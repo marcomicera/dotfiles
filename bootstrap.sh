@@ -49,7 +49,7 @@ doSync() {
 
 doImport() {
     info "Importing"
-    rsync -avh --no-perms ~/.screenrc ~/.bash_profile .
+    rsync -avh --no-perms ~/.screenrc ~/.profile .
 }
 
 doSymLink() {

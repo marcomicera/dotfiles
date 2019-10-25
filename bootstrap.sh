@@ -21,12 +21,16 @@ doInstall() {
         --exclude "README.md" \
         --exclude "bootstrap.sh" \
         --filter=':- .gitignore' \
-        -avh --no-perms . ~;
+        -avh --no-perms ./.* ~;
 }
 
 doImport() {
-    info "Importing"
+    info "Importing base dotfiles"
     rsync -avh --no-perms ~/.screenrc ~/.profile .
+
+    info "Importing SmartGit preferences"
+    rsync -avh --no-perms ~/.config/smartgit/19.1/repositor* .config/smartgit
+    rsync -avh --no-perms ~/.config/smartgit/19.1/ui-* .config/smartgit
 }
 
 doHelp() {

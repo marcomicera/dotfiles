@@ -22,6 +22,9 @@ doInstall() {
 
     echo "Installing SmartGit preferences..."
     rsync -azvhP .config/smartgit/* /home/marcomicera/.config/smartgit
+
+    echo "Setting GRUB's timeout to zero..."
+    sudo sed -i 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
 }
 
 doImport() {

@@ -14,23 +14,25 @@ doUpdate() {
 doInstall() {
     info "Installs dotfiles"
 
-    echo "Installing these dotfiles into home directory"
-
+    echo "Installing these dotfiles into home directory..."
     rsync --exclude ".git/" \
         --exclude ".gitignore" \
         --exclude "README.md" \
         --exclude "bootstrap.sh" \
         --filter=':- .gitignore' \
-        -avh --no-perms ./.* ~;
+        -azvhP --no-perms ./.* ~;
+
+    echo "Installing SmartGit preferences..."
+    rsync -azvhP .config/smartgit/* /home/marcomicera/.config/smartgit
 }
 
 doImport() {
     info "Importing base dotfiles"
-    rsync -avh --no-perms ~/.screenrc ~/.profile .
+    rsync -azvhP --no-perms ~/.screenrc ~/.profile .
 
     info "Importing SmartGit preferences"
-    rsync -avh --no-perms ~/.config/smartgit/19.1/repositor* .config/smartgit
-    rsync -avh --no-perms ~/.config/smartgit/19.1/ui-* .config/smartgit
+    rsync -azvhP --no-perms ~/.config/smartgit/19.1/repositor* .config/smartgit
+    rsync -azvhP --no-perms ~/.config/smartgit/19.1/ui-* .config/smartgit
 }
 
 doHelp() {
@@ -58,7 +60,7 @@ else
                 doInstall
                 shift
                 ;;
-            ---import)
+            --import)
                 doImport
                 shift
 		            ;;

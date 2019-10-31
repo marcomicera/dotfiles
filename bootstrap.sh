@@ -7,13 +7,11 @@ info() {
 }
 
 doUpdate() {
-    info "Updating dotfiles repo"
+    echo "Updating dotfiles repo..."
     git pull origin master;
 }
 
 doInstall() {
-    info "Installs dotfiles"
-
     echo "Installing these dotfiles into home directory..."
     rsync --exclude ".git/" \
         --exclude ".gitignore" \
@@ -27,10 +25,10 @@ doInstall() {
 }
 
 doImport() {
-    info "Importing base dotfiles"
+    echo "Importing base dotfiles..."
     rsync -azvhP --no-perms ~/.screenrc ~/.profile .
 
-    info "Importing SmartGit preferences"
+    echo "Importing SmartGit preferences..."
     rsync -azvhP --no-perms ~/.config/smartgit/19.1/repositor* .config/smartgit
     rsync -azvhP --no-perms ~/.config/smartgit/19.1/ui-* .config/smartgit
 }

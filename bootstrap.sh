@@ -6,9 +6,22 @@ info() {
     printf "\033[00;34m$@\033[0m\n"
 }
 
-doUpdate() {
+doPull() {
     echo "Updating dotfiles repo..."
     git pull origin master;
+}
+
+doPrograms() {
+    PROGRAMS_TO_INSTALL=(
+        git
+    )
+
+    echo "Installing essential programs like ${PROGRAMS_TO_INSTALL[@]}..."
+    for PROGRAM_TO_INSTALL in ${PROGRAMS_TO_INSTALL[@]}; do
+        echo "Installing $PROGRAM_TO_INSTALL..."
+        sudo apt install -y $PROGRAM_TO_INSTALL
+        echo "...$PROGRAM_TO_INSTALL installed."
+    done
 }
 
 doInstall() {
@@ -21,7 +34,7 @@ doInstall() {
         -azvhP --no-perms ./.* ~;
 
     echo "Installing SmartGit preferences..."
-    rsync -azvhP .config/smartgit/* /home/marcomicera/.config/smartgit
+    rsync -azvhP .config/smartgit/* ~/.config/smartgit
 
     echo "Setting GRUB's timeout to zero..."
     sudo sed -i 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
@@ -32,16 +45,17 @@ doImport() {
     rsync -azvhP --no-perms ~/.screenrc ~/.profile .
 
     echo "Importing SmartGit preferences..."
-    rsync -azvhP --no-perms ~/.config/smartgit/19.1/repositor* .config/smartgit
+    rsync -azvhP --no-perms ~/.config/smartgit/19.1/repository-grouping.yml .config/smartgit
     rsync -azvhP --no-perms ~/.config/smartgit/19.1/ui-* .config/smartgit
 }
 
 doHelp() {
     echo "Usage: $(basename "$0") [options]" >&2
     echo
-    echo "  --update              Updates this repo"
+    echo "  --pull                Updates this repo (git pull)"
     echo "  --import              Imports home directory's dotfiles"
     echo "  --install             Installs these dotfiles to home directory"
+    echo "  --programs            Installs essential programs I cannot live without"
     echo
     exit 1
 }
@@ -52,19 +66,23 @@ else
     for i in "$@"
     do
         case $i in
-            --update)
-                doUpdate
+            --pull)
+                doPull
                 shift
                 ;;
             --install)
-                doUpdate
+                doPull
                 doInstall
                 shift
                 ;;
             --import)
                 doImport
                 shift
-		            ;;
+                ;;
+            --programs)
+                doPrograms
+                shift
+                ;;
             *)
                 doHelp
                 shift

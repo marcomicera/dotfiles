@@ -33,6 +33,6 @@ structure:
     path.absolute: /home/marcomicera/git/5c485de3fed02749045294e9, expanded: true}
   - {name: thesis-marco-rmf-inp, favorite: true, git: true, path: ~/git/thesis-marco-rmf-inp,
     path.absolute: /home/marcomicera/git/thesis-marco-rmf-inp, expanded: true}
-recentlyUsed: [~/git/coverletters, ~/git/5c485de3fed02749045294e9, ~/git/thesis-marco-rmf-inp,
-  ~/git/cv, ~/git/followifier, ~/git/distributed-k8s, ~/git/sdp, ~/esp/esp-idf, ~/git/marcomicera.github.io,
-  ~/git/dotfiles, ~/git/cluster-simulator, ~/opt/polito-advanced-downloader]
+recentlyUsed: [~/git/dotfiles, ~/git/followifier, ~/git/distributed-k8s, ~/git/sdp,
+  ~/git/marcomicera.github.io, ~/git/cv, ~/git/coverletters, ~/git/5c485de3fed02749045294e9,
+  ~/git/thesis-marco-rmf-inp, ~/esp/esp-idf, ~/git/cluster-simulator, ~/opt/polito-advanced-downloader]

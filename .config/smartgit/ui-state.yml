@@ -1,8 +1,8 @@
 conflictSolverFrame: {sLayout: merge-right}
 indexEditorFrame: {sLayout: left-merge-right}
 gitProjectLayout.mainIsDefault: true
-gitLogRootLayout.main: (([+289x343:repositories ][+289x614:branches ])(([+765x420:graph
-  ][+860x420:files +860x420:details files ])[+1628x537:changes +1628x537:output output
+gitLogRootLayout.main: (([+345x310:repositories ][+345x647:branches ])(([+972x388:graph
+  ][+597x388:files +597x388:details files ])[+1572x569:changes +1572x569:output changes
   ])[-377x649:comments ])[-1x1:debug-log ]
 gitLogRootLayout.review: (([+194x322:repositories ][+194x323:branches ])(([+777x277:graph
   ]([+389x141:details -1x1:output details ][+389x133:files +389x133:comments files
@@ -13,15 +13,15 @@ hgProjectLayout.mainIsDefault: true
 hgLogLayout.mainIsDefault: true
 bounds:
 - {key: compare, x: 1596, y: 141, width: 1440, height: 881}
-- {key: conflictSolver, x: 1670, y: 68, width: 1443, height: 879}
+- {key: conflictSolver, x: 1684, y: 176, width: 1443, height: 879}
 - {key: editor, x: 1606, y: 81, width: 1440, height: 881}
-- {key: git.commit, x: -217, y: -84, width: 670, height: 585}
+- {key: git.commit, x: -125, y: -128, width: 670, height: 585}
 - {key: git.discard, x: 0, y: 0, width: 500, height: 309}
 - {key: git.flow.configure, width: 400, height: 247}
 - {key: git.indexEditor, width: -2147483648, height: -2147483648}
 - {key: git.stage, width: 500, height: 309}
 - {key: git.stashSave, width: 500, height: 309}
-- {key: log, x: 3929, y: 194, width: 1222, height: 868, state: 1}
+- {key: log, x: 3286, y: 96, width: 1440, height: 881, state: 1}
 - {key: output, width: 1196, height: 749, x: 1, y: -16}
 - {key: preferences, width: -2147483648, height: -2147483648}
 - {key: welcome, x: -365, y: -87, width: 465, height: 346}
@@ -35,6 +35,7 @@ bounds:
 - {key: git.fetchMore, width: 400, height: 247}
 - {key: deepgit, x: 1846, y: 22, width: 1440, height: 881}
 - {key: rebase.interactive.editMessage, width: 600, height: 370}
+- {key: git.squashCommits, width: 630, height: 400}
 columns:
   git.log.files:
     columnNames: "Name\tModification\tRelative Directory\tRenamed Path\tExt.\tRelative\
@@ -45,7 +46,7 @@ columns:
     - {id: Modification, reverse: true}
     - {id: Relative Directory, reverse: false}
     columnWidths:
-    - {id: Name, width: 216, width2x: 0}
+    - {id: Name, width: 170, width2x: 0}
     - {id: Modification, width: 97, width2x: 0}
     - {id: Relative Directory, width: 275, width2x: 0}
     - {id: Renamed Path, width: 463, width2x: 0}
@@ -118,12 +119,12 @@ gitProjectLayout.mainIsdefault: true
 gitProjectLayout.review: ([+2x1:directories ][+7x1:files ][+3x1:message ])[+10x3:changes
   ]([-1x1:branches ][-3x1:outgoing ][-3x1:output ])
 git.pull.fetchAll: true
-lastRepositoryPath: /home/marcomicera/git/coverletters
+lastRepositoryPath: /home/marcomicera/git/pyo_test
 git.addBranch.switch: true
 git.reset: 1
 modifyNotSplit: true
-gitLogSubtreeLayout.main: ((([+200x431:branches ][+798x431:graph ]([+399x143:details
-  -1x1:output details ][+399x285:files ]))[+1403x215:changes ]))
+gitLogSubtreeLayout.main: ([+174x412:branches ][+694x412:graph ]([+347x175:details
+  -1x1:output details ][+347x234:files ]))[+1221x206:changes ]
 gitLogSubtreeLayout.mainIsdefault: true
-gitLogSubtreeLayout.review: ((([+1x1:branches ][+4x1:graph ]([+2x1:details -1x1:output
-  details ][+2x2:files ]))[+4x4:changes ]))
+gitLogSubtreeLayout.review: ([+1x1:branches ][+4x1:graph ]([+2x1:details -1x1:output
+  details ][+2x2:files ]))[+4x4:changes ]

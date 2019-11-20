@@ -49,6 +49,14 @@ doImport() {
     rsync -azvhP --no-perms ~/.config/smartgit/19.1/ui-* .config/smartgit
 }
 
+doMonitors() {
+    echo "Adjusting LVDS1..."
+    xrandr --output LVDS1 --pos 0x435
+
+    echo "Adjusting HDMI1..."
+    xrandr --output HDMI1 --pos 3286x68
+}
+
 doHelp() {
     echo "Usage: $(basename "$0") [options]" >&2
     echo
@@ -56,6 +64,7 @@ doHelp() {
     echo "  --import              Imports home directory's dotfiles"
     echo "  --install             Installs these dotfiles to home directory"
     echo "  --programs            Installs essential programs I cannot live without"
+    echo "  --monitors            Adjusts monitors position"
     echo
     exit 1
 }
@@ -81,6 +90,10 @@ else
                 ;;
             --programs)
                 doPrograms
+                shift
+                ;;
+            --monitors)
+                doMonitors
                 shift
                 ;;
             *)

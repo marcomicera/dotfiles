@@ -1,8 +1,8 @@
 conflictSolverFrame: {sLayout: merge-right}
 indexEditorFrame: {sLayout: left-merge-right}
 gitProjectLayout.mainIsDefault: true
-gitLogRootLayout.main: (([+226x187:repositories ][+226x335:branches ][-346x303:output
-  ])(([+435x281:graph ][+367x281:files +367x281:details files ])[+805x241:changes
+gitLogRootLayout.main: (([+289x343:repositories ][+289x614:branches ])(([+765x420:graph
+  ][+860x420:files +860x420:details files ])[+1628x537:changes +1628x537:output output
   ])[-377x649:comments ])[-1x1:debug-log ]
 gitLogRootLayout.review: (([+194x322:repositories ][+194x323:branches ])(([+777x277:graph
   ]([+389x141:details -1x1:output details ][+389x133:files +389x133:comments files
@@ -12,17 +12,17 @@ gitLogSubtreeLayout.mainIsDefault: true
 hgProjectLayout.mainIsDefault: true
 hgLogLayout.mainIsDefault: true
 bounds:
-- {key: compare, x: 204, y: 63, width: 996, height: 621, state: 1}
-- {key: conflictSolver, x: 1668, y: 67, width: 1440, height: 881}
+- {key: compare, x: 1596, y: 141, width: 1440, height: 881}
+- {key: conflictSolver, x: 1670, y: 68, width: 1443, height: 879}
 - {key: editor, x: 1606, y: 81, width: 1440, height: 881}
-- {key: git.commit, x: 133, y: -120, width: 1022, height: 697}
+- {key: git.commit, x: -217, y: -84, width: 670, height: 585}
 - {key: git.discard, x: 0, y: 0, width: 500, height: 309}
 - {key: git.flow.configure, width: 400, height: 247}
 - {key: git.indexEditor, width: -2147483648, height: -2147483648}
 - {key: git.stage, width: 500, height: 309}
 - {key: git.stashSave, width: 500, height: 309}
-- {key: log, x: 206, y: 47, width: 1040, height: 648}
-- {key: output, width: 725, height: 207, x: 0, y: -1}
+- {key: log, x: 3929, y: 194, width: 1222, height: 868, state: 1}
+- {key: output, width: 1196, height: 749, x: 1, y: -16}
 - {key: preferences, width: -2147483648, height: -2147483648}
 - {key: welcome, x: -365, y: -87, width: 465, height: 346}
 - {key: git.ignore.file, x: -1, y: 0, width: 445, height: 257}
@@ -30,6 +30,11 @@ bounds:
 - {key: provider.comment, width: 560, height: 500}
 - {key: project, x: 1606, y: 81, width: 1440, height: 881}
 - {key: git.tag, width: 400, height: 300, x: 107, y: -5}
+- {key: rebase.interactive, width: 638, height: 370, x: 121, y: 97}
+- {key: editMessage, width: 768, height: 327, x: 134, y: -9}
+- {key: git.fetchMore, width: 400, height: 247}
+- {key: deepgit, x: 1846, y: 22, width: 1440, height: 881}
+- {key: rebase.interactive.editMessage, width: 600, height: 370}
 columns:
   git.log.files:
     columnNames: "Name\tModification\tRelative Directory\tRenamed Path\tExt.\tRelative\
@@ -52,9 +57,9 @@ columns:
     - {id: Assignee, reverse: false}
     - {id: Date, reverse: false}
     columnWidths:
-    - {id: Author, width: 77, width2x: 0}
-    - {id: Text, width: 959, width2x: 0}
-    - {id: Path, width: 295, width2x: 0}
+    - {id: Author, width: 72, width2x: 0}
+    - {id: Text, width: 1493, width2x: 0}
+    - {id: Path, width: 405, width2x: 0}
     - {id: Date, width: 112, width2x: 0}
     - {id: Assignee, width: 76, width2x: 0}
   project.files.git:
@@ -69,13 +74,36 @@ columns:
     sortOrders:
     - {id: Name, reverse: false}
     - {id: Relative Directory, reverse: false}
+  rebase.interactive:
+    columnNames: "Message\tIDs"
+    visibleColumnNames: "IDs\tMessage"
+    columnWidths:
+    - {id: Message, width: 323, width2x: 0}
+    - {id: IDs, width: 127, width2x: 0}
+  commitFiles:
+    columnNames: "File\tModifications"
+    visibleColumnNames: "File\tModifications"
+    columnWidths:
+    - {id: File, width: 600, width2x: 0}
+    - {id: Modifications, width: 150, width2x: 0}
+    sortOrders:
+    - {id: File, reverse: false}
+  originFiles:
+    columnNames: "File\tModifications"
+    visibleColumnNames: "File\tModifications"
+    columnWidths:
+    - {id: File, width: 600, width2x: 0}
+    - {id: Modifications, width: 150, width2x: 0}
+    sortOrders:
+    - {id: File, reverse: false}
 gitViewFileFilter: {viewRecursive: true, viewFromSubmodules: true, viewIgnoredFiles: false,
   viewRenameSources: false, viewSkipped: false, viewUnversionedFiles: true, viewUnchangedFiles: false,
   viewUnchangedAssumed: false, style: 0}
 hgViewFileFilter: {}
-deepGitUiConfiguration: {}
+deepGitUiConfiguration: {mainSplitPaneResizeWeight: '0.0', textSplitPaneResizeWeight: '0.5'}
 confirmations: {commitPushSubset: true, docking.closed: false, git.push: true, git.switchBranch.confirmation: true,
-  remove.repositoryOrGroup: true}
+  remove.repositoryOrGroup: true, conflictSolver.showConflictWarning: true, sync: true,
+  cherryPick.showConflictWarning: true, compare.binaryEqual: true}
 gitLogRootLayout.mainIsdefault: true
 git.pull.defaultFetch: false
 commit.expandOptions: true
@@ -90,4 +118,12 @@ gitProjectLayout.mainIsdefault: true
 gitProjectLayout.review: ([+2x1:directories ][+7x1:files ][+3x1:message ])[+10x3:changes
   ]([-1x1:branches ][-3x1:outgoing ][-3x1:output ])
 git.pull.fetchAll: true
-lastRepositoryPath: /home/marcomicera/git/gists/eae86c28eb81dcce4f95bdb67437ebd0
+lastRepositoryPath: /home/marcomicera/git/coverletters
+git.addBranch.switch: true
+git.reset: 1
+modifyNotSplit: true
+gitLogSubtreeLayout.main: ((([+200x431:branches ][+798x431:graph ]([+399x143:details
+  -1x1:output details ][+399x285:files ]))[+1403x215:changes ]))
+gitLogSubtreeLayout.mainIsdefault: true
+gitLogSubtreeLayout.review: ((([+1x1:branches ][+4x1:graph ]([+2x1:details -1x1:output
+  details ][+2x2:files ]))[+4x4:changes ]))

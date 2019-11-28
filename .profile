@@ -45,4 +45,11 @@ if [ -d "/opt/apache-tomcat-8.5.20" ] ; then
     export CATALINA_HOME=/opt/apache-tomcat-8.5.20
 fi
 
-
+# Title setter in terminal tabs
+function set-title() {
+  if [[ -z "$ORIG" ]]; then
+    ORIG=$PS1
+  fi
+  TITLE="\[\e]2;$*\a\]"
+  PS1=${ORIG}${TITLE}
+}

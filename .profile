@@ -53,3 +53,6 @@ function set-title() {
   TITLE="\[\e]2;$*\a\]"
   PS1=${ORIG}${TITLE}
 }
+
+# Minimize running window on click
+gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'

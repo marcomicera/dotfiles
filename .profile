@@ -45,6 +45,11 @@ if [ -d "/opt/apache-tomcat-8.5.20" ] ; then
     export CATALINA_HOME=/opt/apache-tomcat-8.5.20
 fi
 
+# Reset snap Spotify window position when stuck to full-screen
+function fix-spotify() {
+  sed -i '/app.window.position.saved=true/d' ~/snap/spotify/current/.config/spotify/prefs
+}
+
 # Title setter in terminal tabs
 function set-title() {
   if [[ -z "$ORIG" ]]; then

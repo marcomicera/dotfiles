@@ -3,9 +3,11 @@ structure:
   expanded: false
   children:
   - {name: distributed-k8s, git: true, path: ~/git/distributed-k8s, path.absolute: /home/marcomicera/git/distributed-k8s,
-    expanded: true}
+    expanded: true, favorite: true}
+  - {name: 5de100fb32e40d0001d0e463, git: true, path: ~/git/5de100fb32e40d0001d0e463,
+    path.absolute: /home/marcomicera/git/5de100fb32e40d0001d0e463}
 - name: personal
-  expanded: false
+  expanded: true
   children:
   - {name: polito-advanced-downloader, favorite: false, git: true, path: ~/opt/polito-advanced-downloader,
     path.absolute: /home/marcomicera/opt/polito-advanced-downloader, expanded: true}
@@ -15,24 +17,26 @@ structure:
     expanded: true}
   - {name: dotfiles, git: true, path: ~/git/dotfiles, path.absolute: /home/marcomicera/git/dotfiles}
   - {name: coverletters, git: true, path: ~/git/coverletters, path.absolute: /home/marcomicera/git/coverletters}
+  - {name: pyo-playground, git: true, path: ~/git/pyo-playground, path.absolute: /home/marcomicera/git/pyo-playground}
 - name: pds
   expanded: false
   children:
   - {name: esp-idf, favorite: false, git: true, path: ~/esp/esp-idf, path.absolute: /home/marcomicera/esp/esp-idf,
     expanded: false}
-  - {name: followifier, favorite: false, git: true, path: ~/git/followifier, path.absolute: /home/marcomicera/git/followifier,
+  - {name: followifier, favorite: true, git: true, path: ~/git/followifier, path.absolute: /home/marcomicera/git/followifier,
     expanded: true}
   - {name: sdp, favorite: false, git: true, path: ~/git/sdp, path.absolute: /home/marcomicera/git/sdp,
     expanded: true}
 - name: hire/thesis
   expanded: false
   children:
-  - {name: cluster-simulator, favorite: false, git: true, path: ~/git/cluster-simulator,
+  - {name: cluster-simulator, favorite: true, git: true, path: ~/git/cluster-simulator,
     path.absolute: /home/marcomicera/git/cluster-simulator, expanded: true}
   - {name: 5c485de3fed02749045294e9, favorite: false, git: true, path: ~/git/5c485de3fed02749045294e9,
     path.absolute: /home/marcomicera/git/5c485de3fed02749045294e9, expanded: true}
   - {name: thesis-marco-rmf-inp, favorite: true, git: true, path: ~/git/thesis-marco-rmf-inp,
     path.absolute: /home/marcomicera/git/thesis-marco-rmf-inp, expanded: true}
-recentlyUsed: [~/git/dotfiles, ~/git/followifier, ~/git/distributed-k8s, ~/git/sdp,
-  ~/git/marcomicera.github.io, ~/git/cv, ~/git/coverletters, ~/git/5c485de3fed02749045294e9,
-  ~/git/thesis-marco-rmf-inp, ~/esp/esp-idf, ~/git/cluster-simulator, ~/opt/polito-advanced-downloader]
+recentlyUsed: [~/git/dotfiles, ~/git/distributed-k8s, ~/git/5de100fb32e40d0001d0e463,
+  ~/git/sdp, ~/git/followifier, ~/git/pyo-playground, ~/git/marcomicera.github.io,
+  ~/git/cv, ~/git/coverletters, ~/git/5c485de3fed02749045294e9, ~/git/thesis-marco-rmf-inp,
+  ~/esp/esp-idf, ~/git/cluster-simulator, ~/opt/polito-advanced-downloader]

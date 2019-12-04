@@ -61,3 +61,9 @@ function set-title() {
 
 # Minimize running window on click
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
+
+# Gnome-restarter function
+function gnome-shell-restart() {
+  killall -9 gnome-shell
+  exit
+}

@@ -42,7 +42,7 @@ doInstall() {
 
 doImport() {
     echo "Importing base dotfiles..."
-    rsync -azvhP --no-perms ~/.screenrc ~/.profile .
+    rsync -azvhP --no-perms ~/.bashrc ~/.screenrc ~/.profile .
 
     echo "Importing SmartGit preferences..."
     rsync -azvhP --no-perms ~/.config/smartgit/19.1/repository-grouping.yml .config/smartgit

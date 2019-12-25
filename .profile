@@ -45,25 +45,7 @@ if [ -d "/opt/apache-tomcat-8.5.20" ] ; then
     export CATALINA_HOME=/opt/apache-tomcat-8.5.20
 fi
 
-# Reset snap Spotify window position when stuck to full-screen
-function fix-spotify() {
-  sed -i '/app.window.position.saved=true/d' ~/snap/spotify/current/.config/spotify/prefs
-}
-
-# Title setter in terminal tabs
-function set-title() {
-  if [[ -z "$ORIG" ]]; then
-    ORIG=$PS1
-  fi
-  TITLE="\[\e]2;$*\a\]"
-  PS1=${ORIG}${TITLE}
-}
-
 # Minimize running window on click
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 
-# Gnome-restarter function
-function gnome-shell-restart() {
-  killall -9 gnome-shell
-  exit
-}
+

@@ -48,4 +48,6 @@ fi
 # Minimize running window on click
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 
-
+# Golang
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$(go env GOPATH)

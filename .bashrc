@@ -135,3 +135,12 @@ function set-title() {
   TITLE="\[\e]2;$*\a\]"
   PS1=${ORIG}${TITLE}
 }
+
+# Adjusts monitors position
+function monitors() {
+    echo "Adjusting LVDS1..."
+    xrandr --output LVDS1 --pos 0x435
+
+    echo "Adjusting HDMI1..."
+    xrandr --output HDMI1 --pos 3286x68
+}

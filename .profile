@@ -34,8 +34,8 @@ fi
 export GPG_TTY=$(tty)
 
 # OneDrive client
-# systemctl --user enable onedrive
-# systemctl --user start onedrive
+systemctl --user enable onedrive
+systemctl --user start onedrive
 
 # Java
 export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:jre/bin/java::")

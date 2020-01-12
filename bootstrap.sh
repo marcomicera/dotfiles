@@ -12,6 +12,9 @@ doPull() {
 }
 
 doPrograms() {
+    echo "Running apt update..."
+    sudo apt update
+
     PROGRAMS_TO_INSTALL=(
         git
     )

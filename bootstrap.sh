@@ -16,6 +16,7 @@ doPrograms() {
     sudo apt update
 
     PROGRAMS_TO_INSTALL=(
+        curl
         git
     )
 

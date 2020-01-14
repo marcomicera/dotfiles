@@ -137,9 +137,12 @@ function set-title() {
 }
 
 # Adjusts monitors position
-function monitors() {
+function monitor() {
     echo "Adjusting LVDS1..."
     xrandr --output LVDS1 --pos 0x435
+}
+function monitors() {
+    monitor
 
     echo "Adjusting HDMI1..."
     xrandr --output HDMI1 --pos 3286x68

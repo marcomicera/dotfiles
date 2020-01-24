@@ -18,6 +18,7 @@ doPrograms() {
     PROGRAMS_TO_INSTALL=(
         curl
         git
+		tldr
     )
 
     echo "Installing essential programs like ${PROGRAMS_TO_INSTALL[@]}..."

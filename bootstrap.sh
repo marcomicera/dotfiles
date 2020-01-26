@@ -17,6 +17,7 @@ doPrograms() {
 
     PROGRAMS_TO_INSTALL=(
         curl
+        dconf-editor
         git
 		tldr
     )

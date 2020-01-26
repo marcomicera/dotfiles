@@ -51,3 +51,7 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 # Golang
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$(go env GOPATH)
+
+# Prevent Gnome-shell's Alt+Tab from grouping windows from similar apps
+dconf write /org/gnome/desktop/wm/keybindings/switch-windows "['<Alt>Tab']"
+dconf write /org/gnome/desktop/wm/keybindings/switch-windows-backward "['<Shift><Alt>Tab', '<Alt>Above_Tab']"

@@ -139,7 +139,8 @@ function set-title() {
 # Adjusts monitors position
 function monitor() {
     echo "Adjusting LVDS1..."
-    xrandr --output LVDS1 --pos 0x435
+    # xrandr --output LVDS1 --pos 0x435 # black stand
+    xrandr --output LVDS1 --pos 0x170 # white stand
 }
 function monitors() {
     monitor

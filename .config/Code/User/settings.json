@@ -1,0 +1,159 @@
+{
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": true,
+    "workbench.tree.indent": 21,
+    "files.autoSave": "afterDelay",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "C_Cpp.updateChannel": "Insiders",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "workbench.startupEditor": "newUntitledFile",
+    "sync.gist": "9f483678a5e5c21e3358c9f19eae916e",
+    "workbench.sideBar.location": "left",
+    "dotty.trace.machineId": "67f20cc2-b525-4843-850a-71b1b4d42df3",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.recipes": [
+        {
+          "name": "Complete pdflatex",
+          "tools": [
+            "pdflatex",
+            "bibtex",
+            // "makeglossaries",
+            "pdflatex",
+            "pdflatex"
+          ]
+        },
+        {
+          "name": "pdflatex",
+          "tools": [
+            "pdflatex"
+          ]
+        },
+        {
+          "name": "Complete xelatex",
+          "tools": [
+            "xelatex",
+            "bibtex",
+            // "makeglossaries",
+            "xelatex",
+            "xelatex"
+          ]
+        },
+        {
+          "name": "xelatex",
+          "tools": [
+            "xelatex"
+          ]
+        }
+      ],
+      "latex-workshop.latex.tools": [
+        {
+          "name": "latexmk",
+          "command": "latexmk",
+          "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "-pdf",
+            "-outdir=%OUTDIR%",
+            "%DOC%"
+          ],
+          "env": {}
+        },
+        {
+          "name": "pdflatex",
+          "command": "pdflatex",
+          "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "%DOC%"
+          ],
+          "env": {}
+        },
+        {
+          "name": "xelatex",
+          "command": "xelatex",
+          "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "%DOC%"
+          ],
+          "env": {}
+        },
+        {
+          "name": "bibtex",
+          "command": "bibtex",
+          "args": [
+            "%DOCFILE%"
+          ],
+          "env": {}
+        },
+        {
+          "name": "makeglossaries",
+          "command": "makeglossaries",
+          "args": [
+            "%DOCFILE%"
+          ]
+        }
+      ],
+      "[latex]": {
+        "editor.wordWrap": "on"
+    },
+    "latex-workshop.latex.recipe.default": "lastUsed",
+    "editor.fontSize": 11,
+    "explorer.confirmDragAndDrop": false,
+    "window.zoomLevel": -0.45,
+    "cSpell.enabledLanguageIds": [
+      "asciidoc",
+      "c",
+      "cpp",
+      "csharp",
+      "css",
+      "git-commit",
+      "go",
+      "handlebars",
+      "html",
+      "jade",
+      "java",
+      "javascript",
+      "javascriptreact",
+      "json",
+      "jsonc",
+      "latex",
+      "less",
+      "markdown",
+      "php",
+      "plaintext",
+      "pug",
+      "python",
+      "restructuredtext",
+      "rust",
+      "scala",
+      "scss",
+      "text",
+      "typescript",
+      "typescriptreact",
+      "yaml",
+      "yml"
+    ],
+    "todo-tree.regex.regex": "((//|#|%|<!--|;|/\\*)\\s*($TAGS)|^\\s*- \\[ \\])",
+    "python.jediEnabled": false,
+    "cSpell.userWords": [
+      "Checkmarks",
+      "Daiet",
+      "Mesos",
+      "Oktopus",
+      "PDFs"
+    ],
+    "window.menuBarVisibility": "default",
+    "workbench.editor.enablePreview": false,
+    "latex-workshop.chktex.delay": 1000,
+    "todo-tree.tree.showScanModeButton": false
+}

@@ -44,6 +44,9 @@ doInstall() {
 
     echo "Setting GRUB's timeout to zero..."
     sudo sed -i 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
+
+    echo "Installing Visual Studio Code LaTeX-Workshop settings..."
+    rsync -azvhP .config/Code/User/settings.json ~/.config/Code/User/
 }
 
 doImport() {
@@ -53,6 +56,10 @@ doImport() {
     echo "Importing SmartGit preferences..."
     rsync -azvhP --no-perms ~/.config/smartgit/19.1/repository-grouping.yml .config/smartgit
     rsync -azvhP --no-perms ~/.config/smartgit/19.1/ui-* .config/smartgit
+
+    echo "Importing Visual Studio Code LaTeX-Workshop settings..."
+    rsync -azvhP --no-perms ~/.config/Code/User/settings.json .config/Code/User
+    
 }
 
 doHelp() {

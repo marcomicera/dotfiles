@@ -49,6 +49,12 @@
           "tools": [
             "xelatex"
           ]
+        },
+        {
+          "name": "luatex",
+          "tools": [
+            "luatex"
+          ]
         }
       ],
       "latex-workshop.latex.tools": [
@@ -83,6 +89,18 @@
             "-synctex=1",
             "-interaction=nonstopmode",
             "-file-line-error",
+            "%DOC%"
+          ],
+          "env": {}
+        },
+        {
+          "name": "luatex",
+          "command": "luatex",
+          "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "-pdf",
             "%DOC%"
           ],
           "env": {}
@@ -154,6 +172,6 @@
     ],
     "window.menuBarVisibility": "default",
     "workbench.editor.enablePreview": false,
-    "latex-workshop.chktex.delay": 1000,
+    "latex-workshop.chktex.delay": 1500,
     "todo-tree.tree.showScanModeButton": false
 }

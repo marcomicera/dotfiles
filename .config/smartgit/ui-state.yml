@@ -1,8 +1,8 @@
 conflictSolverFrame: {sLayout: merge-right}
 indexEditorFrame: {sLayout: left-merge-right}
 gitProjectLayout.mainIsDefault: true
-gitLogRootLayout.main: (([+386x372:repositories ][+386x397:branches ])(([+642x429:graph
-  ][+531x429:files +531x429:details files ])[+1176x340:changes +1176x340:output output
+gitLogRootLayout.main: (([+318x359:repositories ][+318x383:branches ])(([+530x255:graph
+  ][+438x255:files +438x255:details files ])[+971x487:changes +971x487:output changes
   ])[-377x649:comments ])[-1x1:debug-log ]
 gitLogRootLayout.review: ([-288x964:repositories ]([-1x1:output ](([+933x164:graph
   ][+933x485:changes ])([+400x178:details +400x178:comments +400x178:branches details
@@ -21,9 +21,9 @@ bounds:
 - {key: git.indexEditor, width: -2147483648, height: -2147483648}
 - {key: git.stage, width: 500, height: 309}
 - {key: git.stashSave, width: 500, height: 309, x: -40, y: -87}
-- {key: log, x: 3493, y: 236, width: 1571, height: 895}
+- {key: log, x: 3604, y: 176, width: 1298, height: 868}
 - {key: output, width: 1196, height: 749, x: 1, y: -16}
-- {key: preferences, width: -2147483648, height: -2147483648}
+- {key: preferences, width: 753, height: 504, x: -364, y: -89}
 - {key: welcome, x: -365, y: -87, width: 465, height: 346}
 - {key: git.ignore.file, x: -1, y: 0, width: 445, height: 257}
 - {key: git.stashRename, width: 500, height: 309}
@@ -124,7 +124,7 @@ gitProjectLayout.mainIsdefault: true
 gitProjectLayout.review: ([+2x1:directories ][+7x1:files ][+3x1:message ])[+10x3:changes
   ]([-1x1:branches ][-3x1:outgoing ][-3x1:output ])
 git.pull.fetchAll: true
-lastRepositoryPath: /home/marcomicera/git/cloudlab-basic
+lastRepositoryPath: /home/marcomicera/go/src/github.com/marcomicera/scribbol
 git.addBranch.switch: true
 git.reset: 2
 modifyNotSplit: true

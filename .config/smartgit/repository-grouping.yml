@@ -16,10 +16,9 @@ structure:
     - {name: polito-advanced-downloader, favorite: false, git: true, path: ~/opt/polito-advanced-downloader,
       path.absolute: /home/marcomicera/opt/polito-advanced-downloader, expanded: true}
     - {name: stick-bridges, git: true, path: ~/git/stick-bridges, path.absolute: /home/marcomicera/git/stick-bridges}
-    - {name: scribble.rs, git: true, path: ~/go/src/github.com/marcomicera/scribble.rs,
-      path.absolute: /home/marcomicera/go/src/github.com/marcomicera/scribble.rs}
+    - {name: scribbol, git: true, path: ~/go/src/github.com/marcomicera/scribbol,
+      path.absolute: /home/marcomicera/go/src/github.com/marcomicera/scribbol}
     expanded: false
-  - {name: interviews, git: true, path: ~/git/interviews, path.absolute: /home/marcomicera/git/interviews}
 - name: university
   children:
   - name: hire/thesis
@@ -39,14 +38,19 @@ structure:
     - {name: distributed-k8s, git: true, path: ~/git/distributed-k8s, path.absolute: /home/marcomicera/git/distributed-k8s,
       favorite: true, expanded: false}
     - {name: git-sync, git: true, path: ~/git/git-sync, path.absolute: /home/marcomicera/git/git-sync}
-  expanded: true
+  expanded: false
 - name: cloud
   children:
   - {name: golang/example, git: true, path: ~/go/src/github.com/golang/example, path.absolute: /home/marcomicera/go/src/github.com/golang/example}
   - {name: fpinscala, git: true, path: ~/git/fpinscala, path.absolute: /home/marcomicera/git/fpinscala}
   expanded: false
-recentlyUsed: [~/git/cloudlab-basic, ~/git/thesis-marco-rmf-inp, ~/git/cluster-simulator,
-  ~/go/src/github.com/marcomicera/scribble.rs, ~/git/distributed-k8s, ~/git/interviews,
-  ~/git/dotfiles, ~/git/cv, ~/git/stick-bridges, ~/git/mtheme, ~/git/marcomicera.github.io,
-  ~/git/5c485de3fed02749045294e9, ~/git/fpinscala, ~/go/src/github.com/golang/example,
+- name: job
+  children:
+  - {name: rivero, git: true, path: ~/git/interview-backend, path.absolute: /home/marcomicera/git/interview-backend}
+  - {name: interviews, git: true, path: ~/git/interviews, path.absolute: /home/marcomicera/git/interviews}
+  expanded: false
+recentlyUsed: [~/go/src/github.com/marcomicera/scribbol, ~/git/interview-backend,
+  ~/git/interviews, ~/git/mtheme, ~/git/cloudlab-basic, ~/git/5c485de3fed02749045294e9,
+  ~/git/cluster-simulator, ~/git/thesis-marco-rmf-inp, ~/git/dotfiles, ~/git/distributed-k8s,
+  ~/git/cv, ~/git/stick-bridges, ~/git/marcomicera.github.io, ~/git/fpinscala, ~/go/src/github.com/golang/example,
   ~/git/git-sync, ~/git/pyo-playground, ~/opt/polito-advanced-downloader]

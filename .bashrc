@@ -142,9 +142,15 @@ function monitor() {
     # xrandr --output LVDS1 --pos 0x435 # black stand
     xrandr --output LVDS1 --pos 0x170 # white stand
 }
-function monitors() {
+function monitors-no-base() {
     monitor
 
     echo "Adjusting HDMI1..."
     xrandr --output HDMI1 --pos 3286x68
+}
+function monitors() {
+    monitor
+
+    echo "Adjusting HDMI1..."
+    xrandr --output HDMI1 --pos 3286x-10
 }

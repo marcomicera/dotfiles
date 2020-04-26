@@ -55,8 +55,8 @@ doImport() {
     rsync -azvhP --no-perms ~/.bashrc ~/.screenrc ~/.profile .
 
     echo "Importing SmartGit preferences..."
-    rsync -azvhP --no-perms ~/.config/smartgit/19.1/repository-grouping.yml .config/smartgit
-    rsync -azvhP --no-perms ~/.config/smartgit/19.1/ui-* .config/smartgit
+    rsync -azvhP --no-perms ~/.config/smartgit/20.1/repository-grouping.yml .config/smartgit
+    rsync -azvhP --no-perms ~/.config/smartgit/20.1/ui-* .config/smartgit
 
     echo "Importing Visual Studio Code LaTeX-Workshop settings..."
     rsync -azvhP --no-perms ~/.config/Code/User/settings.json .config/Code/User

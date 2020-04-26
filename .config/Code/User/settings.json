@@ -95,7 +95,7 @@
         },
         {
           "name": "luatex",
-          "command": "luatex",
+          "command": "lualatex",
           "args": [
             "-synctex=1",
             "-interaction=nonstopmode",

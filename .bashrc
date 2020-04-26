@@ -136,6 +136,9 @@ function set-title() {
   PS1=${ORIG}${TITLE}
 }
 
+# Swagger codegen
+alias swagger-codegen='java -jar ~/opt/swagger-codegen-cli-3.0.0-rc1.jar'
+
 # Adjusts monitors position
 function monitor() {
     echo "Adjusting LVDS1..."

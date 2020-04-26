@@ -17,9 +17,10 @@ doPrograms() {
 
     PROGRAMS_TO_INSTALL=(
         curl
-        dconf-editor
-        git
-		tldr
+        # dconf-editor
+        # git
+        tldr
+        texlive-latex-base
     )
 
     echo "Installing essential programs like ${PROGRAMS_TO_INSTALL[@]}..."

@@ -46,7 +46,7 @@ if [ -d "/opt/apache-tomcat-8.5.20" ] ; then
 fi
 
 # Minimize running window on click
-# gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
+gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 
 # Golang
 export PATH=$PATH:/usr/local/go/bin

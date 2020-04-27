@@ -16,14 +16,17 @@ doPrograms() {
     sudo apt update
 
     PROGRAMS_TO_INSTALL=(
+        # Utilities
         curl
         dconf-editor
-        # git
         tldr
-        texlive-latex-base
+        # Dev
         openjdk-8-jdk-headless
         openjdk-11-jdk-headless
         scala
+        # LaTeX
+        texlive-latex-base
+        texlive-xetex
     )
 
     echo "Installing essential programs like ${PROGRAMS_TO_INSTALL[@]}..."

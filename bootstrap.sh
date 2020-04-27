@@ -27,6 +27,8 @@ doPrograms() {
         # LaTeX
         texlive-latex-base
         texlive-xetex
+		texlive-luatex
+		texlive-fonts-extra
     )
 
     echo "Installing essential programs like ${PROGRAMS_TO_INSTALL[@]}..."
@@ -75,7 +77,6 @@ doImport() {
 
     echo "Importing Visual Studio Code LaTeX-Workshop settings..."
     rsync -azvhP --no-perms ~/.config/Code/User/settings.json .config/Code/User
-    
 }
 
 doHelp() {

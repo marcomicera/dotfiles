@@ -54,8 +54,8 @@ doInstall() {
         --filter=':- .gitignore' \
         -azvhP --no-perms ./.* ~;
 
-    echo "Installing SmartGit preferences..."
-    rsync -azvhP .config/smartgit/* ~/.config/smartgit
+    # echo "Installing SmartGit preferences..."
+    # rsync -azvhP .config/smartgit/* ~/.config/smartgit
 
     echo "Setting GRUB's timeout to zero..."
     sudo sed -i 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
@@ -68,9 +68,9 @@ doImport() {
     echo "Importing base dotfiles..."
     rsync -azvhP --no-perms ~/.bashrc ~/.screenrc ~/.profile .
 
-    echo "Importing SmartGit preferences..."
-    rsync -azvhP --no-perms ~/.config/smartgit/20.1/repository-grouping.yml .config/smartgit
-    rsync -azvhP --no-perms ~/.config/smartgit/20.1/ui-* .config/smartgit
+    # echo "Importing SmartGit preferences..."
+    # rsync -azvhP --no-perms ~/.config/smartgit/20.1/repository-grouping.yml .config/smartgit
+    # rsync -azvhP --no-perms ~/.config/smartgit/20.1/ui-* .config/smartgit
 
     echo "Importing Visual Studio Code LaTeX-Workshop settings..."
     rsync -azvhP --no-perms ~/.config/Code/User/settings.json .config/Code/User

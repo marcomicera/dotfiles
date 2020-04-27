@@ -50,6 +50,7 @@ doInstall() {
     rsync --exclude ".git/" \
         --exclude ".gitignore" \
         --exclude "README.md" \
+        --exclude "LICENSE" \
         --exclude "bootstrap.sh" \
         --filter=':- .gitignore' \
         -azvhP --no-perms ./.* ~;

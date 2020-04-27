@@ -141,19 +141,19 @@ alias swagger-codegen='java -jar ~/opt/swagger-codegen-cli-3.0.0-rc1.jar'
 
 # Adjusts monitors position
 function monitor() {
-    echo "Adjusting LVDS1..."
-    # xrandr --output LVDS1 --pos 0x435 # black stand
-    xrandr --output LVDS1 --pos 0x170 # white stand
+    echo "Adjusting LVDS-1..."
+    # xrandr --output LVDS-1 --pos 0x435 # black stand
+    xrandr --output LVDS-1 --pos 0x170 # white stand
 }
 function monitors-no-base() {
     monitor
 
-    echo "Adjusting HDMI1..."
-    xrandr --output HDMI1 --pos 3286x68
+    echo "Adjusting HDMI-1..."
+    xrandr --output HDMI-1 --pos 3286x68
 }
 function monitors() {
     monitor
 
-    echo "Adjusting HDMI1..."
-    xrandr --output HDMI1 --pos 3286x-10
+    echo "Adjusting HDMI-1..."
+    xrandr --output HDMI-1 --pos 3286x-10
 }

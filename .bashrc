@@ -140,20 +140,26 @@ function set-title() {
 alias swagger-codegen='java -jar ~/opt/swagger-codegen-cli-3.0.0-rc1.jar'
 
 # Adjusts monitors position
+_get_display_name() {
+  xrandr | grep connected | grep $1 | awk '{print $1}'
+}
 function monitor() {
-    echo "Adjusting LVDS-1..."
-    # xrandr --output LVDS-1 --pos 0x435 # black stand
-    xrandr --output LVDS-1 --pos 0x170 # white stand
+    echo "Adjusting notebook's display..."
+    notebook_display=$(_get_display_name LVDS)
+    # xrandr --output ${notebook_display} --pos 0x435 # black stand
+    xrandr --output ${notebook_display} --pos 0x170 # white stand
 }
 function monitors-no-base() {
     monitor
 
-    echo "Adjusting HDMI-1..."
-    xrandr --output HDMI-1 --pos 3286x68
+    echo "Adjusting HDMI display..."
+    hdmi_display=$(_get_display_name HDMI)
+    xrandr --output ${hdmi_display} --pos 3286x68
 }
 function monitors() {
     monitor
 
-    echo "Adjusting HDMI-1..."
-    xrandr --output HDMI-1 --pos 3286x-10
+    echo "Adjusting HDMI display..."
+    hdmi_display=$(_get_display_name HDMI)
+    xrandr --output ${hdmi_display} --pos 3286x-10
 }

@@ -20,6 +20,8 @@ doPrograms() {
         curl
         dconf-editor
         tldr
+		vim
+		htop
         # Dev
         openjdk-8-jdk-headless
         openjdk-11-jdk-headless

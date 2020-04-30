@@ -173,5 +173,6 @@
     "window.menuBarVisibility": "default",
     "workbench.editor.enablePreview": false,
     "latex-workshop.chktex.delay": 1500,
-    "todo-tree.tree.showScanModeButton": false
+    "todo-tree.tree.showScanModeButton": false,
+    "open-in-browser.default": "chrome",
 }

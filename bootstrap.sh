@@ -26,6 +26,8 @@ doPrograms() {
         openjdk-8-jdk-headless
         openjdk-11-jdk-headless
         scala
+        python3
+        python3-pip
         # LaTeX
         texlive-latex-base
         texlive-xetex

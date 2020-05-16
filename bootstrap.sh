@@ -49,6 +49,10 @@ doPrograms() {
     sudo apt update
     sudo apt install -y sbt
     echo "...sbt installed."
+
+    # swagger-codegen
+    wget https://repo1.maven.org/maven2/io/swagger/codegen/v3/swagger-codegen-cli/3.0.19/swagger-codegen-cli-3.0.19.jar \
+        -O ~/.local/bin/swagger-codegen-cli.jar
 }
 
 doInstall() {

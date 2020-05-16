@@ -137,7 +137,7 @@ function set-title() {
 }
 
 # Swagger codegen
-alias swagger-codegen='java -jar ~/opt/swagger-codegen-cli-3.0.0-rc1.jar'
+alias swagger-codegen='java -jar ~/.local/bin/swagger-codegen-cli.jar'
 
 # Adjusts monitors position
 _get_display_name() {

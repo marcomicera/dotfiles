@@ -161,5 +161,5 @@ function monitors() {
 
     echo "Adjusting HDMI display..."
     hdmi_display=$(_get_display_name HDMI)
-    xrandr --output ${hdmi_display} --pos 3286x-10
+    xrandr --output ${hdmi_display} --pos 3286x70
 }

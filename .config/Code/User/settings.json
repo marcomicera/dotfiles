@@ -55,7 +55,13 @@
           "tools": [
             "luatex"
           ]
-        }
+        },
+        {
+          "name": "texlive",
+          "tools": [
+            "texlive"
+          ]
+        },
       ],
       "latex-workshop.latex.tools": [
         {
@@ -87,6 +93,16 @@
           "command": "xelatex",
           "args": [
             "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "%DOC%"
+          ],
+          "env": {}
+        },
+        {
+          "name": "texlive",
+          "command": "tex",
+          "args": [
             "-interaction=nonstopmode",
             "-file-line-error",
             "%DOC%"
@@ -175,4 +191,6 @@
     "latex-workshop.chktex.delay": 1500,
     "todo-tree.tree.showScanModeButton": false,
     "open-in-browser.default": "chrome",
+    "explorer.confirmDelete": false,
+    "workbench.activityBar.visible": true,
 }

@@ -163,3 +163,9 @@ function monitors() {
     hdmi_display=$(_get_display_name HDMI)
     xrandr --output ${hdmi_display} --pos 3286x70
 }
+
+alias t="tail -n 25"
+alias wt="watch -n 1 tail -n 25"
+
+# Golang `go get` private repos
+export GOPRIVATE=github.com/marcomicera/*

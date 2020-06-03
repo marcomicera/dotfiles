@@ -53,15 +53,33 @@ _install_programs() {
     echo "...swagger-codegen installed."
 }
 
+_import_dotfiles() {
+    echo "Importing sh/bash dotfiles..."
+    rsync -azvhP --no-perms ~/.bashrc ~/.profile .
+
+    echo "Importing screen dotfiles..."
+    rsync -azvhP --no-perms ~/.screenrc .
+
+    echo "Importing fish dotfiles..."
+    rsync -azvhP --no-perms ~/.config/fish/config.fish .config/fish
+
+    # echo "Importing SmartGit preferences..."
+    # rsync -azvhP --no-perms ~/.config/smartgit/20.1/repository-grouping.yml .config/smartgit
+    # rsync -azvhP --no-perms ~/.config/smartgit/20.1/ui-* .config/smartgit
+
+    echo "Importing Visual Studio Code LaTeX-Workshop settings..."
+    rsync -azvhP --no-perms ~/.config/Code/User/settings.json .config/Code/User
+}
+
 _install_dotfiles() {
-    echo "Installing these dotfiles into home directory..."
-    rsync --exclude ".git/" \
-        --exclude ".gitignore" \
-        --exclude "README.md" \
-        --exclude "LICENSE" \
-        --exclude "bootstrap.sh" \
-        --filter=':- .gitignore' \
-        -azvhP --no-perms ./.* ~
+    echo "Installing sh/bash dotfiles..."
+    rsync -azvhP --no-perms .bashrc .profile ~
+    
+    echo "Installing screen dotfiles..."
+    rsync -azvhP --no-perms .screenrc ~
+
+    echo "Installing fish dotfiles..."
+    rsync -azvhP --no-perms .config/fish/config.fish ~/.config/fish
 
     # echo "Installing SmartGit preferences..."
     # rsync -azvhP .config/smartgit/* ~/.config/smartgit
@@ -71,18 +89,6 @@ _install_dotfiles() {
 
     echo "Installing Visual Studio Code LaTeX-Workshop settings..."
     rsync -azvhP .config/Code/User/settings.json ~/.config/Code/User/
-}
-
-_import_dotfiles() {
-    echo "Importing base dotfiles..."
-    rsync -azvhP --no-perms ~/.bashrc ~/.screenrc ~/.profile .
-
-    # echo "Importing SmartGit preferences..."
-    # rsync -azvhP --no-perms ~/.config/smartgit/20.1/repository-grouping.yml .config/smartgit
-    # rsync -azvhP --no-perms ~/.config/smartgit/20.1/ui-* .config/smartgit
-
-    echo "Importing Visual Studio Code LaTeX-Workshop settings..."
-    rsync -azvhP --no-perms ~/.config/Code/User/settings.json .config/Code/User
 }
 
 _print_help() {

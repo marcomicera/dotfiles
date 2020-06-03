@@ -2,16 +2,12 @@
 
 DOTFILES=$(pwd -P)
 
-info() {
-    printf "\033[00;34m$@\033[0m\n"
-}
-
-doPull() {
+_pull() {
     echo "Updating dotfiles repo..."
-    git pull origin master;
+    git pull origin master
 }
 
-doPrograms() {
+_install_programs() {
     echo "Running apt update..."
     sudo apt update
 
@@ -55,7 +51,7 @@ doPrograms() {
         -O ~/.local/bin/swagger-codegen-cli.jar
 }
 
-doInstall() {
+_install_dotfiles() {
     echo "Installing these dotfiles into home directory..."
     rsync --exclude ".git/" \
         --exclude ".gitignore" \
@@ -63,7 +59,7 @@ doInstall() {
         --exclude "LICENSE" \
         --exclude "bootstrap.sh" \
         --filter=':- .gitignore' \
-        -azvhP --no-perms ./.* ~;
+        -azvhP --no-perms ./.* ~
 
     # echo "Installing SmartGit preferences..."
     # rsync -azvhP .config/smartgit/* ~/.config/smartgit
@@ -75,7 +71,7 @@ doInstall() {
     rsync -azvhP .config/Code/User/settings.json ~/.config/Code/User/
 }
 
-doImport() {
+_import_dotfiles() {
     echo "Importing base dotfiles..."
     rsync -azvhP --no-perms ~/.bashrc ~/.screenrc ~/.profile .
 
@@ -87,9 +83,10 @@ doImport() {
     rsync -azvhP --no-perms ~/.config/Code/User/settings.json .config/Code/User
 }
 
-doHelp() {
+_print_help() {
     echo "Usage: $(basename "$0") [options]" >&2
     echo
+    echo "  --help                Shows this help message"
     echo "  --pull                Updates this repo (git pull)"
     echo "  --import              Imports home directory's dotfiles"
     echo "  --install             Installs these dotfiles to home directory"
@@ -99,30 +96,30 @@ doHelp() {
 }
 
 if [ $# -eq 0 ]; then
-    doHelp
+    _print_help
 else
     for i in "$@"
     do
         case $i in
             --pull)
-                doPull
+                _pull
                 shift
                 ;;
             --install)
-                doPull
-                doInstall
+                _pull
+                _install_dotfiles
                 shift
                 ;;
             --import)
-                doImport
+                _import_dotfiles
                 shift
                 ;;
             --programs)
-                doPrograms
+                _install_programs
                 shift
                 ;;
-            *)
-                doHelp
+            --help|*)
+                _print_help
                 shift
                 ;;
         esac

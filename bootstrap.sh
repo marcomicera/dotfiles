@@ -51,6 +51,18 @@ _install_programs() {
     wget https://repo1.maven.org/maven2/io/swagger/codegen/v3/swagger-codegen-cli/3.0.19/swagger-codegen-cli-3.0.19.jar \
         -O ~/.local/bin/swagger-codegen-cli.jar
     echo "...swagger-codegen installed."
+
+    # fish shell
+    echo "Installing fish shell..."
+    sudo apt-add-repository ppa:fish-shell/release-3 && sudo apt update && sudo apt install -y fish
+    echo "...fish shell installed."
+
+    # OhMyFish
+    echo "Installing OhMyFish..."
+    curl -L https://get.oh-my.fish | fish
+    fish -c "omf doctor"
+    fish -c "omf install bobthefish"
+    echo "...OhMyFish installed."
 }
 
 _import_dotfiles() {

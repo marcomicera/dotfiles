@@ -51,17 +51,47 @@ _install_programs() {
     wget https://repo1.maven.org/maven2/io/swagger/codegen/v3/swagger-codegen-cli/3.0.19/swagger-codegen-cli-3.0.19.jar \
         -O ~/.local/bin/swagger-codegen-cli.jar
     echo "...swagger-codegen installed."
+
+    # fish shell
+    echo "Installing fish shell..."
+    sudo apt-add-repository ppa:fish-shell/release-3 && sudo apt update && sudo apt install -y fish
+    echo "...fish shell installed."
+
+    # OhMyFish
+    echo "Installing OhMyFish..."
+    curl -L https://get.oh-my.fish | fish
+    fish -c "omf doctor"
+    fish -c "omf install bobthefish"
+    echo "...OhMyFish installed."
+}
+
+_import_dotfiles() {
+    echo "Importing sh/bash dotfiles..."
+    rsync -azvhP --no-perms ~/.bashrc ~/.profile .
+
+    echo "Importing screen dotfiles..."
+    rsync -azvhP --no-perms ~/.screenrc .
+
+    echo "Importing fish dotfiles..."
+    rsync -azvhP --no-perms ~/.config/fish/config.fish .config/fish
+
+    # echo "Importing SmartGit preferences..."
+    # rsync -azvhP --no-perms ~/.config/smartgit/20.1/repository-grouping.yml .config/smartgit
+    # rsync -azvhP --no-perms ~/.config/smartgit/20.1/ui-* .config/smartgit
+
+    echo "Importing Visual Studio Code LaTeX-Workshop settings..."
+    rsync -azvhP --no-perms ~/.config/Code/User/settings.json .config/Code/User
 }
 
 _install_dotfiles() {
-    echo "Installing these dotfiles into home directory..."
-    rsync --exclude ".git/" \
-        --exclude ".gitignore" \
-        --exclude "README.md" \
-        --exclude "LICENSE" \
-        --exclude "bootstrap.sh" \
-        --filter=':- .gitignore' \
-        -azvhP --no-perms ./.* ~
+    echo "Installing sh/bash dotfiles..."
+    rsync -azvhP --no-perms .bashrc .profile ~
+    
+    echo "Installing screen dotfiles..."
+    rsync -azvhP --no-perms .screenrc ~
+
+    echo "Installing fish dotfiles..."
+    rsync -azvhP --no-perms .config/fish/config.fish ~/.config/fish
 
     # echo "Installing SmartGit preferences..."
     # rsync -azvhP .config/smartgit/* ~/.config/smartgit
@@ -71,18 +101,6 @@ _install_dotfiles() {
 
     echo "Installing Visual Studio Code LaTeX-Workshop settings..."
     rsync -azvhP .config/Code/User/settings.json ~/.config/Code/User/
-}
-
-_import_dotfiles() {
-    echo "Importing base dotfiles..."
-    rsync -azvhP --no-perms ~/.bashrc ~/.screenrc ~/.profile .
-
-    # echo "Importing SmartGit preferences..."
-    # rsync -azvhP --no-perms ~/.config/smartgit/20.1/repository-grouping.yml .config/smartgit
-    # rsync -azvhP --no-perms ~/.config/smartgit/20.1/ui-* .config/smartgit
-
-    echo "Importing Visual Studio Code LaTeX-Workshop settings..."
-    rsync -azvhP --no-perms ~/.config/Code/User/settings.json .config/Code/User
 }
 
 _print_help() {

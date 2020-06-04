@@ -63,6 +63,13 @@ _install_programs() {
     fish -c "omf doctor"
     fish -c "omf install bobthefish"
     echo "...OhMyFish installed."
+
+    # Retrieving terminal font
+    echo "Getting terminal font..."
+    TERMINAL_FONT_FILE=~/Desktop/hack-regular-nerd-font-complete.tff
+    wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf \
+        -O ${TERMINAL_FONT_FILE}
+    echo "...font downloaded: ${TERMINAL_FONT_FILE}."
 }
 
 _import_dotfiles() {

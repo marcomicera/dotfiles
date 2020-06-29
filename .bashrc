@@ -147,7 +147,8 @@ function monitor() {
     echo "Adjusting notebook's display..."
     notebook_display=$(_get_display_name LVDS)
     # xrandr --output ${notebook_display} --pos 0x435 # black stand
-    xrandr --output ${notebook_display} --pos 0x170 # white stand
+    # xrandr --output ${notebook_display} --pos 0x170 # white stand
+    xrandr --output ${notebook_display} --pos 0x40 # old smsng TV
 }
 function monitors-no-base() {
     monitor

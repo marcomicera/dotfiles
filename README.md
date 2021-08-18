@@ -1,5 +1,5 @@
 # My `.files`
-Linux only.
+`bash` only.
 
 #### References
 - [dotfiles.github.io](https://dotfiles.github.io/)

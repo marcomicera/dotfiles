@@ -120,6 +120,10 @@ alias n='nano'
 alias nzsh='n ~/.zshrc'
 alias nzshr='n ~/.zshrc'
 alias nzshrc='n ~/.zshrc'
+alias src="source ~/.zshrc"
+alias srczsh="source ~/.zshrc"
+alias srczshr="source ~/.zshrc"
+alias srczshrc="source ~/.zshrc"
 alias nkc='n ~/.kube/config'
 alias t="tree"
 

@@ -229,7 +229,9 @@ export PATH=$PATH:~/Library/Python/2.7/bin # pip for pre-installed Python on mac
 eval $(thefuck --alias)
 
 # remake
-alias maybe="remake --dry-run --trace"
+alias m="remake --trace"
+alias ma="remake --trace --dry-run"
+alias maybe="remake --trace --dry-run"
 
 # asdf
 . /usr/local/opt/asdf/asdf.sh

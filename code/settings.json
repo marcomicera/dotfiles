@@ -1,7 +1,16 @@
 {
+    // Theme
     "workbench.colorTheme": "Default Dark+",
+
+    // Always open files in new tabs
     "workbench.editor.enablePreview": false,
+
+    // Always trust untrusted files
     "security.workspace.trust.untrustedFiles": "open",
+
+    // Terminal font
     "terminal.integrated.fontFamily": "Hack Nerd Font",
+
+    // Never focus opened files into the file explorer pane
     "explorer.autoReveal": false,
 }

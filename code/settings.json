@@ -1,5 +1,6 @@
 {
     "workbench.colorTheme": "Default Dark+",
+    "workbench.editor.enablePreview": false,
     "security.workspace.trust.untrustedFiles": "open",
     "terminal.integrated.fontFamily": "MesloLGS NF"
 }

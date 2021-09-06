@@ -8,3 +8,4 @@ thefuck
 nnn
 tree
 pinentry-mac
+htop

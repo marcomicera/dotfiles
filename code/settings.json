@@ -3,4 +3,5 @@
     "workbench.editor.enablePreview": false,
     "security.workspace.trust.untrustedFiles": "open",
     "terminal.integrated.fontFamily": "Hack Nerd Font",
+    "explorer.autoReveal": false,
 }

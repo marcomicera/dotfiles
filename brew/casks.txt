@@ -1,6 +1,6 @@
-font-hack-nerd-font
-intellij-idea
-visual-studio-code
-font-meslo-for-powerline
-iterm2
 aws-vault
+font-hack-nerd-font
+font-meslo-for-powerline
+intellij-idea
+iterm2
+visual-studio-code

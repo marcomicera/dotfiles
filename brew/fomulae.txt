@@ -9,3 +9,4 @@ nnn
 tree
 pinentry-mac
 htop
+azure-cli

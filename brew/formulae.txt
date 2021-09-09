@@ -12,4 +12,5 @@ romkatv/powerlevel10k/powerlevel10k
 thefuck
 tldr
 tree
+watch
 wget

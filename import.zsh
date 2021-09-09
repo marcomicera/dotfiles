@@ -22,3 +22,4 @@ cp ~/.nanorc .
 
 # Visual Studio Code
 cp ~/Library/Application\ Support/Code/User/settings.json code
+cp ~/Library/Application\ Support/Code/User/keybindings.json code

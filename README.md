@@ -1,5 +1,11 @@
 # My `.files`
 `zsh` on macOS.
 
-#### References
+## Import dotfiles
+
+```shell
+./import.sh
+```
+
+## References
 - [dotfiles.github.io](https://dotfiles.github.io/)

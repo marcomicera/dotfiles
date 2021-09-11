@@ -1,6 +1,8 @@
 golang
 helm
+kompose
 kubectl
+kustomize
 python
 skaffold
 sops

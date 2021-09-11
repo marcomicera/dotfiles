@@ -1,9 +1,9 @@
-set smooth
 set autoindent
 set backup
 set backupdir ~/.nano/backups
 set historylog
-# set mouse
+# set magic
+set mouse
 set linenumbers
 
 include "~/.nano/apacheconf.nanorc"

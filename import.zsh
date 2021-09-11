@@ -4,7 +4,8 @@
 set -x
 
 # zsh
-cp ~/.zshrc .
+cp ~/.zshrc zsh
+cp ~/.p10k.zsh zsh
 
 # asdf
 asdf plugin list > asdf/list.txt

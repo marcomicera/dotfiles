@@ -230,8 +230,8 @@ export PATH=$PATH:~/Library/Python/2.7/bin # pip for pre-installed Python on mac
 # export PATH=$PATH:~/opt/istio-1.7.4/bin
 
 # Terraform
-# autoload -U +X bashcompinit && bashcompinit
-# complete -o nospace -C /usr/local/bin/terraform terraform
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C $(which terraform) terraform
 
 # fuck
 eval $(thefuck --alias)

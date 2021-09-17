@@ -26,7 +26,7 @@ cp ~/.gitconfig "${CWD}"/git
 cp ~/.gitignore_global "${CWD}"/git
 
 # nano
-cp ~/.nanorc .
+cp ~/.nanorc "${CWD}"
 
 # Visual Studio Code
 cp ~/Library/Application\ Support/Code/User/settings.json "${CWD}"/code

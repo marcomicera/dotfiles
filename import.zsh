@@ -1,13 +1,14 @@
 #!/usr/bin/env zsh
 
-# Printing
-set -x
-
 # This repo's absolute path
 CWD="$(
   cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit
   pwd -P
 )"
+echo "Dotfiles absolute path: ${CWD}"
+
+# Printing
+set -x
 
 # zsh
 cp ~/.zshrc "${CWD}"/zsh

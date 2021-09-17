@@ -124,6 +124,10 @@ compinit
 # General aliases
 alias ll='ls -lah'
 alias n='nano'
+alias nkc='n ~/.kube/config'
+alias t="tree"
+
+# zshrc
 alias nzsh='n ~/.zshrc'
 alias nzshr='n ~/.zshrc'
 alias nzshrc='n ~/.zshrc'
@@ -132,8 +136,10 @@ alias src="source ~/.zshrc"
 alias srczsh="source ~/.zshrc"
 alias srczshr="source ~/.zshrc"
 alias srczshrc="source ~/.zshrc"
-alias nkc='n ~/.kube/config'
-alias t="tree"
+alias dtf="~/git/dotfiles/import.zsh"
+alias dtfl="~/git/dotfiles/import.zsh"
+alias dtfls="~/git/dotfiles/import.zsh"
+alias dotfiles="~/git/dotfiles/import.zsh"
 
 # nnn
 alias nn='nnn -deH'

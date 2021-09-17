@@ -3,6 +3,7 @@ azure-cli
 gnupg
 htop
 jq
+k9s
 nano
 nnn
 node

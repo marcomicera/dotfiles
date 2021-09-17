@@ -3,4 +3,5 @@ font-hack-nerd-font
 font-meslo-for-powerline
 intellij-idea
 iterm2
+meld
 visual-studio-code

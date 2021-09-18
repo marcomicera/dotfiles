@@ -3,9 +3,9 @@
 
 ## Import dotfiles
 
-```shell
-./import.sh
-```
+<p align="center">
+    <img src="img/preview.png"/>
+</p>
 
 ## References
 - [dotfiles.github.io](https://dotfiles.github.io/)

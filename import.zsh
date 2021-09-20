@@ -12,7 +12,7 @@ source "${CWD}"/util/*.sh
 green "Dotfiles absolute path: ${CWD}"
 
 # zsh
-yellow "zsh"
+magenta "zsh"
 (
   set -x
   cp ~/.zshrc "${CWD}"/zsh
@@ -20,14 +20,14 @@ yellow "zsh"
 )
 
 # asdf
-yellow "asdf"
+magenta "asdf"
 (
   set -x
   asdf plugin list >"${CWD}"/asdf/list.txt
 )
 
 # brew
-yellow "brew"
+magenta "brew"
 (
   set -x
   brew list --casks -1 >"${CWD}"/brew/casks.txt
@@ -35,7 +35,7 @@ yellow "brew"
 )
 
 # git
-yellow "git"
+magenta "git"
 (
   set -x
   cp ~/.gitconfig "${CWD}"/git
@@ -43,14 +43,14 @@ yellow "git"
 )
 
 # nano
-yellow "nano"
+magenta "nano"
 (
   set -x
   cp ~/.nanorc "${CWD}"
 )
 
 # Visual Studio Code
-yellow "Visual Studio Code"
+magenta "Visual Studio Code"
 (
   set -x
   cp ~/Library/Application\ Support/Code/User/settings.json "${CWD}"/code

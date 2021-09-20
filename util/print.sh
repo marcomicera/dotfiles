@@ -6,6 +6,8 @@ set +x
 RED="\u001b[41;1m"
 GREEN="\u001b[42;1m"
 YELLOW="\u001b[43;1m"
+BLUE="\u001b[44;1m"
+MAGENTA="\u001b[45;1m"
 NOCOLOR="\u001b[0m"
 
 function title() {
@@ -26,4 +28,12 @@ function green() {
 
 function yellow() {
     title "${YELLOW}" "${1}"
+}
+
+function blue() {
+    title "${BLUE}" "${1}"
+}
+
+function magenta() {
+    title "${MAGENTA}" "${1}"
 }

@@ -57,10 +57,16 @@ yellow "Visual Studio Code"
   cp ~/Library/Application\ Support/Code/User/keybindings.json "${CWD}"/code
 )
 
-# Printing the git status & diff
-green "git status & diff"
+# git status
+green "git status"
 (
   set -x
   git -C "${CWD}" status
+)
+
+# git diff
+green "git diff"
+(
+  set -x
   git -C "${CWD}" --no-pager diff
 )

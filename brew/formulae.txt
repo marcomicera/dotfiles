@@ -4,6 +4,7 @@ gnupg
 htop
 jq
 k9s
+lazydocker
 nano
 nnn
 node

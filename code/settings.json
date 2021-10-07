@@ -13,4 +13,7 @@
 
     // Never focus opened files into the file explorer pane
     "explorer.autoReveal": false,
+
+    // PDF viewer
+    "pdf-preview.default.sidebar": false,
 }

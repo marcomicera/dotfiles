@@ -3,6 +3,7 @@ helm
 kompose
 kubectl
 kustomize
+maven
 python
 skaffold
 sops

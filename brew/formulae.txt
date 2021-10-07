@@ -1,5 +1,6 @@
 asdf
 azure-cli
+docker-compose
 gnupg
 htop
 jq

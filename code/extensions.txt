@@ -1,3 +1,4 @@
+bungcip.better-toml
 eamodio.gitlens
 Gruntfuggly.todo-tree
 hashicorp.terraform

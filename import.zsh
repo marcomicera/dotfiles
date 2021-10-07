@@ -55,6 +55,7 @@ magenta "Visual Studio Code"
   set -x
   cp ~/Library/Application\ Support/Code/User/settings.json "${CWD}"/code
   cp ~/Library/Application\ Support/Code/User/keybindings.json "${CWD}"/code
+  code --list-extensions > "${CWD}"/code/extensions.txt # Extensions list (installation: https://stackoverflow.com/a/49398449)
 )
 
 # git status

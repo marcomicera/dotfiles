@@ -1,0 +1,9 @@
+eamodio.gitlens
+Gruntfuggly.todo-tree
+hashicorp.terraform
+iliazeus.vscode-ansi
+Jeff-Tian.tex-workshop
+mindaro-dev.file-downloader
+redhat.vscode-yaml
+tomoki1207.pdf
+yzhang.markdown-all-in-one

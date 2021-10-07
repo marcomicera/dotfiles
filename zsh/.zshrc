@@ -199,6 +199,7 @@ function drop_dgraph() {
 
 # Terraform
 alias tf="terraform"
+alias tfo="tf output"
 
 # gcloud
 if [ -f ~/opt/google-cloud-sdk/path.zsh.inc ]; then

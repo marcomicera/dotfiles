@@ -234,8 +234,12 @@ export PATH=$PATH:~/Library/Python/2.7/bin # pip for pre-installed Python on mac
 # export PATH=$PATH:$MAVEN_BIN
 
 # Helm
-# source <(helm completion zsh)
-# alias h="helm"
+alias h="helm"
+source <(helm completion zsh)
+
+# helmfile
+alias hf="helmfile"
+# source <(curl https://raw.githubusercontent.com/roboll/helmfile/master/autocomplete/helmfile_zsh_autocomplete)
 
 # Istio
 # export PATH=$PATH:~/opt/istio-1.7.4/bin

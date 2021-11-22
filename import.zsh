@@ -58,6 +58,15 @@ magenta "Visual Studio Code"
   code --list-extensions > "${CWD}"/code/extensions.txt # Extensions list (installation: https://stackoverflow.com/a/49398449)
 )
 
+# k9s
+if [ -n ${XDG_CONFIG_HOME} ]; then 
+  magenta "k9s"
+  (
+    set -x
+    cp ${XDG_CONFIG_HOME}/k9s/plugin.yml "${CWD}"/.config/k9s/plugin.yml
+  )
+fi
+
 # git status
 green "git status"
 (

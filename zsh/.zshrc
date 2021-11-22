@@ -180,6 +180,10 @@ source <(kustomize completion zsh)
 alias ku="kustomize"
 alias kub="kustomize build"
 
+# k9s
+source <(k9s completion zsh)
+export XDG_CONFIG_HOME=~/.config
+
 # kompose
 source <(kompose completion zsh)
 alias ko="kompose"

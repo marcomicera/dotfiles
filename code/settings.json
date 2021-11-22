@@ -16,4 +16,9 @@
 
     // PDF viewer
     "pdf-preview.default.sidebar": false,
+    "pdf-preview.default.scale": "page-width",
+
+    // Todo Tree
+    "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^|%|\\\\)\\s*($TAGS)\\{*|^\\s*- \\[ \\])",
+    "todo-tree.regex.regexCaseSensitive": false,
 }

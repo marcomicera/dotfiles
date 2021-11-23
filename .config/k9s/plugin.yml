@@ -3,11 +3,11 @@ plugin:
   get-all:
     shortCut: g
     confirm: false
-    description: get-all
+    description: "Get all"
     scopes:
       - all
     command: sh
     background: false
     args:
       - -c
-      - "kubectl --context $CONTEXT --namespace $NAMESPACE get all | less"
+      - "watch -n 1 \"kubectl --context $CONTEXT --namespace $([[ $NAMESPACE == \"-\" ]] && echo $NAME || echo $NAMESPACE) get all | less\""

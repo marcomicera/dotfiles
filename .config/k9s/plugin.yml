@@ -3,7 +3,7 @@ plugin:
   get-all:
     shortCut: g
     confirm: false
-    description: "Get all"
+    description: Get All
     scopes:
       - all
     command: sh

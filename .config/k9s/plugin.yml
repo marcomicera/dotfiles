@@ -11,3 +11,17 @@ plugin:
     args:
       - -c
       - "watch -n 1 \"kubectl --context $CONTEXT --namespace $([[ $NAMESPACE == \"-\" ]] && echo $NAME || echo $NAMESPACE) get all | less\""
+  # watch events on selected resources
+  # requires linux "watch" command
+  # change '-n' to adjust refresh time in seconds
+  watch-events:
+    shortCut: Shift-E
+    confirm: false
+    description: Get Events
+    scopes:
+    - all
+    command: sh
+    background: false
+    args:
+    - -c
+    - "watch -n 2 \"kubectl get events --context $CONTEXT --namespace $NAMESPACE --field-selector involvedObject.name=$NAME | less\""

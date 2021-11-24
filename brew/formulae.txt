@@ -1,6 +1,7 @@
 asdf
 azure-cli
 docker-compose
+gitui
 gnupg
 htop
 jq

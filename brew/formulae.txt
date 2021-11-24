@@ -3,6 +3,7 @@ azure-cli
 docker-compose
 gitui
 gnupg
+grep
 htop
 jq
 k9s

@@ -13,6 +13,7 @@ node
 pinentry-mac
 remake
 romkatv/powerlevel10k/powerlevel10k
+texlive
 thefuck
 tldr
 tree

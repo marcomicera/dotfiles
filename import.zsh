@@ -19,6 +19,13 @@ magenta "zsh"
   cp ~/.p10k.zsh "${CWD}"/zsh
 )
 
+# Oh My Zsh
+magenta "Oh My Zsh"
+(
+  set -x
+  cp ~/.oh-my-zsh/completions/*.zsh "${CWD}"/.oh-my-zsh/completions
+)
+
 # asdf
 magenta "asdf"
 (

@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+set -e
+
 # This repo's absolute path
 CWD="$(
   cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit

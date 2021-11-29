@@ -162,6 +162,9 @@ alias lcear="clear"
 alias clea="clear"
 alias lcaer="clear"
 
+# git
+git config --global core.excludesfile ~/.gitignore_global # ~/.gitignore_global file
+
 # tree colors
 alias tree="tree -C"
 

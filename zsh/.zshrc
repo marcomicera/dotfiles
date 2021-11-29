@@ -124,6 +124,7 @@ compinit
 # General aliases
 alias ll='ls -lah'
 alias n='nano'
+alias v='vim'
 alias nkc='n ~/.kube/config'
 alias t="tree"
 

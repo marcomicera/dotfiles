@@ -1,7 +1,6 @@
 golang
 helm
 helmfile
-kompose
 kubectl
 kubectx
 kustomize

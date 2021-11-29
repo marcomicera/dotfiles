@@ -188,10 +188,6 @@ alias kub="kustomize build"
 source <(k9s completion zsh)
 export XDG_CONFIG_HOME=~/.config
 
-# kompose
-source <(kompose completion zsh)
-alias ko="kompose"
-
 # skaffold
 source <(skaffold completion zsh)
 alias s="skaffold"

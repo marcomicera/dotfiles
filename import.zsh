@@ -58,6 +58,23 @@ magenta "nano"
   cp ~/.nanorc "${CWD}"
 )
 
+# vim
+magenta "vim"
+(
+  VIM_RUNTIME_CONFIGS=~/.vim_runtime/my_configs.vim
+  if [ ! -f "${VIM_RUNTIME_CONFIGS}" ]; then
+    red "Custom vim config file at ${VIM_RUNTIME_CONFIGS} not found."
+    printf "Install github.com/amix/vimrc with:\n"
+    printf "\t git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime\n"
+    printf "\t sh ~/.vim_runtime/install_awesome_vimrc.sh\n"
+    printf "\t vim ${VIM_RUNTIME_CONFIGS}\n\n"
+    exit 1
+  else
+    set -x
+    cp "${VIM_RUNTIME_CONFIGS}" "${CWD}/vim"
+  fi
+)
+
 # Visual Studio Code
 magenta "Visual Studio Code"
 (

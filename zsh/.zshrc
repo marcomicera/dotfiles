@@ -182,7 +182,7 @@ complete -o nospace -C $(which terraform) terraform
 eval $(thefuck --alias)
 
 # asdf
-. /usr/local/opt/asdf/asdf.sh
+source /usr/local/opt/asdf/asdf.sh
 
 # Powerlevel10k
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true

@@ -1,3 +1,10 @@
+.PHONY: tree
+.SILENT: tree
+tree:
+	tree \
+		-a \
+		-I '.git|.gitignore|.idea|Makefile|README.md|img|import.zsh|util'
+
 .PHONY: gitleaks
 .SILENT: gitleaks
 gitleaks:

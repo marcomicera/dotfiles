@@ -121,68 +121,19 @@ prompt_context(){}
 autoload -Uz compinit
 compinit
 
-# General aliases
-alias ll='ls -lah'
-alias n='nano'
-alias v='vim'
-alias nkc='n ~/.kube/config'
-alias t="tree"
-
-# zshrc
-alias nzsh='n ~/.zshrc'
-alias nzshr='n ~/.zshrc'
-alias nzshrc='n ~/.zshrc'
-alias vzsh='v ~/.zshrc'
-alias vzshr='v ~/.zshrc'
-alias vzshrc='v ~/.zshrc'
-alias szsh="source ~/.zshrc"
-alias src="source ~/.zshrc"
-alias srczsh="source ~/.zshrc"
-alias srczshr="source ~/.zshrc"
-alias srczshrc="source ~/.zshrc"
-alias dtf="~/git/dotfiles/import.zsh"
-alias dtfl="~/git/dotfiles/import.zsh"
-alias dtfls="~/git/dotfiles/import.zsh"
-alias dotfiles="~/git/dotfiles/import.zsh"
+# Aliases
+source ~/.aliases
 
 # nnn
-alias nn='nnn -deH'
-alias nnn='nnn -deH'
 export PATH=$PATH:~/.nnn
 export NNN_BMS="g:$HOME/git,h:$HOME"
 
-# Typos
-alias cd..="cd .."
-alias sl="ls"
-alias l="ll"
-alias lll="ll"
-alias pdw="pwd"
-alias clar="clear"
-alias cler="clear"
-alias clera="clear"
-alias claer="clear"
-alias celar="clear"
-alias lcear="clear"
-alias clea="clear"
-alias lcaer="clear"
-
-# tree colors
-alias tree="tree -C"
-
-# docker-compose
-alias c="docker-compose"
-alias cup="docker-compose up"
-alias cupd="docker-compose up -d"
-
 # kubectl
 source <(kubectl completion zsh)
-alias k="kubectl"
 complete -F __start_kubectl k
 
 # kustomize
 source <(kustomize completion zsh)
-alias ku="kustomize"
-alias kub="kustomize build"
 
 # k9s
 source <(k9s completion zsh)
@@ -190,20 +141,11 @@ export XDG_CONFIG_HOME=~/.config
 
 # skaffold
 source <(skaffold completion zsh)
-alias s="skaffold"
-alias ss="/Users/marcomicera/git/skaffold/out/skaffold"
-
-# KubeMQ
-alias kmq="kubemqctl"
 
 # Dropping all data in DGraph
 function drop_dgraph() {
     curl -X POST localhost:8080/alter -d '{"drop_op": "DATA"}'
 }
-
-# Terraform
-alias tf="terraform"
-alias tfo="tf output"
 
 # gcloud
 if [ -f ~/opt/google-cloud-sdk/path.zsh.inc ]; then
@@ -212,10 +154,6 @@ fi
 if [ -f ~/opt/google-cloud-sdk/completion.zsh.inc ]; then
     source ~/opt/google-cloud-sdk/completion.zsh.inc;
 fi
-
-# Kerberos
-# export PATH="/usr/local/opt/krb5/bin:$PATH"
-# export PATH="/usr/local/opt/krb5/sbin:$PATH"
 
 # Golang
 export GOPATH=~/go
@@ -234,15 +172,7 @@ export PATH=$PATH:~/Library/Python/2.7/bin # pip for pre-installed Python on mac
 # export PATH=$PATH:$MAVEN_BIN
 
 # Helm
-alias h="helm"
 source <(helm completion zsh)
-
-# helmfile
-alias hf="helmfile"
-# source <(curl https://raw.githubusercontent.com/roboll/helmfile/master/autocomplete/helmfile_zsh_autocomplete)
-
-# Istio
-# export PATH=$PATH:~/opt/istio-1.7.4/bin
 
 # Terraform
 autoload -U +X bashcompinit && bashcompinit
@@ -250,11 +180,6 @@ complete -o nospace -C $(which terraform) terraform
 
 # fuck
 eval $(thefuck --alias)
-
-# remake
-alias m="remake --trace"
-alias ma="remake --trace --dry-run"
-alias maybe="remake --trace --dry-run"
 
 # asdf
 . /usr/local/opt/asdf/asdf.sh

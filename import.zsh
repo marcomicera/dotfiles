@@ -17,6 +17,7 @@ green "Dotfiles absolute path: ${CWD}"
 magenta "zsh"
 (
   set -x
+  cp ~/.aliases "${CWD}"/zsh
   cp ~/.zshrc "${CWD}"/zsh
   cp ~/.p10k.zsh "${CWD}"/zsh
 )

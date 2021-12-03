@@ -1,0 +1,80 @@
+# General aliases
+alias ll='ls -lah'
+alias n='nano'
+alias v='vim'
+alias nkc='n ~/.kube/config'
+alias t="tree"
+
+# zshrc
+alias nzsh='n ~/.zshrc'
+alias nzshr='n ~/.zshrc'
+alias nzshrc='n ~/.zshrc'
+alias vzsh='v ~/.zshrc'
+alias vzshr='v ~/.zshrc'
+alias vzshrc='v ~/.zshrc'
+alias szsh="source ~/.zshrc"
+alias src="source ~/.zshrc"
+alias srczsh="source ~/.zshrc"
+alias srczshr="source ~/.zshrc"
+alias srczshrc="source ~/.zshrc"
+alias dtf="~/git/dotfiles/import.zsh"
+alias dtfl="~/git/dotfiles/import.zsh"
+alias dtfls="~/git/dotfiles/import.zsh"
+alias dotfiles="~/git/dotfiles/import.zsh"
+
+# nnn
+alias nn='nnn -deH'
+alias nnn='nnn -deH'
+
+# Typos
+alias cd..="cd .."
+alias sl="ls"
+alias l="ll"
+alias lll="ll"
+alias pdw="pwd"
+alias clar="clear"
+alias cler="clear"
+alias clera="clear"
+alias claer="clear"
+alias celar="clear"
+alias lcear="clear"
+alias clea="clear"
+alias lcaer="clear"
+
+# tree colors
+alias tree="tree -C"
+
+# docker-compose
+alias c="docker-compose"
+alias cup="docker-compose up"
+alias cupd="docker-compose up -d"
+
+# kubectl
+source <(kubectl completion zsh)
+alias k="kubectl"
+
+# kustomize
+alias ku="kustomize"
+alias kub="kustomize build"
+
+# skaffold
+alias s="skaffold"
+
+# KubeMQ
+alias kmq="kubemqctl"
+
+# Terraform
+alias tf="terraform"
+alias tfo="tf output"
+
+# aws
+complete -C '/usr/local/bin/aws_completer' aws
+
+# Helm
+alias h="helm"
+alias hf="helmfile"
+
+# remake
+alias m="remake --trace"
+alias ma="remake --trace --dry-run"
+alias maybe="remake --trace --dry-run"

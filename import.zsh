@@ -48,7 +48,7 @@ magenta "git"
 (
   set -x
   cp ~/.gitconfig "${CWD}"/git
-  cp ~/.gitignore_global "${CWD}"/git
+  cp ~/.config/git/ignore "${CWD}"/.config/git
 )
 
 # nano

@@ -1,3 +1,5 @@
+[gc]
+	autoDetach = false
 [commit]
 	gpgSign = true
 [user]

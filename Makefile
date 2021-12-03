@@ -1,3 +1,8 @@
+.PHONY: import
+.SILENT: import
+import:
+	./import.zsh
+
 .PHONY: tree
 .SILENT: tree
 tree:

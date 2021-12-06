@@ -1,9 +1,18 @@
+# ls 
+alias ls='colorls --git-status --group-directories-first'
+alias ll='ls --long --almost-all'
+alias sl="ls"
+alias l="ll"
+alias lll="ll"
+
+# tree
+alias tree='colorls --tree --git-status'
+alias t='tree'
+
 # General aliases
-alias ll='ls -lah'
 alias n='nano'
 alias v='vim'
 alias nkc='n ~/.kube/config'
-alias t="tree"
 
 # zshrc
 alias nzsh='n ~/.zshrc'
@@ -28,9 +37,6 @@ alias nnn='nnn -deH'
 
 # Typos
 alias cd..="cd .."
-alias sl="ls"
-alias l="ll"
-alias lll="ll"
 alias pdw="pwd"
 alias clar="clear"
 alias cler="clear"
@@ -40,9 +46,6 @@ alias celar="clear"
 alias lcear="clear"
 alias clea="clear"
 alias lcaer="clear"
-
-# tree colors
-alias tree="tree -C"
 
 # docker-compose
 alias c="docker-compose"

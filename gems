@@ -1,7 +1,10 @@
+addressable
 bigdecimal
 bundler
 CFPropertyList
+clocale
 cmath
+colorls
 csv
 date
 dbm
@@ -10,6 +13,7 @@ e2mmap
 etc
 fcntl
 fiddle
+filesize
 fileutils
 forwardable
 io-console
@@ -18,6 +22,7 @@ irb
 json
 libxml-ruby
 logger
+manpages
 matrix
 mini_portile2
 minitest
@@ -29,6 +34,8 @@ ostruct
 power_assert
 prime
 psych
+public_suffix
+rainbow
 rake
 rdoc
 rexml
@@ -43,6 +50,7 @@ sync
 test-unit
 thwait
 tracer
+unicode-display_width
 webrick
 xmlrpc
 zlib

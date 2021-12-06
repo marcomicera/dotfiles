@@ -21,6 +21,7 @@ magenta "zsh"
   cp ~/.zshrc "${CWD}"/zsh
   cp ~/.p10k.zsh "${CWD}"/zsh
   cp ~/.hushlogin "${CWD}"/zsh # disabled "last login" prompt
+  cp ~/.config/iterm2/settings/com.googlecode.iterm2.plist "${CWD}"/zsh # iTerm2 settings 
 )
 
 # Oh My Zsh

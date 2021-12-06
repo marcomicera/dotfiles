@@ -20,6 +20,7 @@ magenta "zsh"
   cp ~/.aliases "${CWD}"/zsh
   cp ~/.zshrc "${CWD}"/zsh
   cp ~/.p10k.zsh "${CWD}"/zsh
+  cp ~/.hushlogin "${CWD}"/zsh # disabled "last login" prompt
 )
 
 # Oh My Zsh

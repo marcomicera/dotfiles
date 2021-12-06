@@ -124,6 +124,9 @@ compinit
 # Aliases
 source ~/.aliases
 
+# Ruby
+export PATH=$PATH:~/.gem/ruby/2.6.0/bin
+
 # nnn
 export PATH=$PATH:~/.nnn
 export NNN_BMS="g:$HOME/git,h:$HOME"

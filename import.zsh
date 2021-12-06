@@ -24,6 +24,13 @@ magenta "zsh"
   cp ~/.config/iterm2/settings/com.googlecode.iterm2.plist "${CWD}"/zsh # iTerm2 settings 
 )
 
+# Ruby
+magenta "Ruby"
+(
+  set -x
+  gem list --no-versions --no-verbose > "${CWD}"/gems
+)
+
 # Oh My Zsh
 magenta "Oh My Zsh"
 (

@@ -1,5 +1,6 @@
 asdf
 azure-cli
+bat
 docker-compose
 gitui
 gnupg

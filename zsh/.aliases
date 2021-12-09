@@ -1,5 +1,6 @@
 # bat
 alias bat='bat --plain --paging=never'
+alias cat='bat'
 
 # ls 
 alias ls='colorls --git-status --group-directories-first'

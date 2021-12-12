@@ -2,6 +2,9 @@
     // Theme
     "workbench.colorTheme": "Default Dark+",
 
+    // No minimap
+    "editor.minimap.enabled": false,
+
     // Always open files in new tabs
     "workbench.editor.enablePreview": false,
 

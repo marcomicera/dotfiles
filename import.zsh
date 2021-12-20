@@ -71,7 +71,8 @@ magenta "nano"
 # vim
 magenta "vim"
 (
-  VIM_RUNTIME_CONFIGS=~/.vim_runtime/my_configs.vim
+  VIM_RUNTIME=~/.vim_runtime
+  VIM_RUNTIME_CONFIGS="${VIM_RUNTIME}"/my_configs.vim
   if [ ! -f "${VIM_RUNTIME_CONFIGS}" ]; then
     red "Custom vim config file at ${VIM_RUNTIME_CONFIGS} not found."
     printf "Install github.com/amix/vimrc with:\n"
@@ -81,7 +82,13 @@ magenta "vim"
     exit 1
   else
     set -x
+
+    # Config
     cp "${VIM_RUNTIME_CONFIGS}" "${CWD}/vim"
+
+    # Plugins
+    VIM_RUNTIME_PLUGINS="${VIM_RUNTIME}"/my_plugins
+    cp -R "${VIM_RUNTIME_PLUGINS}"/ "${CWD}/vim/my_plugins"
   fi
 )
 

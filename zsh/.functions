@@ -1,0 +1,3 @@
+function gitconfig() {
+    <<< $(cat ~/.ssh/.gitconfig-"${1}") < ./.git/config | sponge ./.git/config
+}

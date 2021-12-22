@@ -18,6 +18,7 @@ magenta "zsh"
 (
   set -x
   cp ~/.aliases "${CWD}"/zsh
+  cp ~/.functions "${CWD}"/zsh
   cp ~/.zshrc "${CWD}"/zsh
   cp ~/.p10k.zsh "${CWD}"/zsh
   cp ~/.hushlogin "${CWD}"/zsh # disabled "last login" prompt

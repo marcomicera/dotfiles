@@ -15,6 +15,7 @@ node
 pinentry-mac
 remake
 romkatv/powerlevel10k/powerlevel10k
+sponge
 texlive
 tfsec
 thefuck

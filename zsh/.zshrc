@@ -124,6 +124,9 @@ compinit
 # Aliases
 source ~/.aliases
 
+# Functions
+source ~/.functions
+
 # Ruby
 export PATH=$PATH:~/.gem/ruby/2.6.0/bin
 

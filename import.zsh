@@ -89,7 +89,7 @@ magenta "vim"
 
     # Plugins
     VIM_RUNTIME_PLUGINS="${VIM_RUNTIME}"/my_plugins
-    cp -R "${VIM_RUNTIME_PLUGINS}"/ "${CWD}/vim/my_plugins"
+    cp -R "${VIM_RUNTIME_PLUGINS}"/ "${CWD}/vim/my_plugins" 2>/dev/null || : # https://serverfault.com/a/153893
   fi
 )
 

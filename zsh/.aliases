@@ -9,6 +9,9 @@ alias sl="ls"
 alias l="ll"
 alias lll="ll"
 
+# grep
+alias grepi='grep -i'
+
 # tree
 alias tree='colorls --tree --git-status'
 alias t='tree'

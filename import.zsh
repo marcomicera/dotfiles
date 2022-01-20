@@ -117,7 +117,7 @@ if [ -n ${XDG_CONFIG_HOME} ]; then
   magenta "k9s"
   (
     set -x
-    cp -R ${XDG_CONFIG_HOME}/k9s/ "${CWD}"/.config/k9s
+    cp ${XDG_CONFIG_HOME}/k9s/plugin.yml "${CWD}"/.config/k9s
   )
 fi
 

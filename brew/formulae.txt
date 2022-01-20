@@ -13,6 +13,7 @@ nano
 nnn
 node
 pinentry-mac
+pre-commit
 remake
 romkatv/powerlevel10k/powerlevel10k
 sponge

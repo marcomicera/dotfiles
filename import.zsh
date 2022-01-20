@@ -62,6 +62,16 @@ magenta "git"
   cp ~/.config/git/ignore "${CWD}"/.config/git
 )
 
+# SmartGit
+magenta "SmartGit"
+(
+  set -x
+  cp ~/Library/Preferences/SmartGit/smartgit.vmoptions "${CWD}"/git/smartgit
+  cp ~/Library/Preferences/SmartGit/21.1/preferences.yml "${CWD}"/git/smartgit/21.1
+  cp ~/Library/Preferences/SmartGit/21.1/tools.yml "${CWD}"/git/smartgit/21.1
+  cp ~/Library/Preferences/SmartGit/21.1/ui-config.yml "${CWD}"/git/smartgit/21.1
+)
+
 # nano
 magenta "nano"
 (

@@ -20,3 +20,13 @@ let g:NERDTreeWinPos = "left"
 
 " Quit vim if NERDTree is last and only buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+"
+" Syntax highlighting
+"
+
+" kubeconfig
+augroup twig_ft
+  au!
+  autocmd BufNewFile,BufRead ~/.kube/config set syntax=yaml
+augroup END

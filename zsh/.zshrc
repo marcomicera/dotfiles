@@ -78,6 +78,8 @@ plugins=(
     docker-compose
     gcloud
     asdf
+    ruby
+    zsh-aws-vault
 )
 
 source $ZSH/oh-my-zsh.sh

@@ -62,6 +62,8 @@ alias celar="clear"
 alias lcear="clear"
 alias clea="clear"
 alias lcaer="clear"
+alias idae="idea"
+alias coed="code"
 
 # docker-compose
 alias c="docker-compose"

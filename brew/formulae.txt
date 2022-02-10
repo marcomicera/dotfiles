@@ -2,6 +2,7 @@ asdf
 azure-cli
 bat
 docker-compose
+fd
 gitui
 gnupg
 grep

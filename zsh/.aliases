@@ -1,5 +1,4 @@
 # bat
-alias bat='bat --plain --paging=never'
 alias cat='bat'
 
 # ls 

@@ -4,3 +4,5 @@
 	gpgSign = true
 [user]
 	name = Marco Micera
+[core]
+	excludesFile = ~/.config/git/ignore

@@ -70,7 +70,6 @@ alias cup="docker-compose up"
 alias cupd="docker-compose up -d"
 
 # kubectl
-source <(kubectl completion zsh)
 alias k="kubectl"
 
 # kustomize
@@ -86,9 +85,6 @@ alias kmq="kubemqctl"
 # Terraform
 alias tf="terraform"
 alias tfo="tf output"
-
-# aws
-complete -C '/usr/local/bin/aws_completer' aws
 
 # Helm
 alias h="helm"

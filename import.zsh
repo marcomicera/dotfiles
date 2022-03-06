@@ -72,11 +72,20 @@ magenta "git"
 # SmartGit
 magenta "SmartGit"
 (
+  SMARTGIT_VERSION=21.2
+  SMARTGIT_BASE_CONFIG_DIR=~/Library/Preferences/SmartGit
+  SMARTGIT_VERSION_SPECIFIC_DIR=${SMARTGIT_BASE_CONFIG_DIR}/${SMARTGIT_VERSION}
+  if [ -d "${CWD}"/git/smartgit/${SMARTGIT_VERSION} ]; then
+    printf "Using existing SmartGit version: ${SMARTGIT_VERSION}\n"
+  else
+    printf "Using new SmartGit version: ${SMARTGIT_VERSION}\nCreating folder...\n"
+    mkdir -p "${CWD}"/git/smartgit/${SMARTGIT_VERSION}
+  fi
   set -x
-  cp ~/Library/Preferences/SmartGit/smartgit.vmoptions "${CWD}"/git/smartgit
-  cp ~/Library/Preferences/SmartGit/21.1/preferences.yml "${CWD}"/git/smartgit/21.1
-  cp ~/Library/Preferences/SmartGit/21.1/tools.yml "${CWD}"/git/smartgit/21.1
-  cp ~/Library/Preferences/SmartGit/21.1/ui-config.yml "${CWD}"/git/smartgit/21.1
+  cp ${SMARTGIT_BASE_CONFIG_DIR}/smartgit.vmoptions "${CWD}"/git/smartgit
+  cp ${SMARTGIT_VERSION_SPECIFIC_DIR}/preferences.yml "${CWD}"/git/smartgit/${SMARTGIT_VERSION}
+  cp ${SMARTGIT_VERSION_SPECIFIC_DIR}/tools.yml "${CWD}"/git/smartgit/${SMARTGIT_VERSION}
+  cp ${SMARTGIT_VERSION_SPECIFIC_DIR}/ui-config.yml "${CWD}"/git/smartgit/${SMARTGIT_VERSION}
 )
 
 # nano

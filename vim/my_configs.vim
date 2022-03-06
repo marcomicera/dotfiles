@@ -9,6 +9,9 @@ set number " line numbers
 " NERDTree
 "
 
+" Show hidden files
+let NERDTreeShowHidden=1
+
 " Always open NERDTree
 autocmd VimEnter * NERDTree
 

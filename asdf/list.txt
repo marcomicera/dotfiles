@@ -1,12 +1,17 @@
+gcloud
 golang
 helm
 helmfile
 istioctl
+k9s
 kubectl
 kubectx
 kustomize
 maven
 python
+shellcheck
 skaffold
 sops
+stern
 terraform
+terraform-docs

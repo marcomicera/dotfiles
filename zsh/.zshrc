@@ -79,7 +79,9 @@ plugins=(
     gcloud
     asdf
     ruby
-    zsh-aws-vault
+    kubectl
+    kubectx
+    kube-ps1
 )
 
 source $ZSH/oh-my-zsh.sh

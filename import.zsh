@@ -32,6 +32,13 @@ magenta "Ruby"
   gem list --no-versions --no-verbose > "${CWD}"/gems
 )
 
+# IntelliJ IDEA (Community Edition)
+magenta "IntelliJ IDEA (Community Edition)"
+(
+  set -x
+  cp /usr/local/bin/idea "${CWD}"
+)
+
 # Oh My Zsh
 magenta "Oh My Zsh"
 (

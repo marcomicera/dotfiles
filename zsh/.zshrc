@@ -125,10 +125,6 @@ prompt_context(){}
 # RPROMPT="%D{%-I.%M.%S %p, %d.%m.%Y}"
 # RPROMPT=""
 
-# compdef
-autoload -Uz compinit
-compinit
-
 # Aliases
 source ~/.aliases
 

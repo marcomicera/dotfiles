@@ -153,6 +153,9 @@ source <(kustomize completion zsh)
 source <(k9s completion zsh)
 export XDG_CONFIG_HOME=~/.config
 
+# stern
+source <(stern --completion zsh)
+
 # skaffold
 source <(skaffold completion zsh)
 

@@ -84,6 +84,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# GPG needs to read input from tty: https://stackoverflow.com/a/55032706
+export GPG_TTY=$(tty)
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"

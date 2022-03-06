@@ -1,3 +1,6 @@
+" Tabs instead of spaces
+set noexpandtab
+
 "
 " Navigation
 "

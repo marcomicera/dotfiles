@@ -3,3 +3,4 @@
 .DS_Store
 /super-linter.log
 /.idea
+/.gitleaks.toml

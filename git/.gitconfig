@@ -6,3 +6,5 @@
 	name = Marco Micera
 [core]
 	excludesFile = ~/.config/git/ignore
+[alias]
+	b = !git rev-parse --abbrev-ref HEAD

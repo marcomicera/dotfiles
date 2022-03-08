@@ -68,6 +68,7 @@ magenta "git"
   set -x
   cp ~/.gitconfig "${CWD}"/git
   cp ~/.config/git/ignore "${CWD}"/.config/git
+  cp ~/.gnupg/gpg.conf "${CWD}"/git/.gnupg
 )
 
 # SmartGit

@@ -35,7 +35,7 @@ git:
 hg:
   maxCount: 3
   alternatives: []
-ssh: {useOwnSshClient: true}
+ssh: {useOwnSshClient: false}
 deepGit2: {}
 globalTextComponentSettings:
   font: {family: Monaco, size: 11}

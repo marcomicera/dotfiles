@@ -19,6 +19,8 @@ actions:
   stash: {}
   initCommitMessage: initial commit
   allowModificationOfPushedHistory: true
+  backgroundFetchClosed: true
+  backgroundFetchOpen: true
 logSettings:
   filterConfiguration: {}
   loadGravatars: false

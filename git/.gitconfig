@@ -8,3 +8,9 @@
 	excludesFile = ~/.config/git/ignore
 [alias]
 	b = !git rev-parse --abbrev-ref HEAD
+[color "diff"]
+    meta = yellow
+    frag = magenta
+    old = red bold
+    new = green
+    plain = white

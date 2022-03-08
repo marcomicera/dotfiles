@@ -4,6 +4,7 @@ bat
 docker-compose
 fd
 gh
+git
 gitui
 gnupg
 grep

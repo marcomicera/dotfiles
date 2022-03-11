@@ -15,3 +15,5 @@ sops
 stern
 terraform
 terraform-docs
+tflint
+tfsec

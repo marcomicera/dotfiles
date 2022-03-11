@@ -23,3 +23,7 @@ gitleaks:
 		--verbose \
 		--redact \
 		detect
+
+.PHONY: submodules
+submodules:
+	git submodule update --init --recursive

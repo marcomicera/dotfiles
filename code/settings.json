@@ -24,4 +24,7 @@
     // Todo Tree
     "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^|%|\\\\)\\s*($TAGS)\\{*|^\\s*- \\[ \\])",
     "todo-tree.regex.regexCaseSensitive": false,
+
+    // Icons
+    "workbench.iconTheme": "vscode-icons",
 }

@@ -8,3 +8,4 @@ mindaro-dev.file-downloader
 redhat.vscode-yaml
 tomoki1207.pdf
 yzhang.markdown-all-in-one
+vscode-icons-team.vscode-icons

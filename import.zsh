@@ -52,6 +52,7 @@ magenta "asdf"
 (
   set -x
   asdf plugin list >"${CWD}"/asdf/list.txt
+  cp ~/.tool-versions "${CWD}"/asdf
 )
 
 # brew

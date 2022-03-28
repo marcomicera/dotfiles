@@ -34,11 +34,12 @@ magenta "Ruby"
   gem list --no-versions --no-verbose > "${CWD}"/gems
 )
 
-# IntelliJ IDEA (Community Edition)
-magenta "IntelliJ IDEA (Community Edition)"
+# JetBrains IDEs
+magenta "JetBrains IDEs"
 (
   set -x
   cp /usr/local/bin/idea "${CWD}"
+  cp /usr/local/bin/storm "${CWD}"
 )
 
 # Oh My Zsh

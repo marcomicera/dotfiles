@@ -1,3 +1,4 @@
+fzf
 gcloud
 golang
 helm
@@ -8,6 +9,7 @@ kubectl
 kubectx
 kustomize
 maven
+nodejs
 python
 shellcheck
 skaffold

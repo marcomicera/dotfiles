@@ -24,6 +24,7 @@ magenta "zsh"
   cp ~/.hushlogin "${CWD}"/zsh # disabled "last login" prompt
   cp ~/.config/iterm2/settings/com.googlecode.iterm2.plist "${CWD}"/zsh # iTerm2 settings
   cp ~/.iterm2_shell_integration.zsh "${CWD}"/zsh # https://iterm2.com/documentation-shell-integration.html
+  cp ~/.fzf.zsh "${CWD}/zsh"
 )
 
 # Ruby

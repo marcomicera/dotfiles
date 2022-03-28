@@ -83,6 +83,9 @@ plugins=(
     kubectl
     kubectx
     kube-ps1
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+	zsh-vim-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -193,6 +196,9 @@ eval $(thefuck --alias)
 
 # asdf
 source /usr/local/opt/asdf/asdf.sh
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Powerlevel10k
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true

@@ -40,6 +40,7 @@ magenta "JetBrains IDEs"
   set -x
   cp /usr/local/bin/idea "${CWD}"
   cp /usr/local/bin/storm "${CWD}"
+  cp /usr/local/bin/charm "${CWD}"
 )
 
 # Oh My Zsh

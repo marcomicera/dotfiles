@@ -8,6 +8,16 @@
     // Always open files in new tabs
     "workbench.editor.enablePreview": false,
 
+    // What to show in the file explorer
+    "files.exclude": {
+      "**/.git": false,
+      "**/.svn": false,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/Thumbs.db": true
+    },
+
     // Always trust untrusted files
     "security.workspace.trust.untrustedFiles": "open",
 

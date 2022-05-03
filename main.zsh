@@ -38,6 +38,18 @@ case $1 in
     ;;
 esac
 
+# A copy function that can swap arguments
+function rcp() {
+    set +x
+    if [ $IMPORT_DOTFILES = true ]; then
+        set -x
+        cp "${1}" "${2}"
+      else
+        set -x
+        cp "${2}" "${1}"
+      fi
+}
+
 # zsh
 magenta "zsh"
 if [ $IMPORT_DOTFILES = true ]; then

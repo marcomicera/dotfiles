@@ -1,1 +1,3 @@
 intellij-idea-ce
+maccy
+visual-studio-code

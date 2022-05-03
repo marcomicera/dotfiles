@@ -1,14 +1,19 @@
 .PHONY: import
 .SILENT: import
 import:
-	./import.zsh
+	./main.zsh --import
+
+.PHONY: install
+.SILENT: install
+install:
+	./main.zsh --install
 
 .PHONY: tree
 .SILENT: tree
 tree:
 	tree \
 		-a \
-		-I '.git|.gitignore|.idea|Makefile|README.md|img|import.zsh|util'
+		-I '.git|.gitignore|.idea|Makefile|README.md|img|main.zsh|util'
 
 .PHONY: gitleaks
 .SILENT: gitleaks

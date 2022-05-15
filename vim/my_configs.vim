@@ -35,4 +35,5 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 augroup twig_ft
   au!
   autocmd BufNewFile,BufRead ~/.kube/config set syntax=yaml
+  autocmd BufNewFile,BufRead *Jenkinsfile set syntax=groovy
 augroup END

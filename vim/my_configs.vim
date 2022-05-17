@@ -8,6 +8,9 @@ set noexpandtab
 set mouse=a " recognize mouse commands in all modes
 set number " line numbers
 
+" Set the working directory to the current file's directory
+autocmd BufEnter * lcd %:p:h
+
 "
 " NERDTree
 "

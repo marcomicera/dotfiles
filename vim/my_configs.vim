@@ -31,7 +31,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Syntax highlighting
 "
 
-" kubeconfig
 augroup twig_ft
   au!
   autocmd BufNewFile,BufRead ~/.kube/config set syntax=yaml

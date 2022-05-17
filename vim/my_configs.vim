@@ -15,11 +15,8 @@ set number " line numbers
 " Show hidden files
 let NERDTreeShowHidden=1
 
-" Always open NERDTree
-autocmd VimEnter * NERDTree
-
-" Focus on file
-autocmd VimEnter * wincmd p
+" Start NERDTree and put the cursor back in the other window
+autocmd VimEnter * NERDTree | wincmd p
 
 " Open on the left
 let g:NERDTreeWinPos = "left" 

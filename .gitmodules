@@ -1,3 +1,6 @@
 [submodule "vim/my_plugins/Jenkinsfile-vim-syntax"]
 	path = vim/my_plugins/Jenkinsfile-vim-syntax
 	url = https://github.com/martinda/Jenkinsfile-vim-syntax.git
+[submodule "vim/my_plugins/vim-terraform"]
+	path = vim/my_plugins/vim-terraform
+	url = https://github.com/hashivim/vim-terraform.git

@@ -103,6 +103,13 @@ magenta "nano"
   cp ~/.nanorc "${CWD}"
 )
 
+# Spotify TUI
+magenta "Spotify TUI"
+(
+  set -x
+  cp ~/.config/spotify-tui/config.yml "${CWD}/spotify-tui"
+)
+
 # vim
 magenta "vim"
 (

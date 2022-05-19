@@ -19,6 +19,7 @@ remake
 romkatv/powerlevel10k/powerlevel10k
 ruby
 sponge
+spotify-tui
 terraformer
 texlive
 thefuck

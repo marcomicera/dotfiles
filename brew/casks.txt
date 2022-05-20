@@ -1,3 +1,4 @@
 intellij-idea-ce
 maccy
+raycast
 visual-studio-code

@@ -41,10 +41,9 @@ ssh: {useOwnSshClient: false}
 deepGit2: {}
 globalTextComponentSettings:
   font: {family: Monaco, size: 11}
-  actions: {focusNextChangeAfterTakingChange: false, homeEndToLineNotDocument: true,
+  actions: {focusNextChangeAfterTakingChange: false, tabToSpaces: false, homeEndToLineNotDocument: true,
     smartHome: true, cursorLeftRightLimitToLine: true, smartEnterAutoIndent: true,
-    smartEnterIgnoreEmptyLinesForIndentation: true, smartEnterDeleteWhitespace: true,
-    tabToSpaces: false}
+    smartEnterIgnoreEmptyLinesForIndentation: true, smartEnterDeleteWhitespace: true}
   syntaxHighlightingSettings:
     entries:
     - {language: Basic, pattern: '*.basic, *.cbm, *.vb, *.vbs'}

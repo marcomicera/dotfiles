@@ -5,6 +5,7 @@ Gruntfuggly.todo-tree
 hashicorp.terraform
 iliazeus.vscode-ansi
 Jeff-Tian.tex-workshop
+mtxr.sqltools
 redhat.vscode-yaml
 tomoki1207.pdf
 vscode-icons-team.vscode-icons

@@ -1,6 +1,6 @@
 actions:
   cleanup: {gcIntervalDays: 0}
-  commit: {}
+  commit: {messageLineLimits: true}
   compare:
     fileComparators:
     - filePattern: '*.gif, *.png, *.jpg'

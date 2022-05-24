@@ -31,6 +31,7 @@ function v() {
 # General aliases
 alias n='nano'
 alias nkc='n ~/.kube/config'
+alias f='fzf'
 
 # zshrc
 alias nzsh='n ~/.zshrc'

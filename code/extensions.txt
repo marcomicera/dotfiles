@@ -5,6 +5,7 @@ Gruntfuggly.todo-tree
 hashicorp.terraform
 iliazeus.vscode-ansi
 Jeff-Tian.tex-workshop
+ms-vscode.makefile-tools
 mtxr.sqltools
 redhat.vscode-yaml
 tomoki1207.pdf

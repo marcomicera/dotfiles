@@ -27,6 +27,7 @@ function v() {
         vim .
     fi
 }
+alias vimtutor="v /usr/share/vim/vim82/tutor/tutor"
 
 # General aliases
 alias n='nano'

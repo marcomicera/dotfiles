@@ -15,3 +15,9 @@
     new = green
     plain = white
 	d = !git diff
+[color "branch"]
+	current = green bold
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold

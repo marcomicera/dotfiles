@@ -161,12 +161,9 @@ function drop_dgraph() {
 }
 
 # gcloud
-if [ -f ~/opt/google-cloud-sdk/path.zsh.inc ]; then
-    source ~/opt/google-cloud-sdk/path.zsh.inc;
-fi
-if [ -f ~/opt/google-cloud-sdk/completion.zsh.inc ]; then
-    source ~/opt/google-cloud-sdk/completion.zsh.inc;
-fi
+# Done by the 'gcloud' oh-my-zsh plugin: https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/gcloud/gcloud.plugin.zsh
+# [ -f $(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc ] && source $(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+# [ -f $(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc ] && source $(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 
 # Golang
 export GOPATH=~/go

@@ -1,5 +1,4 @@
 fzf
-gcloud
 golang
 helm
 helmfile

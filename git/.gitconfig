@@ -14,3 +14,4 @@
     old = red bold
     new = green
     plain = white
+	d = !git diff

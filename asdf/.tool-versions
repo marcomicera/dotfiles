@@ -15,5 +15,6 @@ tflint 0.34.1
 tfsec 1.8.0
 nodejs lts
 fzf 0.29.0
+delta 0.13.0
 awscli 2.7.4
 aws-vault 6.6.0

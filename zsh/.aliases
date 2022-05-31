@@ -81,6 +81,9 @@ alias k="kubectl"
 alias ku="kustomize"
 alias kub="kustomize build"
 
+# aws
+alias awsid="aws --no-cli-pager --output yaml sts get-caller-identity"
+
 # skaffold
 alias s="skaffold"
 

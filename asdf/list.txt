@@ -1,3 +1,5 @@
+aws-vault
+awscli
 fzf
 golang
 helm

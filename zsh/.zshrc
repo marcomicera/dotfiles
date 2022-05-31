@@ -194,6 +194,9 @@ eval $(thefuck --alias)
 # asdf
 source /usr/local/opt/asdf/asdf.sh
 
+# aws
+complete -C '$(which aws_completer)' aws
+
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

@@ -2,6 +2,9 @@
     // Theme
     "workbench.colorTheme": "Default Dark+",
 
+    // No welcome page
+    "workbench.startupEditor": "none",
+
     // No minimap
     "editor.minimap.enabled": false,
 

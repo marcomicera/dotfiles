@@ -19,7 +19,7 @@ autocmd BufEnter * lcd %:p:h
 let NERDTreeShowHidden=1
 
 " Start NERDTree and put the cursor back in the other window
-autocmd VimEnter * NERDTree " | wincmd p
+autocmd VimEnter * NERDTree | wincmd p
 
 " Open on the left
 let g:NERDTreeWinPos = "left" 

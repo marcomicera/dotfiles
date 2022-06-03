@@ -19,14 +19,15 @@ alias tree='colorls --tree --git-status'
 alias t='tree'
 
 # vim
-function v() {
-    if [ "$1" != "" ]
-    then
-        vim $1
-    else
-        vim .
-    fi
-}
+alias v='vim'
+# function v() {
+#     if [ "$1" != "" ]
+#     then
+#         vim $1
+#     else
+#         vim .
+#     fi
+# }
 alias vimtutor="v /usr/share/vim/vim82/tutor/tutor"
 
 # General aliases

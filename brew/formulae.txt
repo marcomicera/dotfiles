@@ -1,6 +1,7 @@
 asdf
 azure-cli
 bat
+docker-compose
 fd
 gh
 git

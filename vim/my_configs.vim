@@ -35,4 +35,7 @@ augroup twig_ft
   au!
   autocmd BufNewFile,BufRead ~/.kube/config set syntax=yaml
   autocmd BufNewFile,BufRead *Jenkinsfile set syntax=groovy
+  autocmd BufNewFile,BufRead ~/.functions set syntax=bash
+  autocmd BufNewFile,BufRead ~/.aliases set syntax=bash
+  autocmd BufNewFile,BufRead ~/.work set syntax=bash
 augroup END

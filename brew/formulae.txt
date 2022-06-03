@@ -8,6 +8,7 @@ git
 gitui
 gnupg
 grep
+helmfile
 htop
 jq
 k9s

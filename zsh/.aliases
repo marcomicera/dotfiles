@@ -31,7 +31,7 @@ alias v='vim'
 alias vimtutor="v /usr/share/vim/vim82/tutor/tutor"
 
 # General aliases
-alias n='nano'
+# alias n='nano'
 alias nkc='n ~/.kube/config'
 alias f='fzf'
 
@@ -53,8 +53,9 @@ alias dtfls="~/git/dotfiles/import.zsh"
 alias dotfiles="~/git/dotfiles/import.zsh"
 
 # nnn
-alias nn='nnn -deH'
 alias nnn='nnn -deH'
+alias nn='nnn'
+alias n='nnn'
 
 # Typos
 alias cd..="cd .."

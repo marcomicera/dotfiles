@@ -134,7 +134,7 @@ magenta "vim"
   fi
 )
 
-# Visual Studio Code
+# Visual Studio Code (VSCode)
 magenta "Visual Studio Code"
 (
   set -x

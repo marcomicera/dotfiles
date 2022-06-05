@@ -8,7 +8,7 @@ stern 1.21.0
 terraform-docs 0.16.0
 kustomize 4.5.2
 skaffold 1.9.1
-helm 3.8.0
+helm 3.9.0
 jsonnet 0.18.0
 golang 1.17.8
 tflint 0.34.1

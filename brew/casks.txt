@@ -1,6 +1,7 @@
 google-cloud-sdk
 intellij-idea-ce
 maccy
+meld
 numi
 raycast
 visual-studio-code

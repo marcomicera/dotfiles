@@ -3,9 +3,13 @@ alias cat='bat'
 
 # ls 
 alias ls='colorls --git-status --group-directories-first'
-alias ll='ls --long --almost-all'
 alias sl="ls"
-alias l="ll"
+
+# ls + hidden files
+alias l="ls --almost-all"
+
+# ls + hidden files + long format
+alias ll='ls --long --almost-all'
 alias lll="ll"
 
 # grep

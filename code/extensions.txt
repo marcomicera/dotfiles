@@ -9,6 +9,7 @@ Jeff-Tian.tex-workshop
 ms-vscode.makefile-tools
 mtxr.sqltools
 redhat.vscode-yaml
+techer.open-in-browser
 tomoki1207.pdf
 vscode-icons-team.vscode-icons
 yzhang.markdown-all-in-one

@@ -9,6 +9,8 @@
 [alias]
 	b = !git rev-parse --abbrev-ref HEAD
 	d = !git diff
+	s = !git status
+	ui = !gitui
 # [color "diff"]
 #     meta = yellow
 #     frag = magenta

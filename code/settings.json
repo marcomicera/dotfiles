@@ -24,6 +24,9 @@
       "**/Thumbs.db": true
     },
 
+    // File explorer indentation
+    "workbench.tree.indent": 20,
+
     // Always trust untrusted files
     "security.workspace.trust.untrustedFiles": "open",
 

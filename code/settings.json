@@ -47,4 +47,7 @@
     // Terminal
     "terminal.integrated.fontSize": 11,
     "terminal.integrated.fontFamily": "Menlo",
+
+    // Shell formatter
+    "shellformat.useEditorConfig": true,
 }

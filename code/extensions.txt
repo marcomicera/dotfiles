@@ -1,6 +1,7 @@
 bierner.markdown-emoji
 bungcip.better-toml
 eamodio.gitlens
+foxundermoon.shell-format
 golang.go
 Gruntfuggly.todo-tree
 hashicorp.terraform

@@ -7,6 +7,7 @@ helm
 helmfile
 istioctl
 k9s
+krew
 kubectl
 kubectx
 kustomize

@@ -49,3 +49,5 @@
     conflictstyle = diff3
 [diff]
     colorMoved = default # https://dandavison.github.io/delta/color-moved-support.html
+[help]
+	autocorrect = 50

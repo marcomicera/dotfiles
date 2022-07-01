@@ -3,5 +3,6 @@ intellij-idea-ce
 maccy
 meld
 numi
+postman
 raycast
 visual-studio-code

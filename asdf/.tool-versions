@@ -18,3 +18,4 @@ fzf 0.29.0
 delta 0.13.0
 awscli 2.7.4
 aws-vault 6.6.0
+krew 0.4.3

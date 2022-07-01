@@ -22,3 +22,4 @@ terraform
 terraform-docs
 tflint
 tfsec
+yq

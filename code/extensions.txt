@@ -7,6 +7,7 @@ hashicorp.terraform
 iliazeus.vscode-ansi
 Jeff-Tian.tex-workshop
 ms-vscode.makefile-tools
+ms-vsliveshare.vsliveshare
 mtxr.sqltools
 redhat.vscode-yaml
 techer.open-in-browser

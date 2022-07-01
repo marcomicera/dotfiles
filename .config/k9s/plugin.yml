@@ -1,5 +1,4 @@
 plugin:
-  #get all resources in a namespace using the krew get-all plugin
   get-all:
     shortCut: g
     confirm: false
@@ -8,20 +7,29 @@ plugin:
       - all
     command: sh
     background: false
+    # In the namespace scope, use $NAME instead of $NAMESPACE
     args:
       - -c
-      - "kubectl --context $CONTEXT --namespace $([[ $NAMESPACE == \"-\" ]] && echo $NAME || echo $NAMESPACE) get all | less"
-  # watch events on selected resources
-  # requires linux "watch" command
-  # change '-n' to adjust refresh time in seconds
-  watch-events:
-    shortCut: Shift-E
-    confirm: false
-    description: Get Events
-    scopes:
-    - all
-    command: sh
-    background: false
-    args:
-    - -c
-    - "watch -n 2 \"kubectl get events --context $CONTEXT --namespace $NAMESPACE --field-selector involvedObject.name=$NAME | less\""
+      - "watch -n 2 \"kubectl --context $CONTEXT --namespace $([[ $NAMESPACE == \"-\" ]] && echo $NAME || echo $NAMESPACE) get all | less\""
+  # watch-events:
+  #   shortCut: Shift-E
+  #   confirm: false
+  #   description: Events
+  #   scopes:
+  #   - all
+  #   command: sh
+  #   background: false
+  #   args:
+  #   - -c
+  #   - "watch -n 2 \"kubectl get events --context $CONTEXT --namespace $NAMESPACE --field-selector involvedObject.name=$NAME --field-selector involvedObject.kind=$SCOPE | less\""
+  # stern: # get logs of running containers (Istio excluded) with stern
+  #   shortcut: Shift-S
+  #   confirm: false
+  #   description: Stern
+  #   scopes:
+  #   - deployment
+  #   command: sh
+  #   background: false
+  #   args:
+  #   - c
+  #   - "stern --namespace $NAMESPACE --exclude-container \"istio-[a-z]+\" --field-selector status.phase=Running $NAME"

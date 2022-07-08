@@ -5,4 +5,5 @@ meld
 numi
 postman
 raycast
+rectangle
 visual-studio-code

@@ -152,6 +152,14 @@ if [ -n ${XDG_CONFIG_HOME} ]; then
   )
 fi
 
+# Rectangle
+# https://github.com/rxhanson/Rectangle
+magenta "Rectangle"
+(
+  set -x
+  cp ~/Library/Preferences/com.knollsoft.Rectangle.plist "${CWD}"/.config/rectangle
+)
+
 # git status
 green "git status"
 (

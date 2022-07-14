@@ -24,6 +24,7 @@ sponge
 spotify-tui
 terraformer
 texlive
+the_silver_searcher
 thefuck
 tldr
 tree

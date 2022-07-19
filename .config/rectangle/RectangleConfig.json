@@ -152,7 +152,7 @@
       "int" : 0
     },
     "SUEnableAutomaticChecks" : {
-      "bool" : false
+      "bool" : true
     },
     "todo" : {
       "int" : 0
@@ -193,9 +193,21 @@
       "keyCode" : 8,
       "modifierFlags" : 1572864
     },
+    "centerThird" : {
+      "keyCode" : 126,
+      "modifierFlags" : 786432
+    },
+    "firstThird" : {
+      "keyCode" : 123,
+      "modifierFlags" : 786432
+    },
     "larger" : {
       "keyCode" : 124,
       "modifierFlags" : 917504
+    },
+    "lastThird" : {
+      "keyCode" : 124,
+      "modifierFlags" : 786432
     },
     "leftHalf" : {
       "keyCode" : 123,

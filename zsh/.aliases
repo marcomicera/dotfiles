@@ -84,8 +84,8 @@ alias cupd="docker-compose up -d"
 
 # kubectl
 alias k="kubectl"
-alias ctx="kubectx -c"
-alias ctxc="kubectx"
+alias ctx="kubectx"
+alias cctx="kubectx -c"
 
 # kustomize
 alias ku="kustomize"

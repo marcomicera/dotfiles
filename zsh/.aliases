@@ -15,6 +15,9 @@ alias lll="ll"
 # grep
 alias grepi='grep -i'
 
+# ag (The Silver Searcher)
+# alias ag="ag --context 3 --unrestricted"
+
 # git
 alias gcs="git commit -S"
 alias gcsm="gcs -m"

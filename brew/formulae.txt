@@ -11,6 +11,7 @@ grep
 helmfile
 htop
 jq
+k2tf
 k9s
 lazydocker
 nano

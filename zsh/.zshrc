@@ -125,9 +125,6 @@ prompt_context(){}
 # RPROMPT="%D{%-I.%M.%S %p, %d.%m.%Y}"
 # RPROMPT=""
 
-# Aliases
-source ~/.aliases
-
 # Functions
 source ~/.functions
 
@@ -141,9 +138,24 @@ export PATH=$PATH:~/.gem/ruby/2.6.0/bin
 export PATH=$PATH:~/.nnn
 export NNN_BMS="g:$HOME/git,h:$HOME"
 
-# kubectl
+
+##############
+# START      #
+# Kubernetes #
+##############
+
+# kubectl autocompletion
 source <(kubectl completion zsh)
-complete -F __start_kubectl k
+
+# kubecolor
+# command -v kubecolor >/dev/null 2>&1 && alias kubectl="kubecolor"
+
+# kubecolor autocompletion
+# autoload -U +X bashcompinit && bashcompinit
+# complete -o nospace -C /usr/local/bin/kubecolor kubecolor
+
+# Krew (plugins)
+export PATH="${PATH}:${HOME}/.krew/bin"
 
 # kustomize
 source <(kustomize completion zsh)
@@ -154,6 +166,11 @@ export XDG_CONFIG_HOME=~/.config
 
 # stern
 source <(stern --completion zsh)
+
+##############
+# END        #
+# Kubernetes #
+##############
 
 # skaffold
 source <(skaffold completion zsh)
@@ -203,6 +220,9 @@ complete -C '$(which aws_completer)' aws
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Aliases
+source ~/.aliases
 
 # Powerlevel10k
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true

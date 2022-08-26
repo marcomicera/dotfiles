@@ -180,11 +180,6 @@ function drop_dgraph() {
     curl -X POST localhost:8080/alter -d '{"drop_op": "DATA"}'
 }
 
-# gcloud
-# Done by the 'gcloud' oh-my-zsh plugin: https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/gcloud/gcloud.plugin.zsh
-# [ -f $(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc ] && source $(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
-# [ -f $(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc ] && source $(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
-
 # Golang
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin

@@ -79,6 +79,7 @@ plugins=(
   # docker-compose
   gcloud
   asdf
+  helm
   # ruby
   kubectl
   # kubectx
@@ -190,9 +191,6 @@ export PATH=$PATH:~/Library/Python/2.7/bin # pip for pre-installed Python on mac
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk-11.0.2.jdk/Contents/Home
 # MAVEN_BIN=~/opt/apache-maven-3.6.3/bin
 # export PATH=$PATH:$MAVEN_BIN
-
-# Helm
-source <(helm completion zsh)
 
 # Terraform
 autoload -U +X bashcompinit && bashcompinit

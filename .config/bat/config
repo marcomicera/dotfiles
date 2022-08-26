@@ -22,6 +22,7 @@
 #   Example 1: use the C++ syntax for .ino files
 #   Example 2: Use ".gitignore"-style highlighting for ".ignore" files
 #--map-syntax "*.ino:C++"
+--map-syntax "/Users/**/.kube/config:YAML"
 
 # Show plain style (alias for `--style=plain`), repeat twice to disable disable automatic paging (alias for `--paging=never`)
 --plain

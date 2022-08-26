@@ -207,7 +207,7 @@ source <(helm completion zsh)
 # Terraform
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C $(which terraform) terraform
-export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
+# export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
 
 # fuck
 eval $(thefuck --alias)

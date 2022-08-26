@@ -74,15 +74,15 @@ export ZSH_CUSTOM=$ZSH/custom
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git
-    docker
-    docker-compose
-    gcloud
-    asdf
-    ruby
-    kubectl
-    kubectx
-    kube-ps1
+  git
+  docker
+  docker-compose
+  gcloud
+  asdf
+  ruby
+  kubectl
+  kubectx
+  kube-ps1
 	zsh-autosuggestions
 	zsh-syntax-highlighting
 	zsh-vim-mode

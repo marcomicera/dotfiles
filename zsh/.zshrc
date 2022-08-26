@@ -175,11 +175,6 @@ source <(stern --completion zsh)
 # skaffold
 source <(skaffold completion zsh)
 
-# Dropping all data in DGraph
-function drop_dgraph() {
-    curl -X POST localhost:8080/alter -d '{"drop_op": "DATA"}'
-}
-
 # Golang
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin

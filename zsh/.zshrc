@@ -212,9 +212,6 @@ complete -o nospace -C $(which terraform) terraform
 # fuck
 eval $(thefuck --alias)
 
-# asdf
-source /usr/local/opt/asdf/asdf.sh
-
 # aws
 complete -C '$(which aws_completer)' aws
 

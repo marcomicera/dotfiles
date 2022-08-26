@@ -18,8 +18,8 @@ shellcheck
 skaffold
 sops
 stern
-terraform
 terraform-docs
+terraform
 tflint
 tfsec
 yq

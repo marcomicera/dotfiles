@@ -145,7 +145,7 @@ export NNN_BMS="g:$HOME/git,h:$HOME"
 ##############
 
 # kubectl autocompletion
-source <(kubectl completion zsh)
+# source <(kubectl completion zsh) # done by the plugin
 
 # kubecolor
 # command -v kubecolor >/dev/null 2>&1 && alias kubectl="kubecolor"

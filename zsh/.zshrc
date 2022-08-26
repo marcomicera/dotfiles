@@ -119,7 +119,7 @@ export EDITOR='vim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Hiding "user@hostname" when logged as myself on my local machine
-prompt_context(){}
+# prompt_context(){}
 
 # Right prompt
 # RPROMPT="%D{%-I.%M.%S %p, %d.%m.%Y}"

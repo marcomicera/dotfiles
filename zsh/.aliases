@@ -21,7 +21,8 @@ alias grepi='grep -i'
 # git
 alias gcs="git commit -S"
 alias gcsm="gcs -m"
-alias gcsem="gcs --allow-empty -m"
+alias gcse="gcs --allow-empty"
+alias gcsem="gcse -m"
 
 # tree
 alias tree='colorls --tree --git-status'

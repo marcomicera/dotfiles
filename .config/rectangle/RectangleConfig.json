@@ -70,6 +70,9 @@
     "ignoredSnapAreas" : {
       "int" : 0
     },
+    "landscapeSnapAreas" : {
+
+    },
     "launchOnLogin" : {
       "bool" : true
     },
@@ -90,6 +93,9 @@
     },
     "obtainWindowOnClick" : {
       "int" : 0
+    },
+    "portraitSnapAreas" : {
+
     },
     "relaunchOpensMenu" : {
       "bool" : false
@@ -254,5 +260,5 @@
       "modifierFlags" : 1310720
     }
   },
-  "version" : "63"
+  "version" : "64"
 }

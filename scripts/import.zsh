@@ -76,11 +76,4 @@ magenta "Visual Studio Code"
   code --list-extensions > "${CWD}"/code/extensions.txt # Extensions list (installation: https://stackoverflow.com/a/49398449)
 )
 
-# # git diff
-# green "git diff"
-# (
-#   set -x
-#   git -C "${CWD}" --no-pager diff
-# )
-
 printf "\n"

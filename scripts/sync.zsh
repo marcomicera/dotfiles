@@ -148,11 +148,4 @@ magenta "Rectangle"
   symlink "${CWD}"/.config/rectangle/RectangleConfig.json ~/Library/Application\ Support/Rectangle/RectangleConfig.json
 )
 
-# # git diff
-# green "git diff"
-# (
-#   set -x
-#   git -C "${CWD}" --no-pager diff
-# )
-
 printf "\n"

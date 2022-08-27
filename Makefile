@@ -1,7 +1,19 @@
+# https://stackoverflow.com/a/23324703
+SCRIPTS = $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))/scripts
+
+.PHONY: all
+# .SILENT: all
+all: sync import
+
+.PHONY: sync
+.SILENT: sync
+sync:
+	$(SCRIPTS)/sync.zsh
+
 .PHONY: import
 .SILENT: import
 import:
-	./import.zsh
+	$(SCRIPTS)/import.zsh
 
 .PHONY: tree
 .SILENT: tree

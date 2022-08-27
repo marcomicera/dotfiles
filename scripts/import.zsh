@@ -76,13 +76,6 @@ magenta "Visual Studio Code"
   code --list-extensions > "${CWD}"/code/extensions.txt # Extensions list (installation: https://stackoverflow.com/a/49398449)
 )
 
-# # git status
-# green "git status"
-# (
-#   set -x
-#   git -C "${CWD}" status
-# )
-
 # # git diff
 # green "git diff"
 # (

@@ -3,17 +3,31 @@ SCRIPTS = $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))/scripts
 
 .PHONY: all
 # .SILENT: all
-all: sync import
+all:
+	make sync NO_STATUS=1
+	make import NO_STATUS=1
+	make status
 
 .PHONY: sync
 .SILENT: sync
 sync:
 	$(SCRIPTS)/sync.zsh
+ifeq ($(NO_STATUS),)
+	make status
+endif
 
 .PHONY: import
 .SILENT: import
 import:
 	$(SCRIPTS)/import.zsh
+ifeq ($(NO_STATUS),)
+	make status
+endif
+
+.PHONY: status
+.SILENT: status
+status:
+	$(SCRIPTS)/status.sh
 
 .PHONY: tree
 .SILENT: tree

@@ -3,7 +3,7 @@
 # This repo's absolute path
 DOTFILES_ABSOLUTE_PATH="$(
   cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit
-  realpath $(pwd -P)/..
+  realpath $(pwd -P)/../..
 )"
 
 function symlink() {

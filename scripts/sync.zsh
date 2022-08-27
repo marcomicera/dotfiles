@@ -148,13 +148,6 @@ magenta "Rectangle"
   symlink "${CWD}"/.config/rectangle/RectangleConfig.json ~/Library/Application\ Support/Rectangle/RectangleConfig.json
 )
 
-# # git status
-# green "git status"
-# (
-#   set -x
-#   git -C "${CWD}" status
-# )
-
 # # git diff
 # green "git diff"
 # (

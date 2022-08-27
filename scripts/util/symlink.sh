@@ -8,14 +8,16 @@ DOTFILES_ABSOLUTE_PATH="$(
 
 function symlink() {
     { set +x; } 2>/dev/null # https://stackoverflow.com/a/19226038
-    [ ! -f "${1}" ] && {
-        echo "File ${1} does not exist. Terminating..."
-        exit 1
-    }
-    [ ! -f "${2}" ] && {
-        echo "${2} does not exist, creating..."
-        mkdir -p $(dirname "${2}") || exit
-        touch "${2}" || exit
-    }
-    ln -nfs "${1}" "${2}"
+    for file in "${@:2}"; do
+        [ ! -f "${1}/${2##*/}" ] && {
+            echo "File ${1}/${2##*/} does not exist. Terminating..."
+            exit 1
+        }
+        [ ! -f "${file}" ] && {
+            echo "${file} does not exist, creating..."
+            mkdir -p $(dirname "${file}") || exit
+            touch "${file}" || exit
+        }
+        ln -nfs "${1}/${file##*/}" "${file}"
+    done
 }

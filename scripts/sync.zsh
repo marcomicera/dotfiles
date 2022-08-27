@@ -32,47 +32,46 @@ green "Creating symlinks from files in ${CWD}"
 magenta "zsh"
 (
   set -x
-  symlink "${CWD}"/zsh/.aliases ~/.aliases
-  symlink "${CWD}"/zsh/.functions ~/.functions
-  symlink "${CWD}"/zsh/.zshrc ~/.zshrc
-  symlink "${CWD}"/zsh/.p10k.zsh ~/.p10k.zsh
-  symlink "${CWD}"/zsh/.hushlogin ~/.hushlogin # disabled "last login" prompt
-  symlink "${CWD}"/zsh/com.googlecode.iterm2.plist ~/.config/iterm2/settings/com.googlecode.iterm2.plist  # iTerm2 settings
-  symlink "${CWD}"/zsh/.iterm2_shell_integration.zsh ~/.iterm2_shell_integration.zsh # https://iterm2.com/documentation-shell-integration.html
-  symlink "${CWD}"/zsh/.fzf.zsh ~/.fzf.zsh 
-  symlink "${CWD}"/.config/bat/config ~/.config/bat/config 
+  symlink "${CWD}"/zsh ~/.aliases
+  symlink "${CWD}"/zsh ~/.functions
+  symlink "${CWD}"/zsh ~/.zshrc
+  symlink "${CWD}"/zsh ~/.p10k.zsh
+  symlink "${CWD}"/zsh ~/.hushlogin # disabled "last login" prompt
+  symlink "${CWD}"/zsh ~/.config/iterm2/settings/com.googlecode.iterm2.plist  # iTerm2 settings
+  symlink "${CWD}"/zsh ~/.iterm2_shell_integration.zsh # https://iterm2.com/documentation-shell-integration.html
+  symlink "${CWD}"/zsh ~/.fzf.zsh 
+  symlink "${CWD}"/.config/bat ~/.config/bat/config 
 )
 
 # JetBrains IDEs
 magenta "JetBrains IDEs"
 (
   set -x
-  symlink "${CWD}"/idea /usr/local/bin/idea
-  symlink "${CWD}"/storm /usr/local/bin/storm
-  symlink "${CWD}"/charm /usr/local/bin/charm
+  symlink "${CWD}" /usr/local/bin/idea
+  symlink "${CWD}" /usr/local/bin/storm
+  symlink "${CWD}" /usr/local/bin/charm
 )
 
-# # Oh My Zsh
-# magenta "Oh My Zsh"
-# (
-#   set -x
-# TODO How to symlink using a glob pattern?
-#   cp ~/.oh-my-zsh/completions/*.zsh "${CWD}"/.oh-my-zsh/completions
-# )
+# Oh My Zsh
+magenta "Oh My Zsh"
+(
+  set -x
+  symlink "${CWD}"/.oh-my-zsh/completions ~/.oh-my-zsh/completions/*.zsh
+)
 
 # asdf
 magenta "asdf"
 (
   set -x
-  symlink "${CWD}"/asdf/.tool-versions ~/.tool-versions
+  symlink "${CWD}"/asdf ~/.tool-versions
 )
 
 # git
 magenta "git"
 (
   set -x
-  symlink "${CWD}"/git/.gitconfig ~/.gitconfig
-  symlink "${CWD}"/.config/git/ignore ~/.config/git/ignore
+  symlink "${CWD}"/git ~/.gitconfig
+  symlink "${CWD}"/.config/git ~/.config/git/ignore
   # TODO How to symlink using a glob pattern?
   # cp ~/.gnupg/gpg*.conf "${CWD}"/.gnupg
 )
@@ -80,29 +79,28 @@ magenta "git"
 # SmartGit
 magenta "SmartGit"
 (
-  symlink "${CWD}"/sm /usr/local/bin/sm
+  symlink "${CWD}" /usr/local/bin/sm
 )
 
 # nano
 magenta "nano"
 (
   set -x
-  symlink "${CWD}"/.nanorc ~/.nanorc
+  symlink "${CWD}" ~/.nanorc
 )
 
 # Spotify TUI
 magenta "Spotify TUI"
 (
   set -x
-  symlink "${CWD}"/spotify-tui/config.yml ~/.config/spotify-tui/config.yml
+  symlink "${CWD}"/spotify-tui ~/.config/spotify-tui/config.yml
 )
 
 # vim
 magenta "vim"
 (
   VIM_RUNTIME=~/.vim_runtime
-  CONFIG_FILE_NAME=my_configs.vim
-  VIM_RUNTIME_CONFIGS="${VIM_RUNTIME}/${CONFIG_FILE_NAME}"
+  VIM_RUNTIME_CONFIGS="${VIM_RUNTIME}"/my_configs.vim
   if [ ! -f "${VIM_RUNTIME_CONFIGS}" ]; then
     red "Custom vim config file at ${VIM_RUNTIME_CONFIGS} not found."
     printf "Install github.com/amix/vimrc with:\n"
@@ -114,7 +112,7 @@ magenta "vim"
     set -x
 
     # Config
-    symlink "${CWD}/vim/${CONFIG_FILE_NAME}" "${VIM_RUNTIME_CONFIGS}"
+    symlink "${CWD}"/vim/ "${VIM_RUNTIME_CONFIGS}"
 
     # Plugins
     # TODO How to symlink a folder?
@@ -127,8 +125,8 @@ magenta "vim"
 magenta "Visual Studio Code"
 (
   set -x
-  symlink "${CWD}"/code/settings.json ~/Library/Application\ Support/Code/User/settings.json
-  symlink "${CWD}"/code/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+  symlink "${CWD}"/code ~/Library/Application\ Support/Code/User/settings.json
+  symlink "${CWD}"/code ~/Library/Application\ Support/Code/User/keybindings.json
 )
 
 # k9s
@@ -136,7 +134,7 @@ if [ -n ${XDG_CONFIG_HOME} ]; then
   magenta "k9s"
   (
     set -x
-    symlink "${CWD}"/.config/k9s//plugin.yml ${XDG_CONFIG_HOME}/k9s/plugin.yml
+    symlink "${CWD}"/.config/k9s ${XDG_CONFIG_HOME}/k9s/plugin.yml
   )
 fi
 
@@ -145,7 +143,7 @@ fi
 magenta "Rectangle"
 (
   set -x
-  symlink "${CWD}"/.config/rectangle/RectangleConfig.json ~/Library/Application\ Support/Rectangle/RectangleConfig.json
+  symlink "${CWD}"/.config/rectangle ~/Library/Application\ Support/Rectangle/RectangleConfig.json
 )
 
 printf "\n"

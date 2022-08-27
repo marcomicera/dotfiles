@@ -4,18 +4,18 @@ SCRIPTS = $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))/scripts
 .PHONY: all
 # .SILENT: all
 all:
-	make sync NO_GIT_INFO=1
-	make import NO_GIT_INFO=1
-	make status
-	make diff
+	$(MAKE) sync NO_GIT_INFO=1
+	$(MAKE) import NO_GIT_INFO=1
+	$(MAKE) status
+	$(MAKE) diff
 
 .PHONY: sync
 .SILENT: sync
 sync:
 	$(SCRIPTS)/sync.zsh
 ifeq ($(NO_GIT_INFO),)
-	make status
-	make diff
+	$(MAKE) status
+	$(MAKE) diff
 endif
 
 .PHONY: import
@@ -23,8 +23,8 @@ endif
 import:
 	$(SCRIPTS)/import.zsh
 ifeq ($(NO_GIT_INFO),)
-	make status
-	make diff
+	$(MAKE) status
+	$(MAKE) diff
 endif
 
 .PHONY: status

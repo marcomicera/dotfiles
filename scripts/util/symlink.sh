@@ -6,6 +6,7 @@ DOTFILES_ABSOLUTE_PATH="$(
   realpath $(pwd -P)/../..
 )"
 
+# Creates a symlink ${1} -> ${@:2} (glob pattern)
 function symlink() {
     { set +x; } 2>/dev/null # https://stackoverflow.com/a/19226038
     for file in "${@:2}"; do

@@ -157,7 +157,7 @@ fi
 magenta "Rectangle"
 (
   set -x
-  cp ~/Library/Preferences/com.knollsoft.Rectangle.plist "${CWD}"/.config/rectangle
+  cp ~/Library/Application\ Support/Rectangle/RectangleConfig.json "${CWD}"/.config/rectangle
 )
 
 # git status

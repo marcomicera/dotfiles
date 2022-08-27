@@ -72,8 +72,7 @@ magenta "git"
   set -x
   symlink "${CWD}"/git ~/.gitconfig
   symlink "${CWD}"/.config/git ~/.config/git/ignore
-  # TODO How to symlink using a glob pattern?
-  # cp ~/.gnupg/gpg*.conf "${CWD}"/.gnupg
+  symlink "${CWD}"/.gnupg ~/.gnupg/gpg*.conf 
 )
 
 # SmartGit

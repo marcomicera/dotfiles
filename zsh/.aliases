@@ -57,10 +57,12 @@ alias src="source ~/.zshrc"
 alias srczsh="source ~/.zshrc"
 alias srczshr="source ~/.zshrc"
 alias srczshrc="source ~/.zshrc"
-alias dtf="~/git/dotfiles/import.zsh"
-alias dtfl="~/git/dotfiles/import.zsh"
-alias dtfls="~/git/dotfiles/import.zsh"
-alias dotfiles="~/git/dotfiles/import.zsh"
+DOTFILES_DIR="~/git/dotfiles"
+alias sync="make --directory=${DOTFILES_DIR} sync"
+alias dtf="make --directory=${DOTFILES_DIR} import"
+alias dtfl="dtf"
+alias dtfls="dtf"
+alias dotfiles="dtf"
 
 # nnn
 alias nnn='nnn -deH'

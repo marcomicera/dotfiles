@@ -69,6 +69,17 @@ magenta "SmartGit"
   cp ${SMARTGIT_VERSION_SPECIFIC_DIR}/ui-config.yml "${CWD}"/git/smartgit/${SMARTGIT_VERSION}
 )
 
+# vim
+magenta "vim"
+(
+  VIM_RUNTIME_PLUGINS=/.vim_runtime/my_plugins
+  
+  set -x
+
+  # Plugins
+  cp -R "${VIM_RUNTIME_PLUGINS}"/ "${CWD}/vim/my_plugins" 2>/dev/null || : # https://serverfault.com/a/153893
+)
+
 # Visual Studio Code (VSCode)
 magenta "Visual Studio Code"
 (

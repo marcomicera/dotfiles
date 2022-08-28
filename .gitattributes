@@ -3,7 +3,3 @@ zsh/.functions linguist-language=zsh
 zsh/.hushlogin linguist-language=zsh
 .config/bat/config linguist-language=ini
 .config/git/ignore linguist-language=gitignore
-charm linguist-language=sh
-idea linguist-language=sh
-sm linguist-language=sh
-storm linguist-language=sh

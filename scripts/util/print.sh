@@ -1,7 +1,5 @@
 #!/usr/bin/env zsh
 
-set +x
-
 # Colors
 RED="\u001b[41;1m"
 GREEN="\u001b[42;1m"

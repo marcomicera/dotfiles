@@ -1,7 +1,41 @@
+# https://stackoverflow.com/a/23324703
+SCRIPTS = $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))/scripts
+
+.PHONY: all
+# .SILENT: all
+all:
+	$(MAKE) sync NO_GIT_INFO=1
+	$(MAKE) import NO_GIT_INFO=1
+	$(MAKE) status
+	$(MAKE) diff
+
+.PHONY: sync
+.SILENT: sync
+sync:
+	$(SCRIPTS)/sync.zsh
+ifeq ($(NO_GIT_INFO),)
+	$(MAKE) status
+	$(MAKE) diff
+endif
+
 .PHONY: import
 .SILENT: import
 import:
-	./import.zsh
+	$(SCRIPTS)/import.zsh
+ifeq ($(NO_GIT_INFO),)
+	$(MAKE) status
+	$(MAKE) diff
+endif
+
+.PHONY: status
+.SILENT: status
+status:
+	$(SCRIPTS)/status.sh
+
+.PHONY: diff
+.SILENT: diff
+diff:
+	$(SCRIPTS)/diff.sh
 
 .PHONY: tree
 .SILENT: tree
@@ -23,3 +57,7 @@ gitleaks:
 		--verbose \
 		--redact \
 		detect
+
+.PHONY: submodules
+submodules:
+	git submodule update --init --recursive

@@ -2,17 +2,33 @@
     // Theme
     "workbench.colorTheme": "Default Dark+",
 
+    // No welcome page
+    "workbench.startupEditor": "none",
+
     // No minimap
     "editor.minimap.enabled": false,
 
     // Always open files in new tabs
     "workbench.editor.enablePreview": false,
 
+    // Editor
+    "editor.fontSize": 11,
+
+    // What to show in the file explorer
+    "files.exclude": {
+      "**/.git": false,
+      "**/.svn": false,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/Thumbs.db": true
+    },
+
+    // File explorer indentation
+    "workbench.tree.indent": 20,
+
     // Always trust untrusted files
     "security.workspace.trust.untrustedFiles": "open",
-
-    // Terminal font
-    "terminal.integrated.fontFamily": "Hack Nerd Font",
 
     // Never focus opened files into the file explorer pane
     "explorer.autoReveal": false,
@@ -24,4 +40,14 @@
     // Todo Tree
     "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^|%|\\\\)\\s*($TAGS)\\{*|^\\s*- \\[ \\])",
     "todo-tree.regex.regexCaseSensitive": false,
+
+    // Icons
+    "workbench.iconTheme": "vscode-icons",
+    
+    // Terminal
+    "terminal.integrated.fontSize": 11,
+    "terminal.integrated.fontFamily": "Menlo",
+
+    // Shell formatter
+    "shellformat.useEditorConfig": true,
 }

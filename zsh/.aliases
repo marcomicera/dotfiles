@@ -1,34 +1,49 @@
 # bat
-alias bat='bat --plain --paging=never'
 alias cat='bat'
 
 # ls 
 alias ls='colorls --git-status --group-directories-first'
-alias ll='ls --long --almost-all'
 alias sl="ls"
-alias l="ll"
+
+# ls + hidden files
+alias l="ls --almost-all"
+
+# ls + hidden files + long format
+alias ll='ls --long --almost-all'
 alias lll="ll"
 
 # grep
 alias grepi='grep -i'
+
+# ag (The Silver Searcher)
+# alias ag="ag --context 3 --unrestricted"
+
+# git
+alias gcs="git commit -S"
+alias gcsm="gcs -m"
+alias gcse="gcs --allow-empty"
+alias gcsem="gcse -m"
 
 # tree
 alias tree='colorls --tree --git-status'
 alias t='tree'
 
 # vim
-function v() {
-    if [ "$1" != "" ]
-    then
-        vim $1
-    else
-        vim .
-    fi
-}
+alias v='vim'
+# function v() {
+#     if [ "$1" != "" ]
+#     then
+#         vim $1
+#     else
+#         vim .
+#     fi
+# }
+alias vimtutor="v /usr/share/vim/vim82/tutor/tutor"
 
 # General aliases
-alias n='nano'
+# alias n='nano'
 alias nkc='n ~/.kube/config'
+alias f='fzf'
 
 # zshrc
 alias nzsh='n ~/.zshrc'
@@ -42,14 +57,17 @@ alias src="source ~/.zshrc"
 alias srczsh="source ~/.zshrc"
 alias srczshr="source ~/.zshrc"
 alias srczshrc="source ~/.zshrc"
-alias dtf="~/git/dotfiles/import.zsh"
-alias dtfl="~/git/dotfiles/import.zsh"
-alias dtfls="~/git/dotfiles/import.zsh"
-alias dotfiles="~/git/dotfiles/import.zsh"
+DOTFILES_DIR="~/git/dotfiles"
+alias sync="make --directory=${DOTFILES_DIR} sync"
+alias dtf="make --directory=${DOTFILES_DIR} import"
+alias dtfl="dtf"
+alias dtfls="dtf"
+alias dotfiles="dtf"
 
 # nnn
-alias nn='nnn -deH'
 alias nnn='nnn -deH'
+alias nn='nnn'
+alias n='nnn'
 
 # Typos
 alias cd..="cd .."
@@ -62,6 +80,8 @@ alias celar="clear"
 alias lcear="clear"
 alias clea="clear"
 alias lcaer="clear"
+alias idae="idea"
+alias coed="code"
 
 # docker-compose
 alias c="docker-compose"
@@ -69,12 +89,16 @@ alias cup="docker-compose up"
 alias cupd="docker-compose up -d"
 
 # kubectl
-source <(kubectl completion zsh)
 alias k="kubectl"
+alias ctx="kubectx"
+alias cctx="kubectx -c"
 
 # kustomize
 alias ku="kustomize"
 alias kub="kustomize build"
+
+# aws
+alias awsid="aws --no-cli-pager --output yaml sts get-caller-identity"
 
 # skaffold
 alias s="skaffold"
@@ -85,9 +109,6 @@ alias kmq="kubemqctl"
 # Terraform
 alias tf="terraform"
 alias tfo="tf output"
-
-# aws
-complete -C '/usr/local/bin/aws_completer' aws
 
 # Helm
 alias h="helm"

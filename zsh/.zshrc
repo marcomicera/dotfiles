@@ -7,12 +7,13 @@ fi
 
 # If you come from bash you might have to change your $PATH.  
 # export PATH=$HOME/bin:/usr/local/bin:$PATH # Path to your oh-my-zsh installation.
-export ZSH="/Users/marcomicera/.oh-my-zsh" 
+export ZSH="${HOME}/.oh-my-zsh"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="agnoster"
+export ZSH_CUSTOM=$ZSH/custom
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -73,11 +74,19 @@ export ZSH="/Users/marcomicera/.oh-my-zsh"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git
-    docker
-    docker-compose
-    gcloud
-    asdf
+  # git
+  # docker
+  # docker-compose
+  gcloud
+  asdf
+  helm
+  # ruby
+  kubectl
+  # kubectx
+  # kube-ps1
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  zsh-vim-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -111,21 +120,17 @@ export EDITOR='vim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Hiding "user@hostname" when logged as myself on my local machine
-prompt_context(){}
+# prompt_context(){}
 
 # Right prompt
 # RPROMPT="%D{%-I.%M.%S %p, %d.%m.%Y}"
 # RPROMPT=""
 
-# compdef
-autoload -Uz compinit
-compinit
-
-# Aliases
-source ~/.aliases
-
 # Functions
 source ~/.functions
+
+# Work-related
+source ~/.work
 
 # Ruby
 export PATH=$PATH:~/.gem/ruby/2.6.0/bin
@@ -134,9 +139,24 @@ export PATH=$PATH:~/.gem/ruby/2.6.0/bin
 export PATH=$PATH:~/.nnn
 export NNN_BMS="g:$HOME/git,h:$HOME"
 
-# kubectl
-source <(kubectl completion zsh)
-complete -F __start_kubectl k
+
+##############
+# START      #
+# Kubernetes #
+##############
+
+# kubectl autocompletion
+# source <(kubectl completion zsh) # done by the plugin
+
+# kubecolor
+# command -v kubecolor >/dev/null 2>&1 && alias kubectl="kubecolor"
+
+# kubecolor autocompletion
+# autoload -U +X bashcompinit && bashcompinit
+# complete -o nospace -C /usr/local/bin/kubecolor kubecolor
+
+# Krew (plugins)
+export PATH="${PATH}:${HOME}/.krew/bin"
 
 # kustomize
 source <(kustomize completion zsh)
@@ -145,21 +165,16 @@ source <(kustomize completion zsh)
 source <(k9s completion zsh)
 export XDG_CONFIG_HOME=~/.config
 
+# stern
+source <(stern --completion zsh)
+
+##############
+# END        #
+# Kubernetes #
+##############
+
 # skaffold
 source <(skaffold completion zsh)
-
-# Dropping all data in DGraph
-function drop_dgraph() {
-    curl -X POST localhost:8080/alter -d '{"drop_op": "DATA"}'
-}
-
-# gcloud
-if [ -f ~/opt/google-cloud-sdk/path.zsh.inc ]; then
-    source ~/opt/google-cloud-sdk/path.zsh.inc;
-fi
-if [ -f ~/opt/google-cloud-sdk/completion.zsh.inc ]; then
-    source ~/opt/google-cloud-sdk/completion.zsh.inc;
-fi
 
 # Golang
 export GOPATH=~/go
@@ -177,18 +192,22 @@ export PATH=$PATH:~/Library/Python/2.7/bin # pip for pre-installed Python on mac
 # MAVEN_BIN=~/opt/apache-maven-3.6.3/bin
 # export PATH=$PATH:$MAVEN_BIN
 
-# Helm
-source <(helm completion zsh)
-
 # Terraform
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C $(which terraform) terraform
+# export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
 
 # fuck
 eval $(thefuck --alias)
 
-# asdf
-source /usr/local/opt/asdf/asdf.sh
+# aws
+complete -C '$(which aws_completer)' aws
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Aliases
+source ~/.aliases
 
 # Powerlevel10k
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true

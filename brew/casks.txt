@@ -1,8 +1,9 @@
-aws-vault
-font-hack-nerd-font
-font-meslo-for-powerline
-goland
-intellij-idea
-iterm2
+google-cloud-sdk
+intellij-idea-ce
+maccy
 meld
+numi
+postman
+raycast
+rectangle
 visual-studio-code

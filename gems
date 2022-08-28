@@ -9,6 +9,7 @@ csv
 date
 dbm
 did_you_mean
+do
 e2mmap
 etc
 fcntl
@@ -27,6 +28,8 @@ matrix
 mini_portile2
 minitest
 mutex_m
+net-sftp
+net-ssh
 net-telnet
 nokogiri
 openssl
@@ -35,14 +38,17 @@ power_assert
 prime
 psych
 public_suffix
+racc
 rainbow
 rake
 rdoc
+reline
 rexml
 rss
 scanf
 sdbm
 shell
+singleton
 sqlite3
 stringio
 strscan

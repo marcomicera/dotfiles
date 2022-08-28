@@ -4,3 +4,50 @@
 	gpgSign = true
 [user]
 	name = Marco Micera
+[core]
+	excludesFile = ~/.config/git/ignore
+[alias]
+	b = !git rev-parse --abbrev-ref HEAD
+	d = !git diff
+	s = !git status
+	ui = !gitui
+# [color "diff"]
+#     meta = yellow
+#     frag = magenta
+#     old = red bold
+#     new = green
+#     plain = white
+[color "branch"]
+	current = green bold
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+
+# https://github.com/dandavison/delta
+[core]
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true # use n and N to move between diff sections
+	side-by-side = true
+    # minus-style = red bold normal
+	# plus-style = green bold normal
+	minus-emph-style = white bold red
+	# minus-non-emph-style = red bold normal
+	plus-emph-style = white bold green
+	# plus-non-emph-style = green bold normal
+	file-style = yellow bold none
+	file-decoration-style = yellow box
+	# hunk-header-style = magenta bold
+	hunk-header-decoration-style = magenta box
+	# minus-empty-line-marker-style = normal normal
+	# plus-empty-line-marker-style = normal normal
+	# line-numbers-right-format = "{np:^4}│ "
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default # https://dandavison.github.io/delta/color-moved-support.html
+[help]
+	autocorrect = 50

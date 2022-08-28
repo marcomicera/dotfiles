@@ -1,0 +1,3 @@
+#!/bin/sh
+
+open -na "pyCharm CE.app" --args "$@"

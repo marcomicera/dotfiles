@@ -1,4 +1,4 @@
 zsh/.aliases linguist-language=zsh
 zsh/.functions linguist-language=zsh
 zsh/.hushlogin linguist-language=zsh
-
+.config/bat/config linguist-language=ini

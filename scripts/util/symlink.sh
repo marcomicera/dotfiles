@@ -8,17 +8,29 @@ DOTFILES_ABSOLUTE_PATH="$(
 
 # Creates a symlink ${1} -> ${@:2} (glob pattern)
 function symlink() {
-    { set +x; } 2>/dev/null # https://stackoverflow.com/a/19226038
+
+    # `set +x` without it being printed
+    # https://stackoverflow.com/a/19226038
+    { set +x; } 2>/dev/null
+
+    # For all `ln` target files (glob patterns get expanded)
     for file in "${@:2}"; do
-        [ ! -f "${1}/${2##*/}" ] && {
+
+        # If file to be symlinked is not a directory and doesn't exist
+        [ ! -d "${1}/${2##*/}" ] && [ ! -f "${1}/${2##*/}" ] && {
             echo "File ${1}/${2##*/} does not exist. Terminating..."
             exit 1
         }
-        [ ! -f "${file}" ] && {
+
+        # If `ln` target file is not a directory and doesn't exist
+        [ ! -d "${1}/${2##*/}" ] && [ ! -f "${file}" ] && {
+
+            # Create the `ln` target file
             echo "${file} does not exist, creating..."
             mkdir -p $(dirname "${file}") || exit
             touch "${file}" || exit
         }
+
         ln -nfs "${1}/${file##*/}" "${file}"
     done
 }

@@ -5,17 +5,19 @@
     // No welcome page
     "workbench.startupEditor": "none",
 
-    // No minimap
-    "editor.minimap.enabled": false,
-
-    // Always open files in new tabs
-    "workbench.editor.enablePreview": false,
+    // Always trust untrusted files
+    "security.workspace.trust.untrustedFiles": "open",
 
     // Editor
     "editor.fontSize": 11,
+    "files.autoSave": "afterDelay", // autosave
+    "editor.minimap.enabled": false, // no minimap
+    "workbench.editor.enablePreview": false, // always open files in new tabs
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.unicodeHighlight.nonBasicASCII": false,
 
-    // What to show in the file explorer
-    "files.exclude": {
+    // File explorer
+    "files.exclude": { // what to show
       "**/.git": false,
       "**/.svn": false,
       "**/.hg": true,
@@ -23,15 +25,8 @@
       "**/.DS_Store": true,
       "**/Thumbs.db": true
     },
-
-    // File explorer indentation
-    "workbench.tree.indent": 20,
-
-    // Always trust untrusted files
-    "security.workspace.trust.untrustedFiles": "open",
-
-    // Never focus opened files into the file explorer pane
-    "explorer.autoReveal": false,
+    "workbench.tree.indent": 20, // indentation
+    "explorer.autoReveal": false, // never focus opened files into the file explorer pane
 
     // PDF viewer
     "pdf-preview.default.sidebar": false,
@@ -43,6 +38,7 @@
 
     // Icons
     "workbench.iconTheme": "vscode-icons",
+    "vsicons.dontShowNewVersionMessage": true,
     
     // Terminal
     "terminal.integrated.fontSize": 11,
@@ -50,4 +46,7 @@
 
     // Shell formatter
     "shellformat.useEditorConfig": true,
+    
+    // Don't send usage data and errors to Red Hat servers
+    "redhat.telemetry.enabled": false,
 }

@@ -31,6 +31,8 @@ function symlink() {
             touch "${file}" || exit
         }
 
+        set -x
         ln -nfs "${1}/${file##*/}" "${file}"
+        { set +x; } 2>/dev/null # https://stackoverflow.com/a/19226038
     done
 }

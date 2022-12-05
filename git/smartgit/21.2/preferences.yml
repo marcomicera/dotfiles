@@ -24,7 +24,7 @@ actions:
 logSettings:
   filterConfiguration: {}
   loadGravatars: false
-  showOnlyFirstParents: false
+  showOnlyFirstParents: true
 comparePreviewSettings: {}
 dateFormat: {datePattern: dd.MM.yyyy, timePattern: 'hh:mm a', showTimeForLastDays: true}
 defaultViewSettings:

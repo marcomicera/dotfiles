@@ -79,16 +79,20 @@ plugins=(
   # git
   # docker
   # docker-compose
-  gcloud
-  asdf
-  helm
+  
   # ruby
-  kubectl
+  
   # kubectx
   # kube-ps1
+
+  # gcloud
+  asdf
+  # helm
+  # kubectl
   zsh-autosuggestions
+  # zsh-interactive-cd
   zsh-syntax-highlighting
-  zsh-vim-mode
+  # zsh-vim-mode
 )
 
 DISABLE_AUTO_UPDATE=true source $ZSH/oh-my-zsh.sh

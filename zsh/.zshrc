@@ -89,7 +89,7 @@ plugins=(
   zsh-vim-mode
 )
 
-source $ZSH/oh-my-zsh.sh
+DISABLE_AUTO_UPDATE=true source $ZSH/oh-my-zsh.sh
 
 # User configuration
 

@@ -88,7 +88,7 @@ plugins=(
   # gcloud
   asdf
   # helm
-  # kubectl
+  kubectl
   zsh-autosuggestions
   # zsh-interactive-cd
   zsh-syntax-highlighting

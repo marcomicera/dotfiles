@@ -85,7 +85,7 @@ plugins=(
   # kubectx
   # kube-ps1
 
-  # gcloud
+  gcloud
   asdf
   # helm
   kubectl

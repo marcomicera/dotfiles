@@ -27,6 +27,11 @@ ifeq ($(NO_GIT_INFO),)
 	$(MAKE) diff
 endif
 
+.PHONY: install
+.SILENT: install
+install:
+	$(SCRIPTS)/install.zsh
+
 .PHONY: status
 .SILENT: status
 status:

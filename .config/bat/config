@@ -25,6 +25,7 @@
 --map-syntax "/Users/**/.kube/config:YAML"
 --map-syntax ".aliases:Bourne Again Shell (bash)"
 --map-syntax ".functions:Bourne Again Shell (bash)"
+--map-syntax ".work:Bourne Again Shell (bash)"
 
 # Show plain style (alias for `--style=plain`), repeat twice to disable disable automatic paging (alias for `--paging=never`)
 --plain

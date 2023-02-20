@@ -49,4 +49,13 @@
     
     // Don't send usage data and errors to Red Hat servers
     "redhat.telemetry.enabled": false,
+    "[python]": {
+      "editor.formatOnType": true
+    },
+
+    // Terraform
+    "[terraform]": {
+      "editor.formatOnSave": true
+    },
+    "window.zoomLevel": 1
 }

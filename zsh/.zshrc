@@ -151,6 +151,9 @@ export NNN_BMS="g:$HOME/git,h:$HOME"
 # Kubernetes #
 ##############
 
+# Default editor
+export KUBE_EDITOR="code -w"
+
 # kubectl autocompletion
 # source <(kubectl completion zsh) # done by the plugin
 

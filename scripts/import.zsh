@@ -39,7 +39,7 @@ magenta "Ruby"
 magenta "asdf"
 (
   set -x
-  asdf plugin list >"${CWD}"/asdf/list.txt
+  asdf plugin list > "${CWD}"/asdf/list.txt
 )
 
 # brew

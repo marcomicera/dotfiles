@@ -4,8 +4,10 @@ bungcip.better-toml
 eamodio.gitlens
 EditorConfig.EditorConfig
 foxundermoon.shell-format
+GitHub.copilot
 golang.go
 Gruntfuggly.todo-tree
+hashicorp.hcl
 hashicorp.terraform
 iliazeus.vscode-ansi
 Jeff-Tian.tex-workshop
@@ -24,6 +26,7 @@ mtxr.sqltools
 recode4dev.jenkinsfile
 redhat.java
 redhat.vscode-yaml
+richie5um2.vscode-statusbar-json-path
 techer.open-in-browser
 tomoki1207.pdf
 VisualStudioExptTeam.intellicode-api-usage-examples

@@ -34,4 +34,15 @@ if [[ "$answer" != [yY] ]]; then
   exit 1
 fi
 
-
+# Ruby
+magenta "Ruby"
+(
+  while read -r gem
+  do
+    # Install the gem using the gem install command
+    (
+      set -x
+      gem install --user-install "${gem}" || echo "Failed to install gem: $gem"
+    )
+  done < "${CWD}"/gems
+)

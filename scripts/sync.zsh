@@ -55,7 +55,23 @@ magenta "JetBrains IDEs"
 # Oh My Zsh
 magenta "Oh My Zsh"
 (
+  # Where is the completions directory locally
+  completions_dir="${HOME}/.oh-my-zsh/completions"
+  
   set -x
+
+  # Create the completoions dir if it doesn't exist
+  [ ! -d "${completions_dir}" ] && mkdir -p "${completions_dir}"
+
+  # For all completion files
+  for file in "${CWD}/.oh-my-zsh/completions/"*.zsh; do
+
+    # If the completion file doesn't exist
+    if [ ! -e "${completions_dir}/${file##*/}" ]; then
+      cp "$file" "${completions_dir}"
+    fi
+  done
+
   symlink "${CWD}"/.oh-my-zsh/completions ~/.oh-my-zsh/completions/*.zsh
 )
 

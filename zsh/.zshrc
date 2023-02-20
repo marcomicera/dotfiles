@@ -218,7 +218,7 @@ complete -C '$(which aws_completer)' aws
 source ~/.aliases
 
 # Powerlevel10k
-POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+# POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true

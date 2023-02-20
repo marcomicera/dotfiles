@@ -5,12 +5,10 @@ alias cat='bat'
 alias ls='colorls --git-status --group-directories-first'
 alias sl="ls"
 
-# ls + hidden files
-alias l="ls --almost-all"
-
 # ls + hidden files + long format
-alias ll='ls --long --almost-all'
-alias lll="ll"
+alias l="ls --long --almost-all"
+alias ll="l"
+alias lll="l"
 
 # grep
 alias grepi='grep -i'

@@ -46,3 +46,11 @@ magenta "Ruby"
     )
   done < "${CWD}"/gems
 )
+
+# asdf
+magenta "asdf"
+(
+  while read -r plugin; do
+    asdf plugin-add "${plugin}" || true
+  done < "${CWD}"/asdf/list.txt
+)

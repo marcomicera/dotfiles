@@ -50,7 +50,11 @@ magenta "Ruby"
 # asdf
 magenta "asdf"
 (
+  # Plugins
   while read -r plugin; do
     asdf plugin-add "${plugin}" || true
   done < "${CWD}"/asdf/list.txt
+
+  # Global binaries
+  popd "${CWD}"/asdf && asdf install
 )

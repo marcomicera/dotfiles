@@ -59,3 +59,7 @@ function today() {
 function gitconfig() {
     <<< $(cat ~/.ssh/.gitconfig-"${1}") < ./.git/config | sponge ./.git/config
 }
+
+function restartgpg() {
+  pkill -9 gpg-agent
+}

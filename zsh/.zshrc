@@ -224,3 +224,21 @@ source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
 # zprof
+
+##########
+# START  #
+# gcloud #
+##########
+
+export PATH=~/google-cloud-sdk/bin:${PATH}
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/micera/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/micera/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/micera/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/micera/google-cloud-sdk/completion.zsh.inc'; fi
+
+##########
+# END    #
+# gcloud #
+##########

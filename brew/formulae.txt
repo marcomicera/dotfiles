@@ -18,9 +18,9 @@ nano
 nnn
 padok-team/tap/tfautomv
 pinentry-mac
+powerlevel10k
 pre-commit
 remake
-romkatv/powerlevel10k/powerlevel10k
 ruby
 sponge
 spotify-tui

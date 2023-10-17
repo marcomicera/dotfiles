@@ -16,7 +16,7 @@ tfsec 1.8.0
 nodejs lts
 fzf 0.43.0
 mongosh 1.3.1
-delta 0.13.0
+delta 0.15.1
 awscli 2.7.4
 aws-vault 6.6.0
 krew 0.4.3
@@ -28,3 +28,4 @@ terragrunt 0.43.0
 gradle 7.2
 dive 0.10.0
 azure-cli 2.45.0
+istioctl 1.19.3

@@ -53,7 +53,7 @@ magenta "brew"
 # SmartGit
 magenta "SmartGit"
 (
-  SMARTGIT_VERSION=21.2
+  SMARTGIT_VERSION=22.1
   SMARTGIT_BASE_CONFIG_DIR=~/Library/Preferences/SmartGit
   SMARTGIT_VERSION_SPECIFIC_DIR=${SMARTGIT_BASE_CONFIG_DIR}/${SMARTGIT_VERSION}
   if [ -d "${CWD}"/git/smartgit/${SMARTGIT_VERSION} ]; then

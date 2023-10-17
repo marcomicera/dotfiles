@@ -10,6 +10,7 @@ helm
 helmfile
 istioctl
 java
+jsonnet
 k9s
 krew
 kubectl
@@ -19,7 +20,6 @@ kustomize
 maven
 mongosh
 nodejs
-pipenv
 postgres
 python
 shellcheck
@@ -28,7 +28,10 @@ sops
 stern
 terraform-docs
 terraform
+terraformer
 terragrunt
+tf-summarize
 tflint
 tfsec
 yq
+zoxide

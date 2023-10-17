@@ -1,9 +1,9 @@
-google-cloud-sdk
-intellij-idea-ce
+1password-cli
+gitnuro
+gittyup
 maccy
 meld
 numi
-postman
 raycast
 rectangle
 stats

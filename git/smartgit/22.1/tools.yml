@@ -1,0 +1,29 @@
+tools:
+- id: openFile
+  name: Open File
+  fileStarter: {command: /usr/bin/open, parameters: '${filePath}'}
+  useForOpen: true
+  waitUntilFinished: false
+  filePattern: '*'
+  forFilesNotDirectories: true
+- id: revealInFinder
+  name: Reveal in Finder
+  fileStarter: {command: /usr/bin/open, parameters: '--reveal ${filePath}'}
+  useForOpen: false
+  waitUntilFinished: true
+  filePattern: '*'
+- id: openInTerminalSh
+  name: Open in Terminal
+  fileStarter: {command: '${smartGitDir}/Contents/Resources/open-terminal.sh', parameters: '${filePath}'}
+  useForOpen: true
+  waitUntilFinished: false
+  filePattern: '*'
+  forFilesNotDirectories: false
+- id: editInTextEditor
+  name: Edit
+  fileStarter: {command: /usr/bin/open, parameters: '-t ${filePath}'}
+  useForOpen: true
+  waitUntilFinished: false
+  filePattern: '*'
+  forFilesNotDirectories: true
+manuallyDeletedIds: []

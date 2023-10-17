@@ -1,4 +1,4 @@
-kubectl 1.22.9
+kubectl 1.28.0
 terraform 1.0.2
 kubectx 0.9.4
 gcloud 374.0.0

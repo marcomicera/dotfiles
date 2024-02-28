@@ -41,8 +41,10 @@
     "vsicons.dontShowNewVersionMessage": true,
     
     // Terminal
+    "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.fontSize": 11,
-    "terminal.integrated.fontFamily": "Menlo",
+    "terminal.integrated.fontFamily": "Hack Nerd Font",
+    "terminal.integrated.scrollback": 9999,
 
     // Shell formatter
     "shellformat.useEditorConfig": true,

@@ -1,11 +1,13 @@
 aws-vault
 awscli
 azure-cli
+cloud-sql-proxy
 delta
 dive
 fzf
 golang
 gradle
+groovy
 helm
 helmfile
 istioctl
@@ -16,12 +18,11 @@ krew
 kubectl
 kubectx
 kubeseal
-kustomize
 maven
 mongosh
 nodejs
-postgres
 python
+ruby
 shellcheck
 skaffold
 sops

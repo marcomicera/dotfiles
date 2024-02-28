@@ -96,8 +96,8 @@ globalTextComponentSettings:
 listx: {uid: x39597832768}
 project: {}
 uiSettings: {theme: auto, themeChanged: false, fileSearchPatternType: 1}
-vcsRecords: {lastGitUsage: 1697533769940}
-updateCheck: {prevCheckTime: 1697458024821, checkedBuild: 19285, mode: download, upgradeInstallation: false}
+vcsRecords: {lastGitUsage: 1706015244007}
+updateCheck: {prevCheckTime: 1706026782858, checkedBuild: 19294, mode: download, upgradeInstallation: false}
 updateCheckDg: {}
 proxy: {enabled: false, autoDetect: true}
 spellCheck:
@@ -107,7 +107,7 @@ spellCheck:
   activeDictionary: 0
 lastUsedVersion: '22.1'
 firstUsedTime: 1678626423290
-tempDirs: [/var/folders/k7/rp7dtsg929s0svw93hx2bjc80000gn/T/smartgit17695622789717080373]
+tempDirs: [/var/folders/k7/rp7dtsg929s0svw93hx2bjc80000gn/T/smartgit1385670576520233724]
 machineId: a2f808d0
 warnForMissingMasterPassword: false
 sendStacktraces2: false

@@ -56,5 +56,8 @@
     // Terraform
     "[terraform]": {
       "editor.formatOnSave": true
-    }
+    },
+
+    // Git
+    "git.openRepositoryInParentFolders": "always"
 }

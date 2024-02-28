@@ -1,10 +1,12 @@
 1password-cli
-gitnuro
+android-platform-tools
 gittyup
 maccy
 meld
+monitorcontrol
 numi
 raycast
 rectangle
 stats
 visual-studio-code
+warp

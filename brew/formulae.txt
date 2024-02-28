@@ -1,6 +1,7 @@
 asdf
 azure-cli
 bat
+busser/tap/tfautomv
 docker-compose
 fd
 gh
@@ -14,12 +15,14 @@ jq
 k2tf
 k9s
 lazydocker
+mongodb-atlas-cli
 nano
 nnn
-padok-team/tap/tfautomv
 pinentry-mac
+postgresql@14
 powerlevel10k
 pre-commit
+python@3.10
 remake
 ruby
 sponge
@@ -30,6 +33,7 @@ the_silver_searcher
 thefuck
 tldr
 tree
+virtualenv
 watch
 wget
 yamllint

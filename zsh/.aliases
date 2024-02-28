@@ -13,6 +13,9 @@ alias lll="l"
 # grep
 alias grepi='grep -i'
 
+# diff
+alias diff='delta'
+
 # ag (The Silver Searcher)
 # alias ag="ag --context 3 --unrestricted"
 
@@ -21,9 +24,39 @@ alias gcs="git commit -S"
 alias gcsm="gcs -m"
 alias gcse="gcs --allow-empty"
 alias gcsem="gcse -m"
+fzf-git-branch() {
+    git rev-parse HEAD > /dev/null 2>&1 || return
+
+    git branch --color=always --all --sort=-committerdate |
+        grep -v HEAD |
+        fzf --height 50% --ansi --no-multi --preview-window right:65% \
+            --preview 'git log -n 50 --color=always --date=short --pretty="format:%C(auto)%cd %h%d %s" $(sed "s/.* //" <<< {})' |
+        sed "s/.* //"
+}
+fzf-git-checkout() {
+    git rev-parse HEAD > /dev/null 2>&1 || return
+
+    local branch
+
+    branch=$(fzf-git-branch)
+    if [[ "$branch" = "" ]]; then
+        echo "No branch selected."
+        return
+    fi
+
+    # If branch name starts with 'remotes/' then it is a remote branch. By
+    # using --track and a remote branch name, it is the same as:
+    # git checkout -b branchName --track origin/branchName
+    if [[ "$branch" = 'remotes/'* ]]; then
+        git checkout --track $branch
+    else
+        git checkout $branch;
+    fi
+}
+alias gc="fzf-git-checkout"
 
 # tree
-alias tree='colorls --tree --git-status'
+alias tree='tree' # 'colorls --tree --git-status'
 alias t='tree'
 
 # vim
@@ -88,10 +121,10 @@ alias cupd="docker-compose up -d"
 
 # kubectl
 alias k="kubectl"
-alias ctx="kubectx"
-alias cctx="kubectx --current"
-alias ns="kubens"
-alias cns="kubens --current"
+alias kx="kubectx"
+alias kxc="kubectx --current"
+alias kn="kubens"
+alias knc="kubens --current"
 
 # kustomize
 alias ku="kustomize"

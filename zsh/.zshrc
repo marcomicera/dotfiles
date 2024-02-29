@@ -1,33 +1,29 @@
 # zmodload zsh/zprof
 
 # Powerlevel10k
-# if [ "$TERM_PROGRAM" != "WarpTerminal" ]; then
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-# fi
 
 # asdf
 fpath+=$HOMEBREW_PREFIX/share/zsh/site-functions
 source $(brew --prefix asdf)/libexec/asdf.sh
 export PATH=~/.asdf/shims:"${PATH}"
 
-if [ "$TERM_PROGRAM" != "WarpTerminal" ]; then
-    plugins=(
-        iterm2
-        gcloud
-        kubectl
-        kubectx
-        zsh-autosuggestions
-        zsh-syntax-highlighting
-    )
-    export ZSH="${HOME}/.oh-my-zsh"
-    export ZSH_CUSTOM=$ZSH/custom
-    ZSH_THEME="powerlevel10k/powerlevel10k"
-    source $ZSH/oh-my-zsh.sh
-    source ~/.iterm2_shell_integration.zsh
-fi
+plugins=(
+    iterm2
+    gcloud
+    kubectl
+    kubectx
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+)
+export ZSH="${HOME}/.oh-my-zsh"
+export ZSH_CUSTOM=$ZSH/custom
+ZSH_THEME="powerlevel10k/powerlevel10k"
+source $ZSH/oh-my-zsh.sh
+source ~/.iterm2_shell_integration.zsh
 
 export VISUAL='vim'
 export EDITOR='vim'

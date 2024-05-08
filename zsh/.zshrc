@@ -12,8 +12,11 @@ source $(brew --prefix asdf)/libexec/asdf.sh
 export PATH=~/.asdf/shims:"${PATH}"
 
 plugins=(
+	asdf
+	docker
     iterm2
     gcloud
+    gh
     kubectl
     kubectx
     zsh-autosuggestions

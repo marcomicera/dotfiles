@@ -5,6 +5,7 @@ golang.go
 hashicorp.hcl
 hashicorp.terraform
 iliazeus.vscode-ansi
+jasonnutter.vscode-codeowners
 mindaro-dev.file-downloader
 ms-python.debugpy
 ms-python.python

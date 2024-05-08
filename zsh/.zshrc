@@ -7,7 +7,7 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # asdf
-fpath+=$HOMEBREW_PREFIX/share/zsh/site-functions
+fPATH+=:$HOMEBREW_PREFIX/share/zsh/site-functions
 source $(brew --prefix asdf)/libexec/asdf.sh
 export PATH=~/.asdf/shims:"${PATH}"
 
@@ -51,11 +51,8 @@ source ~/.completions
 # Work-related
 source ~/.work
 
-# Ruby
-PATH+=~/.gem/ruby/2.6.0/bin
-
 # nnn
-PATH+=~/.nnn
+PATH+=:~/.nnn
 export NNN_BMS="g:$HOME/git,h:$HOME"
 
 ##############
@@ -73,7 +70,7 @@ export KUBE_EDITOR="code -w"
 # complete -o nospace -C /usr/local/bin/kubecolor kubecolor
 
 # Krew (plugins)
-PATH+=~/.krew/bin
+PATH+=:"${KREW_ROOT:-$HOME/.krew}/bin"
 
 # k9s
 export XDG_CONFIG_HOME=~/.config
@@ -84,7 +81,7 @@ export XDG_CONFIG_HOME=~/.config
 ##############
 
 # Python
-PATH+=~/Library/Python/2.7/bin # pip for pre-installed Python on macOS
+PATH+=:~/Library/Python/2.7/bin # pip for pre-installed Python on macOS
 
 # jEnv
 # export PATH=$PATH:~/.jenv/bin
@@ -112,7 +109,7 @@ source ~/.aliases
 # gcloud #
 ##########
 
-PATH+=~/google-cloud-sdk/bin
+PATH+=:~/google-cloud-sdk/bin
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/micera/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/micera/google-cloud-sdk/path.zsh.inc'; fi

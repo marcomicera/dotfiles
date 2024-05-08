@@ -2,6 +2,7 @@ aws-vault
 awscli
 azure-cli
 cloud-sql-proxy
+cloudflared
 delta
 dive
 fzf
@@ -14,7 +15,6 @@ istioctl
 java
 jsonnet
 k9s
-krew
 kubectl
 kubectx
 kubeseal

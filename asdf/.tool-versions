@@ -11,7 +11,7 @@ skaffold 2.1.0
 helm 3.9.0
 jsonnet 0.18.0
 golang 1.22.0
-tflint 0.34.1
+tflint 0.51.0
 tfsec 1.8.0
 nodejs lts
 fzf 0.43.0
@@ -19,7 +19,7 @@ mongosh 1.3.1
 delta 0.15.1
 awscli 2.7.4
 aws-vault 6.6.0
-krew 0.4.3
+krew 0.4.4
 kubeseal 0.18.0
 yq 4.27.5
 pipenv 2022.7.4
@@ -33,3 +33,4 @@ dyff 1.6.0
 groovy 4.0.9
 ruby 3.3.0
 cloud-sql-proxy 2.8.2
+cloudflared 2024.4.1

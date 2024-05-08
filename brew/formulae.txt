@@ -1,5 +1,6 @@
 asdf
 azure-cli
+azure/kubelogin/kubelogin
 bat
 busser/tap/tfautomv
 docker-compose
@@ -10,6 +11,7 @@ gitui
 gnupg
 grep
 helmfile
+hmarr/tap/codeowners
 htop
 jq
 k2tf

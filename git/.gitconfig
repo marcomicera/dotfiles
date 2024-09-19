@@ -18,9 +18,7 @@
     temp_file=$(mktemp); \
     sed -e \"s/INF-XXXX/$branch/g\" -e \"s/- \\[ \\] Linked to a Jira ticket/- \\[x\\] Linked to a Jira ticket/g\" $(git rev-parse --show-toplevel)/.github/pull_request_template.md > $temp_file; \
     git push --set-upstream origin $(git b) && \
-    gh pr create --draft \
-    --assignee=@me \
-    --reviewer=infrastructure/team-infra \
+    gh pr create -d -a=@me \
     --body-file=$temp_file \
     --fill-first; \
     rm $temp_file; \

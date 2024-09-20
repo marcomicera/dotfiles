@@ -17,7 +17,7 @@
     branch=$(git b | cut -d '-' -f 1-2); \
     temp_file=$(mktemp); \
     sed -e \"s/INF-XXXX/$branch/g\" -e \"s/- \\[ \\] Linked to a Jira ticket/- \\[x\\] Linked to a Jira ticket/g\" $(git rev-parse --show-toplevel)/.github/pull_request_template.md > $temp_file; \
-    git push --set-upstream origin $(git b) && \
+    git push -u origin HEAD && \
     gh pr create -d -a=@me \
     --body-file=$temp_file \
     --fill-first; \

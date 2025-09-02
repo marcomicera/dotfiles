@@ -1,13 +1,9 @@
-1password-cli
-android-platform-tools
-bruno
-gittyup
+chromium
 maccy
 meld
 monitorcontrol
 numi
 raycast
 rectangle
-stats
 visual-studio-code
-warp
+vscodium

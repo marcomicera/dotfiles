@@ -80,11 +80,11 @@ magenta "vim"
   cp -R "${VIM_RUNTIME_PLUGINS}"/ "${CWD}/vim/my_plugins" 2>/dev/null || : # https://serverfault.com/a/153893
 )
 
-# Visual Studio Code (VSCode)
-magenta "Visual Studio Code"
+# VSCodium
+magenta "VSCodium"
 (
   set -x
-  code --list-extensions > "${CWD}"/code/extensions.txt # Extensions list (installation: https://stackoverflow.com/a/49398449)
+  codium --list-extensions > "${CWD}"/codium/extensions.txt # Extensions list (installation: https://stackoverflow.com/a/49398449)
 )
 
 printf "\n"

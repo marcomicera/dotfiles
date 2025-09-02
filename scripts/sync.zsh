@@ -131,12 +131,12 @@ magenta "vim"
   fi
 )
 
-# Visual Studio Code (VSCode)
-magenta "Visual Studio Code"
+# VSCodium
+magenta "VSCodium"
 (
   set -x
-  symlink "${CWD}"/code ~/Library/Application\ Support/Code/User/settings.json
-  symlink "${CWD}"/code ~/Library/Application\ Support/Code/User/keybindings.json
+  symlink "${CWD}"/codium ~/Library/Application\ Support/VSCodium/User/settings.json
+  symlink "${CWD}"/codium ~/Library/Application\ Support/VSCodium/User/keybindings.json
 )
 
 # k9s

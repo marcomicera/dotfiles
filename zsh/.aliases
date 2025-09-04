@@ -1,6 +1,7 @@
-# Codium
+# Text editors
 alias code='codium'
 alias code.='codium .'
+alias cursor.='cursor .'
 
 # bat
 alias cat='bat'

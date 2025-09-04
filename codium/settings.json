@@ -58,5 +58,8 @@
     },
 
     // Git
-    "git.openRepositoryInParentFolders": "always"
+    "git.openRepositoryInParentFolders": "always",
+
+    // Makefile
+    "makefile.configureOnOpen": false
 }

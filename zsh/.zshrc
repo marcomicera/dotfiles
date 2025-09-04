@@ -15,7 +15,7 @@ plugins=(
 	asdf
 	docker
     iterm2
-    gcloud
+    # gcloud
     gh
     kubectl
     kubectx
@@ -41,6 +41,13 @@ if [ "$TERM_PROGRAM" = "WarpTerminal" ]; then
 fi
 # autoload -U +X bashcompinit && bashcompinit
 
+export SSH_AUTH_SOCK="/Users/micera/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock"
+
+# Ruby
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+export PATH="$PATH:$GEM_HOME/bin"
+
 # Golang
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
@@ -52,7 +59,7 @@ source ~/.functions
 source ~/.completions
 
 # Work-related
-source ~/.work
+# source ~/.work
 
 # nnn
 PATH+=:~/.nnn
@@ -73,10 +80,10 @@ export KUBE_EDITOR="code -w"
 # complete -o nospace -C /usr/local/bin/kubecolor kubecolor
 
 # Krew (plugins)
-PATH+=:"${KREW_ROOT:-$HOME/.krew}/bin"
+# PATH+=:"${KREW_ROOT:-$HOME/.krew}/bin"
 
 # k9s
-export XDG_CONFIG_HOME=~/.config
+# export XDG_CONFIG_HOME=~/.config
 
 ##############
 # END        #
@@ -84,7 +91,7 @@ export XDG_CONFIG_HOME=~/.config
 ##############
 
 # Python
-PATH+=:~/Library/Python/2.7/bin # pip for pre-installed Python on macOS
+# PATH+=:~/Library/Python/2.7/bin # pip for pre-installed Python on macOS
 
 # jEnv
 # export PATH=$PATH:~/.jenv/bin
@@ -96,13 +103,13 @@ PATH+=:~/Library/Python/2.7/bin # pip for pre-installed Python on macOS
 # export PATH=$PATH:$MAVEN_BIN
 
 # Terraform
-export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
+# export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
 
 # fuck
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Aliases
 source ~/.aliases
@@ -112,13 +119,13 @@ source ~/.aliases
 # gcloud #
 ##########
 
-PATH+=:~/google-cloud-sdk/bin
+# PATH+=:~/google-cloud-sdk/bin
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/micera/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/micera/google-cloud-sdk/path.zsh.inc'; fi
+# if [ -f '/Users/micera/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/micera/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/micera/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/micera/google-cloud-sdk/completion.zsh.inc'; fi
+# if [ -f '/Users/micera/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/micera/google-cloud-sdk/completion.zsh.inc'; fi
 
 ##########
 # END    #

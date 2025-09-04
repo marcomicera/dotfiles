@@ -31,6 +31,5 @@ azure-cli 2.45.0
 istioctl 1.19.3
 dyff 1.6.0
 groovy 4.0.9
-ruby 3.3.0
 cloud-sql-proxy 2.8.2
 cloudflared 2024.4.1

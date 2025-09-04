@@ -10,6 +10,7 @@ pinentry-mac
 powerlevel10k
 prettier
 python@3.10
+ruby
 the_silver_searcher
 tldr
 tree

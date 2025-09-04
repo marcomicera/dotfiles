@@ -1,3 +1,7 @@
+# Codium
+alias code='codium'
+alias code.='codium .'
+
 # bat
 alias cat='bat'
 

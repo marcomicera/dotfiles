@@ -1,7 +1,4 @@
 {
-    // Theme
-    "workbench.colorTheme": "Default Dark+",
-
     // No welcome page
     "workbench.startupEditor": "none",
 

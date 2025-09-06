@@ -4,6 +4,7 @@ SCRIPTS = $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))/scripts
 .PHONY: all
 # .SILENT: all
 all:
+	$(MAKE) submodules
 	$(MAKE) sync NO_GIT_INFO=1
 	$(MAKE) import NO_GIT_INFO=1
 	$(MAKE) status

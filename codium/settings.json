@@ -38,6 +38,7 @@
     "vsicons.dontShowNewVersionMessage": true,
     
     // Terminal
+    "terminal.integrated.defaultProfile.osx": "zsh",
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.fontSize": 11,
     "terminal.integrated.fontFamily": "Hack Nerd Font",

@@ -13,6 +13,11 @@
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.unicodeHighlight.nonBasicASCII": false,
 
+    // Theme
+    "window.autoDetectColorScheme": true,
+    "workbench.preferredDarkColorTheme": "Default Dark+",
+    "workbench.preferredLightColorTheme": "Default Light+",
+
     // File explorer
     "files.exclude": { // what to show
       "**/.git": false,
@@ -49,6 +54,7 @@
     
     // Don't send usage data and errors to Red Hat servers
     "redhat.telemetry.enabled": false,
+    
     "[python]": {
       "editor.formatOnType": true
     },
@@ -62,5 +68,15 @@
     "git.openRepositoryInParentFolders": "always",
 
     // Makefile
-    "makefile.configureOnOpen": false
+    "makefile.configureOnOpen": false,
+
+    // Go
+    "gopls": {
+      "ui.semanticTokens": true,
+      "hoverKind": "SynopsisDocumentation", // No/Synopsis/Full, default Synopsis
+      "completeUnimported": true,
+      "usePlaceholders": true,
+      "completionDocumentation": true,
+    },
+    "continue.enableNextEdit": false,
 }

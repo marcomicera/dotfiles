@@ -4,6 +4,7 @@ coreutils
 dty1er/tap/kubecolor
 gh
 git
+git-filter-repo
 gitui
 gnupg
 go

@@ -7,3 +7,4 @@ raycast
 rectangle
 visual-studio-code
 vscodium
+warp

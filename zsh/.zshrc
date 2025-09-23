@@ -9,7 +9,8 @@ fi
 # asdf
 fPATH+=:$HOMEBREW_PREFIX/share/zsh/site-functions
 source $(brew --prefix asdf)/libexec/asdf.sh
-export PATH=~/.asdf/shims:"${PATH}"
+export ASDF_DIR="${HOME}/.asdf"
+export PATH="${ASDF_DIR}:${PATH}"
 
 plugins=(
 	asdf
@@ -49,8 +50,11 @@ export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
 
 # Golang
-export GOPATH=~/go
-export PATH=$PATH:$GOPATH/bin
+export GOPATH="$(go env GOPATH)"
+export GOBIN="${GOPATH}/bin"
+export PATH="${PATH}:${GOBIN}"
+export GOROOT="$(brew --prefix go)/libexec"
+export PATH="$PATH:$GOROOT/bin"
 
 # Functions
 source ~/.functions

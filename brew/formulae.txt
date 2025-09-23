@@ -4,6 +4,7 @@ gh
 git
 gitui
 gnupg
+go
 grep
 php
 pinentry-mac

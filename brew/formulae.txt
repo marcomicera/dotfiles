@@ -1,5 +1,6 @@
 asdf
 bat
+coreutils
 dty1er/tap/kubecolor
 gh
 git

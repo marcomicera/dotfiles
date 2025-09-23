@@ -9,3 +9,4 @@ kubectl
 kubectx
 php
 skaffold
+terraform

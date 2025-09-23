@@ -7,12 +7,16 @@ gitui
 gnupg
 go
 grep
+k9s
+kind
 php
 pinentry-mac
 powerlevel10k
+pre-commit
 prettier
 python@3.10
 ruby
+tflint
 the_silver_searcher
 tldr
 tree

@@ -78,10 +78,7 @@ export NNN_BMS="g:$HOME/git,h:$HOME"
 export KUBE_EDITOR="code -w"
 
 # kubecolor
-# command -v kubecolor >/dev/null 2>&1 && alias kubectl="kubecolor"
-
-# kubecolor autocompletion
-# complete -o nospace -C /usr/local/bin/kubecolor kubecolor
+compdef kubecolor=kubectl
 
 # Krew (plugins)
 # PATH+=:"${KREW_ROOT:-$HOME/.krew}/bin"

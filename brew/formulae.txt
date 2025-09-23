@@ -1,5 +1,6 @@
 asdf
 bat
+dty1er/tap/kubecolor
 gh
 git
 gitui

@@ -9,6 +9,7 @@ gitui
 gnupg
 go
 grep
+helm
 k9s
 kind
 php

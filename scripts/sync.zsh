@@ -139,6 +139,14 @@ magenta "VSCodium"
   symlink "${CWD}"/codium ~/Library/Application\ Support/VSCodium/User/keybindings.json
 )
 
+# Cursor
+magenta "Cursor"
+(
+  set -x
+  symlink "${CWD}"/codium ~/Library/Application\ Support/Cursor/User/settings.json
+  symlink "${CWD}"/codium ~/Library/Application\ Support/Cursor/User/keybindings.json
+)
+
 # # k9s
 # if [ -n ${XDG_CONFIG_HOME} ]; then 
 #   magenta "k9s"

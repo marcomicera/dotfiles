@@ -7,11 +7,12 @@
 
     // Editor
     "editor.fontSize": 11,
-    "files.autoSave": "onFocusChange", // autosave
+    "files.autoSave": "onFocusChange",
     "editor.minimap.enabled": false, // no minimap
     "workbench.editor.enablePreview": false, // always open files in new tabs
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.unicodeHighlight.nonBasicASCII": false,
+    "workbench.editor.revealIfOpen": true,
 
     // Theme
     "window.autoDetectColorScheme": true,
@@ -37,6 +38,7 @@
     // Todo Tree
     "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^|%|\\\\)\\s*($TAGS)\\{*|^\\s*- \\[ \\])",
     "todo-tree.regex.regexCaseSensitive": false,
+    "todo-tree.highlights.enabled": true,
 
     // Icons
     "workbench.iconTheme": "vscode-icons",
@@ -55,22 +57,20 @@
     // Don't send usage data and errors to Red Hat servers
     "redhat.telemetry.enabled": false,
     
-    "[python]": {
-      "editor.formatOnType": true
-    },
-
-    // Terraform
-    "[terraform]": {
-      "editor.formatOnSave": true
-    },
-
     // Git
     "git.openRepositoryInParentFolders": "always",
 
-    // Makefile
+    // Laguage-specific
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "makefile.configureOnOpen": false,
-
-    // Go
+    "[python]": {
+      "editor.formatOnType": true
+    },
+    "[terraform]": {
+      "editor.formatOnSave": true
+    },
     "gopls": {
       "ui.semanticTokens": true,
       "hoverKind": "SynopsisDocumentation", // No/Synopsis/Full, default Synopsis
@@ -78,5 +78,7 @@
       "usePlaceholders": true,
       "completionDocumentation": true,
     },
+
+    // Continue
     "continue.enableNextEdit": false,
 }

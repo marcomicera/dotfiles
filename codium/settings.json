@@ -13,6 +13,7 @@
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.unicodeHighlight.nonBasicASCII": false,
     "workbench.editor.revealIfOpen": true,
+    "editor.accessibilitySupport": "off",
 
     // Theme
     "window.autoDetectColorScheme": true,

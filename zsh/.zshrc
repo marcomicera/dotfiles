@@ -6,6 +6,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# My binaries
+export PATH="${HOME}/bin:${PATH}"
+
 # asdf
 fPATH+=:$HOMEBREW_PREFIX/share/zsh/site-functions
 source $(brew --prefix asdf)/libexec/asdf.sh

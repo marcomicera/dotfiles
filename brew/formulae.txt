@@ -19,6 +19,7 @@ pre-commit
 prettier
 python@3.10
 ruby
+terraform-docs
 tflint
 the_silver_searcher
 tldr

@@ -91,11 +91,11 @@ magenta "asdf"
 #   symlink "${CWD}"/.gnupg ~/.gnupg/gpg*.conf 
 # )
 
-# # SmartGit
-# magenta "SmartGit"
-# (
-#   symlink "${CWD}" /usr/local/bin/sm
-# )
+# SmartGit
+magenta "SmartGit"
+(
+  symlink "${CWD}"/bin /usr/local/bin/sm
+)
 
 # nano
 magenta "nano"

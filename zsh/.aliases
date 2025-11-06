@@ -3,6 +3,9 @@ alias code='codium'
 alias code.='codium .'
 alias cursor.='cursor .'
 
+# SmartGit
+alias sm.='sm .'
+
 # bat
 alias cat='bat'
 

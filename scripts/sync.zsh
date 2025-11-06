@@ -37,7 +37,7 @@ magenta "zsh"
   symlink "${CWD}"/zsh ~/.zshrc
   symlink "${CWD}"/zsh ~/.p10k.zsh
   symlink "${CWD}"/zsh ~/.hushlogin # disabled "last login" prompt
-  # symlink "${CWD}"/zsh ~/.config/iterm2/settings/com.googlecode.iterm2.plist  # iTerm2 settings
+  # symlink "${CWD}"/zsh ~/.config/iterm2/settings/com.googlecode.iterm2.plist  # Symlink in iTerm2's settings -> General -> Settings
   symlink "${CWD}"/zsh ~/.iterm2_shell_integration.zsh # https://iterm2.com/documentation-shell-integration.html
   symlink "${CWD}"/zsh ~/.fzf.zsh 
   symlink "${CWD}"/.config/bat ~/.config/bat/config 

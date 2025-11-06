@@ -47,9 +47,9 @@ magenta "zsh"
 # magenta "JetBrains IDEs"
 # (
 #   set -x
-#   symlink "${CWD}" /usr/local/bin/idea
-#   symlink "${CWD}" /usr/local/bin/storm
-#   symlink "${CWD}" /usr/local/bin/charm
+#   symlink "${CWD}"/bin /usr/local/bin/idea
+#   symlink "${CWD}"/bin /usr/local/bin/storm
+#   symlink "${CWD}"/bin /usr/local/bin/charm
 # )
 
 # Oh My Zsh

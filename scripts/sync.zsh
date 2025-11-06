@@ -161,6 +161,7 @@ fi
 # magenta "Rectangle"
 # (
 #   set -x
+#	# Export the file in Rectangle's settings
 #   symlink "${CWD}"/.config/rectangle ~/Library/Application\ Support/Rectangle/RectangleConfig.json
 # )
 

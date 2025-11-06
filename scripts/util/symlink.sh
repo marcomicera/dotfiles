@@ -1,10 +1,11 @@
 #!/usr/bin/env zsh
 
-# This repo's absolute path
-DOTFILES_ABSOLUTE_PATH="$(
-  cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit
-  realpath $(pwd -P)/../..
-)"
+# helper that retries with sudo on failure
+_try() {
+  "$@" && return 0
+  # only escalate if not already root
+  [ "${EUID:-$(id -u)}" -ne 0 ] && sudo "$@"
+}
 
 # Creates a symlink ${1} -> ${@:2} (glob pattern)
 function symlink() {
@@ -17,22 +18,22 @@ function symlink() {
     for file in "${@:2}"; do
 
         # If file to be symlinked is not a directory and doesn't exist
-        [ ! -d "${1}/${2##*/}" ] && [ ! -f "${1}/${2##*/}" ] && {
-            echo "File ${1}/${2##*/} does not exist. Terminating..."
-            exit 1
-        }
+		[ ! -d "${1}/${file##*/}" ] && [ ! -f "${1}/${file##*/}" ] && {
+			echo "File ${1}/${file##*/} does not exist. Terminating..."
+			exit 1
+	    }
 
         # If `ln` target file is not a directory and doesn't exist
-        [ ! -d "${1}/${2##*/}" ] && [ ! -f "${file}" ] && {
+        [ ! -d "${1}/${file##*/}" ] && [ ! -f "${file}" ] && {
 
             # Create the `ln` target file
             echo "${file} does not exist, creating..."
-            mkdir -p $(dirname "${file}") || exit
-            touch "${file}" || exit
+			_try mkdir -p "$(dirname "${file}")" || exit
+			_try touch "${file}" || exit
         }
 
         set -x
-        ln -nfs "${1}/${file##*/}" "${file}"
+	    _try ln -nfs "${1}/${file##*/}" "${file}" || exit
         { set +x; } 2>/dev/null # https://stackoverflow.com/a/19226038
     done
 }

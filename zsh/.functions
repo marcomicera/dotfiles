@@ -59,3 +59,26 @@ function today() {
 function gitconfig() {
     <<< $(cat ~/.ssh/.gitconfig-"${1}") < ./.git/config | sponge ./.git/config
 }
+
+bwlogin() {
+  # Logs into Bitwarden and exports the session token
+  # Usage: bwlogin [--apikey]
+  if [[ "$1" == "--apikey" ]]; then
+    export BW_SESSION="$(BW_CLIENTID="$BW_CLIENTID" BW_CLIENTSECRET="$BW_CLIENTSECRET" bw login --apikey --raw)"
+  else
+    export BW_SESSION="$(bw unlock --raw)"
+  fi
+
+  if [[ -z "$BW_SESSION" ]]; then
+    echo "Bitwarden login failed" >&2
+    return 1
+  fi
+  echo "Bitwarden session active"
+}
+
+bwlogout() {
+  # Locks Bitwarden and unsets session token
+  bw lock >/dev/null 2>&1
+  unset BW_SESSION
+  echo "Bitwarden session closed"
+}

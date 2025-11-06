@@ -7,6 +7,11 @@
     <img src="img/preview.png"/>
 </p>
 
+### Manual imports
+
+- Rectangle (into [`.config/rectangle/RectangleConfig.json`](.config/rectangle/RectangleConfig.json))
+- iTerm2 (into [`zsh/com.googlecode.iterm2.plist`](zsh/com.googlecode.iterm2.plist))
+
 ## Dependencies
 
 - [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh)

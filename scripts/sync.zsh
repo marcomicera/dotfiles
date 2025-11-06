@@ -37,7 +37,6 @@ magenta "zsh"
   symlink "${CWD}"/zsh ~/.zshrc
   symlink "${CWD}"/zsh ~/.p10k.zsh
   symlink "${CWD}"/zsh ~/.hushlogin # disabled "last login" prompt
-  # symlink "${CWD}"/zsh ~/.config/iterm2/settings/com.googlecode.iterm2.plist  # Symlink in iTerm2's settings -> General -> Settings
   symlink "${CWD}"/zsh ~/.iterm2_shell_integration.zsh # https://iterm2.com/documentation-shell-integration.html
   symlink "${CWD}"/zsh ~/.fzf.zsh 
   symlink "${CWD}"/.config/bat ~/.config/bat/config 
@@ -155,14 +154,5 @@ if [ -n ${XDG_CONFIG_HOME} ]; then
     symlink "${CWD}"/.config/k9s ${XDG_CONFIG_HOME}/k9s/plugins.yaml
   )
 fi
-
-# # Rectangle
-# # https://github.com/rxhanson/Rectangle
-# magenta "Rectangle"
-# (
-#   set -x
-#	# Export the file in Rectangle's settings
-#   symlink "${CWD}"/.config/rectangle ~/Library/Application\ Support/Rectangle/RectangleConfig.json
-# )
 
 printf "\n"

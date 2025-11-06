@@ -83,13 +83,13 @@ magenta "asdf"
 )
 
 # git
-# magenta "git"
-# (
-#   set -x
-#   symlink "${CWD}"/git ~/.gitconfig
+magenta "git"
+(
+  set -x
+  symlink "${CWD}"/git ~/.gitconfig
 #   symlink "${CWD}"/.config/git ~/.config/git/ignore
 #   symlink "${CWD}"/.gnupg ~/.gnupg/gpg*.conf 
-# )
+)
 
 # SmartGit
 magenta "SmartGit"

@@ -1,31 +1,38 @@
-[gc]
-	autoDetach = false
+# Signing and GPG
 [commit]
 	gpgSign = true
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers
+[tag]
+	gpgSign = true
+[gpg]
+	format = ssh
+
+# Identity
 [user]
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID6WK+7ZJe931ec97Imijf9wQyetIXcDv0hK246Txq4A
 	name = Marco Micera
+	email = marco.micera@gmail.com
+
+# UI and helpers
+[gui]
+	pruneduringfetch = true
+[help]
+	autocorrect = 50
+[smartgit "submodule"]
+	fetchalways = false
+	update = true
+	initializenew = true
+
+# Ignore
 [core]
 	excludesFile = ~/.config/git/ignore
-[alias]
-	b = !git rev-parse --abbrev-ref HEAD
-	d = !git diff
-	s = !git status
-	ui = !gitui
-	ll = !git pull
-# [color "diff"]
-#     meta = yellow
-#     frag = magenta
-#     old = red bold
-#     new = green
-#     plain = white
-[color "branch"]
-	current = green bold
-[color "status"]
-	added = green bold
-	changed = yellow bold
-	untracked = red bold
 
-# https://github.com/dandavison/delta
+# Diff and the Delta pager: https://github.com/dandavison/delta
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default # https://dandavison.github.io/delta/color-moved-support.html
 [core]
     pager = delta
 [interactive]
@@ -46,9 +53,34 @@
 	# minus-empty-line-marker-style = normal normal
 	# plus-empty-line-marker-style = normal normal
 	# line-numbers-right-format = "{np:^4}│ "
-[merge]
-    conflictstyle = diff3
-[diff]
-    colorMoved = default # https://dandavison.github.io/delta/color-moved-support.html
-[help]
-	autocorrect = 50
+
+# Aliases
+[alias]
+	b = !git rev-parse --abbrev-ref HEAD
+	d = !git diff
+	s = !git status
+	ui = !gitui
+	ll = !git pull
+	p = !git push
+
+# Colors
+[color "diff"]
+    meta = yellow
+    frag = magenta
+    old = red bold
+    new = green
+    plain = white
+[color "branch"]
+	current = green bold
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+
+# Git
+[pull]
+	rebase = false
+[push]
+	recurseSubmodules = check
+[gc]
+	autoDetach = false

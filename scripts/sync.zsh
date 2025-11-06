@@ -148,13 +148,13 @@ magenta "Cursor"
 )
 
 # # k9s
-# if [ -n ${XDG_CONFIG_HOME} ]; then 
-#   magenta "k9s"
-#   (
-#     set -x
-#     symlink "${CWD}"/.config/k9s ${XDG_CONFIG_HOME}/k9s/plugin.yml
-#   )
-# fi
+if [ -n ${XDG_CONFIG_HOME} ]; then 
+  magenta "k9s"
+  (
+    set -x
+    symlink "${CWD}"/.config/k9s ${XDG_CONFIG_HOME}/k9s/plugins.yaml
+  )
+fi
 
 # # Rectangle
 # # https://github.com/rxhanson/Rectangle

@@ -87,7 +87,7 @@ compdef kubecolor=kubectl
 # PATH+=:"${KREW_ROOT:-$HOME/.krew}/bin"
 
 # k9s
-# export XDG_CONFIG_HOME=~/.config
+export XDG_CONFIG_HOME=~/.config
 
 ##############
 # END        #

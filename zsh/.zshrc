@@ -108,6 +108,7 @@ compdef kubecolor=kubectl
 
 # Terraform
 # export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
+complete -o nospace -C $(asdf which terraform) terraform
 
 # fuck
 # eval $(thefuck --alias)

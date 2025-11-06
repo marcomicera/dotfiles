@@ -1,6 +1,19 @@
 # https://stackoverflow.com/a/23324703
 SCRIPTS = $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))/scripts
 
+# Open command
+ifeq ($(OS), Windows_NT)
+	OPEN := start
+else
+	UNAME := $(shell uname -s)
+	ifeq ($(UNAME), Linux)
+		OPEN := xdg-open
+	else ifeq ($(UNAME), Darwin)
+		OPEN := open
+	endif
+endif
+
+
 .PHONY: all
 # .SILENT: all
 all:
@@ -45,9 +58,23 @@ tree:
 		-a \
 		-I '.git|.gitignore|.idea|Makefile|README.md|img|import.zsh|util'
 
+.PHONY: start-docker
+start-docker:
+ifeq ($(UNAME), Darwin)
+	@if ! docker info > /dev/null 2>&1; then \
+		echo "Docker is not running. Attempting to start Docker.app..."; \
+		open -a Docker; \
+		echo "Waiting for Docker to start..."; \
+		while ! docker info > /dev/null 2>&1; do \
+			sleep 1; \
+		done; \
+		echo "Docker is now running."; \
+	fi
+endif
+
 .PHONY: gitleaks
 .SILENT: gitleaks
-gitleaks:
+gitleaks: start-docker
 	docker run \
 		--rm \
 		--name gitleaks \

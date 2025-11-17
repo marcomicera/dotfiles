@@ -8,7 +8,7 @@
 ## Manual imports
 
 - Rectangle (into [`.config/rectangle/RectangleConfig.json`](.config/rectangle/RectangleConfig.json))
-- iTerm2 (into [`zsh/com.googlecode.iterm2.plist`](zsh/com.googlecode.iterm2.plist))
+- iTerm2 (into [`iterm2/com.googlecode.iterm2.plist`](iterm2/com.googlecode.iterm2.plist))
 
 ## Dependencies
 

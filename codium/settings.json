@@ -6,7 +6,7 @@
     "security.workspace.trust.untrustedFiles": "open",
 
     // Editor
-    "editor.fontSize": 11,
+    "editor.fontSize": 12,
     "files.autoSave": "onFocusChange",
     "editor.minimap.enabled": false, // no minimap
     "workbench.editor.enablePreview": false, // always open files in new tabs
@@ -48,7 +48,7 @@
     // Terminal
     "terminal.integrated.defaultProfile.osx": "zsh",
     "terminal.external.osxExec": "iTerm.app",
-    "terminal.integrated.fontSize": 11,
+    "terminal.integrated.fontSize": 12,
     "terminal.integrated.fontFamily": "Hack Nerd Font",
     "terminal.integrated.scrollback": 9999,
 

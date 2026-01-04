@@ -18,7 +18,6 @@
 
     // Theme
     "window.autoDetectColorScheme": true,
-    "workbench.preferredDarkColorTheme": "Default Dark+",
     "workbench.preferredLightColorTheme": "Default Light+",
 
     // File explorer

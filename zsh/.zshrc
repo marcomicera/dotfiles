@@ -25,6 +25,7 @@ plugins=(
     kubectx
     zsh-autosuggestions
     zsh-syntax-highlighting
+	zsh-fzf-history-search
 )
 export ZSH="${HOME}/.oh-my-zsh"
 export ZSH_CUSTOM=$ZSH/custom

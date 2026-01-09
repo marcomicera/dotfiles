@@ -84,7 +84,7 @@ export KUBE_EDITOR="code -w"
 compdef kubecolor=kubectl
 
 # Krew (plugins)
-# PATH+=:"${KREW_ROOT:-$HOME/.krew}/bin"
+PATH+=:"${KREW_ROOT:-$HOME/.krew}/bin"
 
 # k9s
 export XDG_CONFIG_HOME=~/.config

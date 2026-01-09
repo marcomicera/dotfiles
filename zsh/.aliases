@@ -130,8 +130,10 @@ alias cupd="docker-compose up -d"
 
 # kubectl
 alias k="kubectl"
+alias kubectx="${KREW_ROOT:-$HOME/.krew}/bin/kubectl-ctx"
 alias kx="kubectx"
 alias kxc="kubectx --current"
+alias kubens="${KREW_ROOT:-$HOME/.krew}/bin/kubectl-ns"
 alias kn="kubens"
 alias knc="kubens --current"
 

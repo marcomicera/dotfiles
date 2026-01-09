@@ -1,12 +1,5 @@
-delta
-deno
-fzf
-golang
 helm
-helmfile
-k9s
 kubectl
-kubectx
-php
-skaffold
+remotectl
 terraform
+terragrunt

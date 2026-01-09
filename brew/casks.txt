@@ -1,10 +1,6 @@
-chromium
+1password-cli
 maccy
 meld
 monitorcontrol
-numi
-raycast
 rectangle
-visual-studio-code
 vscodium
-warp

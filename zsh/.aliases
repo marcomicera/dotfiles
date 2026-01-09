@@ -153,6 +153,7 @@ alias kmq="kubemqctl"
 # Terraform
 alias tf="terraform"
 alias tfo="tf output"
+alias tg="terragrunt"
 
 # Helm
 alias h="helm"

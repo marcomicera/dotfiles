@@ -108,7 +108,7 @@ export XDG_CONFIG_HOME=~/.config
 # export PATH=$PATH:$MAVEN_BIN
 
 # Terraform
-# export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
+export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
 complete -o nospace -C $(asdf which terraform) terraform
 
 # fuck

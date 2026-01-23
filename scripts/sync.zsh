@@ -152,6 +152,7 @@ if [ -n ${XDG_CONFIG_HOME} ]; then
   (
     set -x
     symlink "${CWD}"/.config/k9s ${XDG_CONFIG_HOME}/k9s/plugins.yaml
+    symlink "${CWD}"/.config/k9s ${XDG_CONFIG_HOME}/k9s/config.yaml
   )
 fi
 

@@ -1,5 +1,11 @@
 # zmodload zsh/zprof
 
+# --- Faster zsh startup (see zprof) ---
+# Skip compaudit on every shell (~20ms). Only set if you trust your fpath.
+export ZSH_DISABLE_COMPFIX=true
+# Skip Oh-My-Zsh upgrade check (~6–12ms)
+export DISABLE_AUTO_UPDATE=true
+
 # Powerlevel10k
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"

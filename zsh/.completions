@@ -1,10 +1,45 @@
-if [ "$TERM_PROGRAM" != "WarpTerminal" ]; then
-    source <(k9s completion zsh)
-    source <(stern --completion zsh)
-    source <(skaffold completion zsh)
-    complete -o nospace -C $(which terraform) terraform
-    complete -C '$(which aws_completer)' aws
-    source <(dyff completion zsh)
-    source <(helm completion zsh)
-    source <(atlas completion zsh)
+# Source completions from cache or generate on first use. Run refresh-zsh-completions to regenerate.
+if [[ "$TERM_PROGRAM" = WarpTerminal ]]; then
+	return
 fi
+
+ZSH_COMPLETIONS_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh-completions"
+mkdir -p "$ZSH_COMPLETIONS_CACHE"
+
+# Usage: _source_completion cache_name "full command that prints zsh completion"
+_source_completion() {
+	local name="$1" cmd="$2" cache_file="$ZSH_COMPLETIONS_CACHE/_$name"
+	if [[ -r "$cache_file" ]]; then
+		source "$cache_file"
+	elif [[ -n "$cmd" ]]; then
+		(eval "$cmd" 2>/dev/null) > "$cache_file" && [[ -s "$cache_file" ]] && source "$cache_file"
+	fi
+}
+
+# Cached: run binary only on cache miss or after refresh-zsh-completions
+_source_completion k9s             'k9s completion zsh'
+_source_completion stern           'stern --completion zsh'
+_source_completion skaffold        'skaffold completion zsh'
+_source_completion terraform-docs  'terraform-docs completion zsh'
+_source_completion dyff            'dyff completion zsh'
+_source_completion helm            'helm completion zsh'
+_source_completion remotectl       'remotectl completion zsh'
+_source_completion glab            'glab completion --shell zsh'
+_source_completion argocd          'argocd completion zsh'
+_source_completion cilium          'cilium completion zsh'
+_source_completion hubble          'hubble completion zsh'
+_source_completion mise            'mise completion --quiet zsh'
+_source_completion kubectl-neat    'kubectl neat completion zsh'
+
+# These stay as-is (cheap: just register completer, no heavy binary)
+complete -o nospace -C "$(command -v terraform 2>/dev/null)" terraform 2>/dev/null || true
+complete -C "$(command -v aws_completer 2>/dev/null)" aws 2>/dev/null || true
+complete -o nospace -C "$(command -v terragrunt 2>/dev/null || asdf which terragrunt 2>/dev/null)" terragrunt 2>/dev/null || true
+compdef _remotectl remotectl 2>/dev/null || true
+
+# Refresh all cached completions (run after installing/upgrading tools)
+refresh-zsh-completions() {
+	local d="${XDG_CACHE_HOME:-$HOME/.cache}/zsh-completions"
+	rm -f "$d"/_*
+	echo "Completions cache cleared. Restart zsh to regenerate."
+}

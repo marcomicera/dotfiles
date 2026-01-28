@@ -63,6 +63,10 @@ export PATH="$PATH:$GOROOT/bin"
 # Functions
 source ~/.functions
 
+# Krew (plugins)
+# Needs to be before completions
+PATH+=:"${KREW_ROOT:-$HOME/.krew}/bin"
+
 # Completions
 source ~/.completions
 
@@ -83,9 +87,6 @@ export KUBE_EDITOR="code -w"
 
 # kubecolor
 compdef kubecolor=kubectl
-
-# Krew (plugins)
-PATH+=:"${KREW_ROOT:-$HOME/.krew}/bin"
 
 # k9s
 export XDG_CONFIG_HOME=~/.config

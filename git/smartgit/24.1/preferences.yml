@@ -112,8 +112,8 @@ globalTextComponentSettings:
 listx: {uid: 947a9n3v53tp}
 project: {showWelcomeDialog: false}
 uiSettings: {theme: auto, themeChanged: false, fileSearchPatternType: 1}
-vcsRecords: {lastGitUsage: 1762445729278}
-updateCheck: {prevCheckTime: 1762445726642, checkedBuild: 21169, mode: download, upgradeInstallation: false}
+vcsRecords: {lastGitUsage: 1767954938184}
+updateCheck: {prevCheckTime: 1767957339259, checkedBuild: 21169, mode: download, upgradeInstallation: false}
 updateCheckDg: {}
 proxy: {enabled: false, autoDetect: true}
 spellCheck:

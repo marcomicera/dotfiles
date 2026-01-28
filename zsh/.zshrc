@@ -50,6 +50,14 @@ export EDITOR='vim'
 
 export SSH_AUTH_SOCK="/Users/micera/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock"
 
+# Mise (lazy: activate on first prompt, saves ~26ms at shell open)
+export MISE_OVERRIDE_TOOL_VERSIONS_FILENAMES=none
+_mise_lazy_init() {
+  eval "$(mise activate zsh)"
+  precmd_functions=(${precmd_functions:#_mise_lazy_init})
+}
+precmd_functions+=(_mise_lazy_init)
+
 # Ruby
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"

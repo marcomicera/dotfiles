@@ -33,6 +33,7 @@ magenta "zsh"
 (
   set -x
   symlink "${CWD}"/zsh ~/.aliases
+  symlink "${CWD}"/zsh ~/.completions
   symlink "${CWD}"/zsh ~/.functions
   symlink "${CWD}"/zsh ~/.zshrc
   symlink "${CWD}"/zsh ~/.p10k.zsh

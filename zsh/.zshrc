@@ -48,11 +48,6 @@ export EDITOR='vim'
 #   export EDITOR='mvim'
 # fi
 
-if [ "$TERM_PROGRAM" = "WarpTerminal" ]; then
-    autoload -U +X compinit && compinit -i
-fi
-# autoload -U +X bashcompinit && bashcompinit
-
 export SSH_AUTH_SOCK="/Users/micera/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock"
 
 # Ruby

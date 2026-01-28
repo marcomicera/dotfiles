@@ -30,7 +30,6 @@ plugins=(
     gh
     git
     kubectl
-    kubectx
     zsh-autosuggestions
     zsh-syntax-highlighting
 	zsh-fzf-history-search

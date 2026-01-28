@@ -1,7 +1,11 @@
 # Text editors
 alias code='codium'
 alias code.='codium .'
+alias c="cursor"
+alias cu="cursor"
 alias cursor.='cursor .'
+alias c.='cursor .'
+alias cu.='cursor .'
 
 # SmartGit
 alias sm.='sm .'
@@ -124,16 +128,14 @@ alias idae="idea"
 alias coed="code"
 
 # docker-compose
-alias c="docker-compose"
-alias cup="docker-compose up"
-alias cupd="docker-compose up -d"
+alias co="docker-compose"
+alias coup="docker-compose up"
+alias coupd="docker-compose up -d"
 
 # kubectl
 alias k="kubectl"
-alias kubectx="${KREW_ROOT:-$HOME/.krew}/bin/kubectl-ctx"
 alias kx="kubectx"
 alias kxc="kubectx --current"
-alias kubens="${KREW_ROOT:-$HOME/.krew}/bin/kubectl-ns"
 alias kn="kubens"
 alias knc="kubens --current"
 

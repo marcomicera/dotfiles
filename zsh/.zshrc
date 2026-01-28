@@ -77,6 +77,12 @@ source ~/.completions
 PATH+=:~/.nnn
 export NNN_BMS="g:$HOME/git,h:$HOME"
 
+# Cursor
+PATH+=:$HOME/.local/bin
+
+# Docker
+PATH+=:$HOME/.docker/bin
+
 ##############
 # START      #
 # Kubernetes #

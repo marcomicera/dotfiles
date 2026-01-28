@@ -12,4 +12,8 @@
         "key": "shift+cmd+'",
         "command": "workbench.action.terminal.focus"
     },
+    {
+        "key": "cmd+i",
+        "command": "composerMode.agent"
+    },
 ]

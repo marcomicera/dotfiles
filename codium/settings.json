@@ -2,6 +2,9 @@
     // No welcome page
     "workbench.startupEditor": "none",
 
+    // No release notes
+    "update.showReleaseNotes": false,
+
     // Always trust untrusted files
     "security.workspace.trust.untrustedFiles": "open",
 

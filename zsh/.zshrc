@@ -21,6 +21,7 @@ plugins=(
     iterm2
     # gcloud
     gh
+    git
     kubectl
     kubectx
     zsh-autosuggestions

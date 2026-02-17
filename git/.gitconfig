@@ -1,19 +1,20 @@
-# Signing and GPG
+# Identity and signing
 [commit]
 	gpgSign = true
 [gpg "ssh"]
 	allowedSignersFile = ~/.ssh/allowed_signers
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 [tag]
 	gpgSign = true
 [gpg]
 	format = ssh
-
-# Identity
 [user]
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID6WK+7ZJe931ec97Imijf9wQyetIXcDv0hK246Txq4A
 	name = Marco Micera
-	email = marco.micera@gmail.com
-
+[includeIf "gitdir:~/git/personal/"]
+    path = ~/.gitconfig-personal
+[includeIf "gitdir:~/git/work/"]
+    path = ~/.gitconfig-work
+	
 # UI and helpers
 [gui]
 	pruneduringfetch = true
@@ -40,28 +41,21 @@
 [delta]
     navigate = true # use n and N to move between diff sections
 	side-by-side = true
-    # minus-style = red bold normal
-	# plus-style = green bold normal
 	minus-emph-style = white bold red
-	# minus-non-emph-style = red bold normal
 	plus-emph-style = white bold green
-	# plus-non-emph-style = green bold normal
 	file-style = yellow bold none
 	file-decoration-style = yellow box
-	# hunk-header-style = magenta bold
 	hunk-header-decoration-style = magenta box
-	# minus-empty-line-marker-style = normal normal
-	# plus-empty-line-marker-style = normal normal
-	# line-numbers-right-format = "{np:^4}│ "
 
 # Aliases
 [alias]
 	b = !git rev-parse --abbrev-ref HEAD
+	p = !git push --set-upstream origin $(git b)
 	d = !git diff
 	s = !git status
 	ui = !gitui
 	ll = !git pull
-	p = !git push
+	recent = "for-each-ref --sort=committerdate --format='%(color:green)%(committerdate:iso)%09%(color:blue)%(committerdate:relative)%09%(color:reset)%(refname:short)' refs/heads/"
 
 # Colors
 [color "diff"]

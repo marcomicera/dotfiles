@@ -147,6 +147,13 @@ magenta "Cursor"
   symlink "${CWD}"/codium ~/Library/Application\ Support/Cursor/User/keybindings.json
 )
 
+# Ghossty
+magenta "Ghossty"
+(
+  set -x
+  symlink "${CWD}"/ghostty ~/Library/Application\ Support/com.mitchellh.ghostty/config.ghostty
+)
+
 # # k9s
 if [ -n ${XDG_CONFIG_HOME} ]; then 
   magenta "k9s"

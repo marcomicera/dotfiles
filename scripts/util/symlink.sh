@@ -7,33 +7,38 @@ _try() {
   [ "${EUID:-$(id -u)}" -ne 0 ] && sudo "$@"
 }
 
-# Creates a symlink ${1} -> ${@:2} (glob pattern)
+# Creates symlinks: ${1}/${basename(target)} -> each path in ${@:2}
 function symlink() {
-
-    # `set +x` without it being printed
-    # https://stackoverflow.com/a/19226038
     { set +x; } 2>/dev/null
-
-    # For all `ln` target files (glob patterns get expanded)
-    for file in "${@:2}"; do
-
-        # If file to be symlinked is not a directory and doesn't exist
-		[ ! -d "${1}/${file##*/}" ] && [ ! -f "${1}/${file##*/}" ] && {
-			echo "File ${1}/${file##*/} does not exist. Terminating..."
-			exit 1
-	    }
-
-        # If `ln` target file is not a directory and doesn't exist
-        [ ! -d "${1}/${file##*/}" ] && [ ! -f "${file}" ] && {
-
-            # Create the `ln` target file
-            echo "${file} does not exist, creating..."
-			_try mkdir -p "$(dirname "${file}")" || exit
-			_try touch "${file}" || exit
-        }
-
+    local base_dir="${1}"
+    shift
+    for target in "$@"; do
+        local name="${target##*/}"
+        local source="${base_dir}/${name}"
+        _try mkdir -p "$(dirname "${source}")" || exit
+        _try mkdir -p "$(dirname "${target}")" || exit
+        local source_abs target_abs
+        source_abs="$(cd "$(dirname "${source}")" && pwd)/${name}"
+        target_abs="$(cd "$(dirname "${target}")" && pwd)/${name}"
+        if [ "${source_abs}" = "${target_abs}" ]; then
+            echo "Source and target are the same (${source_abs}). Skipping."
+            continue
+        fi
+        # Migrate existing real file at target into repo (don't clobber with empty touch)
+        if [ ! -e "${source}" ] && [ -f "${target}" ] && [ ! -L "${target}" ]; then
+            echo "Migrating ${target} -> ${source}"
+            _try cp -p "${target}" "${source}" || exit
+        elif [ ! -e "${source}" ]; then
+            echo "${source} does not exist, creating empty file..."
+            _try touch "${source}" || exit
+        fi
+        # Skip if already correct symlink
+        if [ -L "${target}" ] && [ "$(readlink "${target}")" = "${source_abs}" ]; then
+            echo "${target} already links to ${source_abs}. Skipping."
+            continue
+        fi
         set -x
-	    _try ln -nfs "${1}/${file##*/}" "${file}" || exit
-        { set +x; } 2>/dev/null # https://stackoverflow.com/a/19226038
+        _try ln -nfs "${source_abs}" "${target}" || exit
+        { set +x; } 2>/dev/null
     done
 }

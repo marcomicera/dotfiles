@@ -18,6 +18,7 @@
     "workbench.editor.revealIfOpen": true,
     "editor.accessibilitySupport": "off",
     "breadcrumbs.enabled": true,
+    "window.commandCenter": true,
 
     // Theme
     "window.autoDetectColorScheme": true,

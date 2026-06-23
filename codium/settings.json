@@ -54,6 +54,7 @@
     "terminal.integrated.fontSize": 12,
     "terminal.integrated.fontFamily": "Hack Nerd Font",
     "terminal.integrated.scrollback": 9999,
+    "terminal.integrated.defaultLocation": "editor",
 
     // Shell formatter
     "shellformat.useEditorConfig": true,

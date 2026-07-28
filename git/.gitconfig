@@ -58,6 +58,7 @@
 	ui = !gitui
 	ll = !git pull
 	recent = "for-each-ref --sort=committerdate --format='%(color:green)%(committerdate:iso)%09%(color:blue)%(committerdate:relative)%09%(color:reset)%(refname:short)' refs/heads/"
+	m = "!git switch main || git switch master; git pull"
 
 # Colors
 [color "diff"]

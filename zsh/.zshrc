@@ -96,9 +96,6 @@ PATH+=:$HOME/.docker/bin
 # Default editor
 export KUBE_EDITOR="code -w"
 
-# kubecolor
-compdef kubecolor=kubectl
-
 # k9s
 export XDG_CONFIG_HOME=~/.config
 

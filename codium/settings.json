@@ -116,4 +116,9 @@
     "explorer.confirmDelete": false,
     "aikido.coreUrl": "https://ide.aikido.dev",
     "editor.wordWrap": "on",
+    
+    // AI
+    "cursor.chatMaxWidth": 9999,
+    "gitlens.ai.model": "gitkraken",
+    "gitlens.ai.gitkraken.model": "gemini:gemini-2.5-flash",
 }

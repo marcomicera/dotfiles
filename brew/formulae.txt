@@ -5,6 +5,7 @@ cilium-cli
 dyff
 elixir
 fzf
+git
 git-delta
 git-lfs
 gitui

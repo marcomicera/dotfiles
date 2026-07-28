@@ -97,4 +97,18 @@
 
     // Continue
     "continue.enableNextEdit": false,
+
+    // Terragrunt
+    "[hcl]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "jkillian.custom-local-formatters",
+    },
+    "customLocalFormatters.formatters": [
+        {
+            "command": "$HOME/hcl_format.sh",
+            "languages": [
+              "hcl"
+            ]
+        }
+    ],
 }

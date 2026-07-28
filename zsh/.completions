@@ -29,6 +29,7 @@ _source_completion cilium          'cilium completion zsh'
 _source_completion hubble          'hubble completion zsh'
 _source_completion mise            'mise completion --quiet zsh'
 _source_completion kubectl-neat    'kubectl neat completion zsh'
+_source_completion argo			   'argo completion zsh'
 
 # These stay as-is (cheap: just register completer, no heavy binary)
 complete -o nospace -C "$(command -v terraform 2>/dev/null)" terraform 2>/dev/null || true

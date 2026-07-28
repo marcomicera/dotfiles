@@ -23,7 +23,7 @@ plugins=(
     iterm2
     # gcloud
     gh
-    git
+    # git
     kubectl
     zsh-autosuggestions
     zsh-syntax-highlighting

@@ -43,7 +43,7 @@ export EDITOR='vim'
 #   export EDITOR='mvim'
 # fi
 
-export SSH_AUTH_SOCK="/Users/micera/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock"
+# export SSH_AUTH_SOCK="/Users/micera/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock"
 
 # Mise (lazy: activate on first prompt, saves ~26ms at shell open)
 export MISE_OVERRIDE_TOOL_VERSIONS_FILENAMES=none

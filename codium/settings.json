@@ -41,6 +41,15 @@
     "pdf-preview.default.sidebar": false,
     "pdf-preview.default.scale": "page-width",
 
+    // SVG: open as text instead of image preview
+    // Markdown: open in preview by default
+    "workbench.editorAssociations": {
+        "*.svg": "default",
+        "*.md": "vscode.markdown.preview.editor",
+        "*.mdx": "vscode.markdown.preview.editor",
+        "*.markdown": "vscode.markdown.preview.editor"
+    },
+
     // Todo Tree
     "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^|%|\\\\)\\s*($TAGS)\\{*|^\\s*- \\[ \\])",
     "todo-tree.regex.regexCaseSensitive": false,

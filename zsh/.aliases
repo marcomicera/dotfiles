@@ -43,6 +43,8 @@ alias gcs="git commit -S"
 alias gcsm="gcs -m"
 alias gcse="gcs --allow-empty"
 alias gcsem="gcse -m"
+alias gl="git pull"
+alias gm="git m"
 fzf-git-branch() {
     git rev-parse HEAD > /dev/null 2>&1 || return
 

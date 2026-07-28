@@ -32,7 +32,7 @@ plugins=(
 )
 export ZSH="${HOME}/.oh-my-zsh"
 export ZSH_CUSTOM=$ZSH/custom
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="" # theme loaded from Homebrew above
 source $ZSH/oh-my-zsh.sh
 source ~/.iterm2_shell_integration.zsh
 

@@ -1,4 +1,5 @@
 # zmodload zsh/zprof
+# zsh_start_epoch=$EPOCHREALTIME
 
 # --- Faster zsh startup (see zprof) ---
 # Skip compaudit on every shell (~20ms). Only set if you trust your fpath.
@@ -150,3 +151,6 @@ source ~/.aliases
 ##########
 
 # zprof
+# [[ -n "$zsh_start_epoch" ]] && echo "zsh init: $(( (EPOCHREALTIME - zsh_start_epoch) * 1000 )) ms"
+# source ~/.safe-chain/scripts/init-posix.sh # Safe-chain Zsh initialization script
+# export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"

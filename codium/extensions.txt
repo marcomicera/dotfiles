@@ -3,3 +3,4 @@ hashicorp.terraform
 malo.copy-json-path
 mechatroner.rainbow-csv
 remcohaszing.schemastore
+tomoki1207.pdf

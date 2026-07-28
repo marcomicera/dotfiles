@@ -12,6 +12,8 @@
 	name = Marco Micera
 [includeIf "gitdir:~/git/personal/"]
     path = ~/.gitconfig-personal
+[includeIf "gitdir:~/.cursor/"]
+    path = ~/.gitconfig-work
 [includeIf "gitdir:~/git/work/"]
     path = ~/.gitconfig-work
 	

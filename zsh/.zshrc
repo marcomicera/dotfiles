@@ -76,7 +76,7 @@ PATH+=:"${KREW_ROOT:-$HOME/.krew}/bin"
 source ~/.completions
 
 # Work-related
-# source ~/.work
+source ~/.work
 
 # nnn
 PATH+=:~/.nnn

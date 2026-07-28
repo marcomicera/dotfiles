@@ -1,5 +1,0 @@
-helm
-kubectl
-remotectl
-terraform
-terragrunt

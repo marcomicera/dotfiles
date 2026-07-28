@@ -1,5 +1,4 @@
 argocd
-asdf
 awscli
 bat
 cilium-cli

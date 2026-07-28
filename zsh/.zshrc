@@ -16,14 +16,9 @@ source "$(brew --prefix powerlevel10k)"/share/powerlevel10k/powerlevel10k.zsh-th
 # My binaries
 export PATH="${HOME}/bin:${PATH}"
 
-# asdf
 fPATH+=:$HOMEBREW_PREFIX/share/zsh/site-functions
-source $(brew --prefix asdf)/libexec/asdf.sh
-export ASDF_DIR="${HOME}/.asdf"
-export PATH="${ASDF_DIR}:${PATH}"
 
 plugins=(
-	asdf
 	docker
     iterm2
     # gcloud
@@ -126,7 +121,6 @@ export XDG_CONFIG_HOME=~/.config
 
 # Terraform
 export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
-complete -o nospace -C $(asdf which terraform) terraform
 
 # fuck
 # eval $(thefuck --alias)

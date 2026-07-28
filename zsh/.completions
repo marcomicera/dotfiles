@@ -23,7 +23,6 @@ _source_completion skaffold        'skaffold completion zsh'
 _source_completion terraform-docs  'terraform-docs completion zsh'
 _source_completion dyff            'dyff completion zsh'
 _source_completion helm            'helm completion zsh'
-_source_completion remotectl       'remotectl completion zsh'
 _source_completion glab            'glab completion --shell zsh'
 _source_completion argocd          'argocd completion zsh'
 _source_completion cilium          'cilium completion zsh'
@@ -34,8 +33,8 @@ _source_completion kubectl-neat    'kubectl neat completion zsh'
 # These stay as-is (cheap: just register completer, no heavy binary)
 complete -o nospace -C "$(command -v terraform 2>/dev/null)" terraform 2>/dev/null || true
 complete -C "$(command -v aws_completer 2>/dev/null)" aws 2>/dev/null || true
-complete -o nospace -C "$(command -v terragrunt 2>/dev/null || asdf which terragrunt 2>/dev/null)" terragrunt 2>/dev/null || true
-compdef _remotectl remotectl 2>/dev/null || true
+complete -o nospace -C "$(command -v terragrunt 2>/dev/null)" terragrunt 2>/dev/null || true
+# compdef _remotectl remotectl 2>/dev/null || true
 
 # Refresh all cached completions (run after installing/upgrading tools)
 refresh-zsh-completions() {

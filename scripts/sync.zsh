@@ -75,13 +75,6 @@ magenta "Oh My Zsh"
   symlink "${CWD}"/.oh-my-zsh/completions ~/.oh-my-zsh/completions/*.zsh
 )
 
-# asdf
-magenta "asdf"
-(
-  set -x
-  symlink "${CWD}"/asdf ~/.tool-versions
-)
-
 # git
 magenta "git"
 (

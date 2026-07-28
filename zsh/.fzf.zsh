@@ -1,13 +1,9 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */Users/micera/.asdf/installs/fzf/0.43.0/bin* ]]; then
-  PATH="${PATH:+${PATH}:}/Users/micera/.asdf/installs/fzf/0.43.0/bin"
-fi
-
 # Auto-completion
 # ---------------
-source "/Users/micera/.asdf/installs/fzf/0.43.0/shell/completion.zsh"
+[[ $- == *i* ]] && source "$(brew --prefix)/opt/fzf/shell/completion.zsh" 2>/dev/null
 
 # Key bindings
 # ------------
-source "/Users/micera/.asdf/installs/fzf/0.43.0/shell/key-bindings.zsh"
+source "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh" 2>/dev/null

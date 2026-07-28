@@ -35,13 +35,6 @@ magenta "Ruby"
   gem list --no-versions --no-verbose > "${CWD}"/gems
 )
 
-# asdf
-magenta "asdf"
-(
-  set -x
-  asdf plugin list >"${CWD}"/asdf/list.txt
-)
-
 # brew
 magenta "brew"
 (

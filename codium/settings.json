@@ -22,7 +22,8 @@
 
     // Theme
     "window.autoDetectColorScheme": true,
-    "workbench.preferredLightColorTheme": "Default Light+",
+    // "workbench.preferredLightColorTheme": "Light+",
+    // "workbench.preferredDarkColorTheme": "Cursor Dark",
 
     // File explorer
     "files.exclude": { // what to show

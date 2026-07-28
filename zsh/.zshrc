@@ -125,6 +125,9 @@ export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
 # fzf
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Rust
+export PATH="$(brew --prefix)/opt/rustup/bin:$PATH"
+
 # Aliases
 source ~/.aliases
 

@@ -35,6 +35,13 @@ magenta "Ruby"
   gem list --no-versions --no-verbose > "${CWD}"/gems
 )
 
+# mise
+magenta "mise"
+(
+  set -x
+  mise plugins ls >"${CWD}"/mise/list.txt
+)
+
 # brew
 magenta "brew"
 (

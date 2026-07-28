@@ -75,6 +75,13 @@ magenta "Oh My Zsh"
   symlink "${CWD}"/.oh-my-zsh/completions ~/.oh-my-zsh/completions/*.zsh
 )
 
+# mise
+magenta "mise"
+(
+  set -x
+  symlink "${CWD}"/mise ~/.config/mise/config.toml
+)
+
 # git
 magenta "git"
 (

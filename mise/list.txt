@@ -1,0 +1,4 @@
+groovy
+jsonnet
+remotectl
+vfox-mise-plugins-vfox-postgres

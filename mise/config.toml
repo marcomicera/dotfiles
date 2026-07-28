@@ -1,0 +1,6 @@
+[tools]
+helm = "latest"
+kubectl = "latest"
+remotectl = "latest"
+terraform = "latest"
+terragrunt = "latest"

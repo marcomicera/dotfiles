@@ -111,4 +111,9 @@
             ]
         }
     ],
+    "diffEditor.ignoreTrimWhitespace": false,
+    "go.toolsManagement.autoUpdate": true,
+    "explorer.confirmDelete": false,
+    "aikido.coreUrl": "https://ide.aikido.dev",
+    "editor.wordWrap": "on",
 }

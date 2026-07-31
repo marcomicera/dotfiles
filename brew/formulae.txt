@@ -20,8 +20,8 @@ kubectx
 kustomize
 libpq
 mise
+neovim
 opencode
-openjdk
 pipx
 postgresql@14
 postgresql@16

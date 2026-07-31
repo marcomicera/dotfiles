@@ -4,7 +4,6 @@ base64
 benchmark
 bigdecimal
 bundler
-cgi
 clocale
 colorls
 csv
@@ -49,7 +48,6 @@ open3
 openssl
 optparse
 ostruct
-pathname
 power_assert
 pp
 prettyprint
@@ -73,7 +71,6 @@ rinda
 rss
 ruby2_keywords
 securerandom
-set
 shellwords
 singleton
 stringio

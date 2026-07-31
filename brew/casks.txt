@@ -1,6 +1,5 @@
 1password-cli
 claude-code
-freelens
 ghostty
 maccy
 meld
@@ -8,4 +7,3 @@ monitorcontrol
 rectangle
 session-manager-plugin
 vscodium
-warp

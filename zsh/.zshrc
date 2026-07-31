@@ -95,7 +95,7 @@ PATH+=:$HOME/.docker/bin
 ##############
 
 # Default editor
-export KUBE_EDITOR="code -w"
+export KUBE_EDITOR="codium --wait"
 
 # k9s
 export XDG_CONFIG_HOME=~/.config

@@ -131,6 +131,32 @@ magenta "vim"
   fi
 )
 
+# neovim (LazyVim)
+magenta "neovim"
+(
+  NVIM_CONFIG="${HOME}/.config/nvim"
+  NVIM_REPO="${CWD}/nvim"
+
+  if [ -L "${NVIM_CONFIG}" ] && [ "$(readlink "${NVIM_CONFIG}")" = "${NVIM_REPO}" ]; then
+    echo "${NVIM_CONFIG} already links to ${NVIM_REPO}. Skipping."
+  else
+    if [ -e "${NVIM_CONFIG}" ] && [ ! -L "${NVIM_CONFIG}" ]; then
+      if [ ! -f "${NVIM_REPO}/init.lua" ]; then
+        echo "Migrating ${NVIM_CONFIG} -> ${NVIM_REPO}"
+        mkdir -p "${NVIM_REPO}"
+        cp -R "${NVIM_CONFIG}/." "${NVIM_REPO}/"
+      fi
+      echo "Backing up ${NVIM_CONFIG} -> ${NVIM_CONFIG}.bak"
+      mv "${NVIM_CONFIG}" "${NVIM_CONFIG}.bak"
+    elif [ -L "${NVIM_CONFIG}" ]; then
+      rm "${NVIM_CONFIG}"
+    fi
+    set -x
+    mkdir -p "$(dirname "${NVIM_CONFIG}")"
+    ln -nfs "${NVIM_REPO}" "${NVIM_CONFIG}"
+  fi
+)
+
 # VSCodium
 magenta "VSCodium"
 (

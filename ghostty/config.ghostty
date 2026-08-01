@@ -5,3 +5,18 @@ background-opacity = 0.85
 background-blur=16
 # background=#000000
 # macos-titlebar-style = hidden
+
+# Split panes: visible dividers + stronger focus contrast.
+# Divider hit area is fixed at ~7px in Ghostty (not configurable yet).
+split-divider-color =#5c75c0
+unfocused-split-opacity = 0.2
+unfocused-split-fill = #000000
+
+# iTerm2-style splits: equalize panes after each split so repeated
+# Cmd+D / Cmd+Shift+D produces evenly sized columns/rows (e.g. thirds).
+keybind = super+d=unbind
+keybind = super+d=new_split:right
+keybind = chain=equalize_splits
+keybind = super+shift+d=unbind
+keybind = super+shift+d=new_split:down
+keybind = chain=equalize_splits

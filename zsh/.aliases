@@ -81,7 +81,7 @@ alias tree='tree' # 'colorls --tree --git-status'
 alias t='tree'
 
 # vim
-alias v='vim'
+alias v='nvim'
 # function v() {
 #     if [ "$1" != "" ]
 #     then

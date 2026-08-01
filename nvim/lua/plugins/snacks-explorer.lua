@@ -31,6 +31,13 @@ return {
     explorer = {
       replace_netrw = true,
     },
+    picker = {
+      sources = {
+        explorer = {
+          hidden = true,
+        },
+      },
+    },
   },
   init = function()
     local group = vim.api.nvim_create_augroup("lazyvim_auto_explorer", { clear = true })

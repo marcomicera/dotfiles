@@ -17,6 +17,15 @@ local function list_normal_wins()
   return wins
 end
 
+local function has_floating_win()
+  for _, win in ipairs(vim.api.nvim_list_wins()) do
+    if is_floating_win(win) then
+      return true
+    end
+  end
+  return false
+end
+
 local function close_snacks_wins()
   for _, win in ipairs(vim.api.nvim_list_wins()) do
     if is_snacks_win(win) then
@@ -61,11 +70,12 @@ return {
     vim.api.nvim_create_autocmd("WinClosed", {
       group = group,
       callback = function()
-        if #list_normal_wins() == 0 then
-          vim.schedule(function()
+        vim.schedule(function()
+          -- Pickers (find files, grep, etc.) are floating; don't quit while one is open
+          if #list_normal_wins() == 0 and not has_floating_win() then
             pcall(vim.cmd, "qa!")
-          end)
-        end
+          end
+        end)
       end,
     })
 

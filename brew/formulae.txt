@@ -35,6 +35,7 @@ rustup
 skaffold
 stern
 terraform-docs
+terragrunt
 tflint
 the_silver_searcher
 tldr

@@ -75,6 +75,7 @@ fzf-git-checkout() {
     fi
 }
 alias gc="fzf-git-checkout"
+alias z="lazygit"
 
 # tree
 alias tree='tree' # 'colorls --tree --git-status'

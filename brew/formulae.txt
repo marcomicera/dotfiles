@@ -19,6 +19,7 @@ jq
 k9s
 kubectx
 kustomize
+lazygit
 libpq
 mise
 neovim

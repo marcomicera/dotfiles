@@ -4,6 +4,7 @@ bat
 cilium-cli
 dyff
 elixir
+fd
 fzf
 git
 git-delta

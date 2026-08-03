@@ -16,13 +16,20 @@ _source_completion() {
 	fi
 }
 
+# Mise tools aren't on PATH until first prompt (lazy mise init in .zshrc).
+_mise_source_completion() {
+	local name="$1" tool="$2"
+	shift 2
+	_source_completion "$name" "mise x -- $tool $*"
+}
+
 # Cached: run binary only on cache miss or after refresh-zsh-completions
 _source_completion k9s             'k9s completion zsh'
 _source_completion stern           'stern --completion zsh'
 _source_completion skaffold        'skaffold completion zsh'
 _source_completion terraform-docs  'terraform-docs completion zsh'
 _source_completion dyff            'dyff completion zsh'
-_source_completion helm            'helm completion zsh'
+_mise_source_completion helm helm completion zsh
 _source_completion glab            'glab completion --shell zsh'
 _source_completion argocd          'argocd completion zsh'
 _source_completion cilium          'cilium completion zsh'
@@ -32,9 +39,9 @@ _source_completion kubectl-neat    'kubectl neat completion zsh'
 _source_completion argo			   'argo completion zsh'
 
 # These stay as-is (cheap: just register completer, no heavy binary)
-complete -o nospace -C "$(command -v terraform 2>/dev/null)" terraform 2>/dev/null || true
+complete -o nospace -C "$(mise which terraform 2>/dev/null)" terraform 2>/dev/null || true
 complete -C "$(command -v aws_completer 2>/dev/null)" aws 2>/dev/null || true
-complete -o nospace -C "$(command -v terragrunt 2>/dev/null)" terragrunt 2>/dev/null || true
+complete -o nospace -C "$(mise which terragrunt 2>/dev/null)" terragrunt 2>/dev/null || true
 # compdef _remotectl remotectl 2>/dev/null || true
 
 # Refresh all cached completions (run after installing/upgrading tools)

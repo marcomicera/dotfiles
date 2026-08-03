@@ -1,3 +1,4 @@
+eamodio.gitlens
 hashicorp.hcl
 hashicorp.terraform
 malo.copy-json-path

@@ -131,6 +131,7 @@ export PATH="$(brew --prefix)/opt/rustup/bin:$PATH"
 
 # Aliases
 source ~/.aliases
+source ~/.untracked-aliases
 
 ##########
 # START  #

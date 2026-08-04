@@ -79,10 +79,6 @@ source ~/.completions
 # Work-related
 source ~/.work
 
-# nnn
-PATH+=:~/.nnn
-export NNN_BMS="g:$HOME/git,h:$HOME"
-
 # Cursor
 PATH+=:$HOME/.local/bin
 

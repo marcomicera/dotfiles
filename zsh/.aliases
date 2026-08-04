@@ -117,11 +117,6 @@ alias dtfl="dtf"
 alias dtfls="dtf"
 alias dotfiles="dtf"
 
-# nnn
-alias nnn='nnn -deH'
-alias nn='nnn'
-alias n='nnn'
-
 # Typos
 alias cd..="cd .."
 alias pdw="pwd"

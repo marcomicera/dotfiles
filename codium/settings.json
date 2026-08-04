@@ -36,6 +36,7 @@
     },
     "workbench.tree.indent": 20, // indentation
     "explorer.autoReveal": false, // never focus opened files into the file explorer pane
+    "explorer.confirmDragAndDrop": false,
 
     // PDF viewer
     "pdf-preview.default.sidebar": false,

@@ -205,4 +205,16 @@ if [ -n ${XDG_CONFIG_HOME} ]; then
   )
 fi
 
+# yazi
+if [[ -n ${XDG_CONFIG_HOME} ]]; then
+  magenta "yazi"
+  (
+    set -x
+    symlink "${CWD}"/.config/yazi "${XDG_CONFIG_HOME}/yazi/yazi.toml"
+    symlink "${CWD}"/.config/yazi "${XDG_CONFIG_HOME}/yazi/keymap.toml"
+    symlink "${CWD}"/.config/yazi "${XDG_CONFIG_HOME}/yazi/theme.toml"
+    symlink "${CWD}"/.config/yazi "${XDG_CONFIG_HOME}/yazi/init.lua"
+  )
+fi
+
 printf "\n"

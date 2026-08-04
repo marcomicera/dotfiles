@@ -41,5 +41,6 @@ tldr
 tree
 watch
 yamlfmt
+yazi
 yq
 zsh-completions

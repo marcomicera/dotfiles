@@ -178,7 +178,7 @@ magenta "Ghossty"
 (
   set -x
   symlink "${CWD}"/ghostty ~/Library/Application\ Support/com.mitchellh.ghostty/config.ghostty
-  # xterm-ghostty terminfo for TUIs (gitui, lazygit, etc.)
+  # xterm-ghostty terminfo for TUIs (lazygit, etc.)
   if [[ -d "/Applications/Ghostty.app/Contents/Resources/terminfo" ]]; then
     mkdir -p "${HOME}/.terminfo"
     TERMINFO="/Applications/Ghostty.app/Contents/Resources/terminfo" \
@@ -186,13 +186,12 @@ magenta "Ghossty"
   fi
 )
 
-# gitui (Ghostty color fix via ~/bin wrapper + theme)
-magenta "gitui"
+# lazygit
+magenta "lazygit"
 (
   set -x
-  symlink "${CWD}"/bin "${HOME}/bin/gitui"
   if [[ -n ${XDG_CONFIG_HOME} ]]; then
-    symlink "${CWD}"/.config/gitui "${XDG_CONFIG_HOME}/gitui/theme.ron"
+    symlink "${CWD}"/.config/lazygit "${XDG_CONFIG_HOME}/lazygit/config.yml"
   fi
 )
 

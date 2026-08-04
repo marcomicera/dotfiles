@@ -9,7 +9,6 @@ fzf
 git
 git-delta
 git-lfs
-gitui
 glab
 gnupg
 go

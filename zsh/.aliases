@@ -1,7 +1,3 @@
-# Bewerbung
-alias bewerbung="make -C ~/git/personal/bewerbemappe"
-alias b="bewerbung"
-
 # AI
 alias c="claude"
 

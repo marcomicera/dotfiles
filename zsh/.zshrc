@@ -36,8 +36,8 @@ ZSH_THEME="" # theme loaded from Homebrew above
 source $ZSH/oh-my-zsh.sh
 source ~/.iterm2_shell_integration.zsh
 
-export VISUAL='vim'
-export EDITOR='vim'
+export VISUAL='nvim'
+export EDITOR='nvim'
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else

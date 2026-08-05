@@ -1,0 +1,12 @@
+# fzf default options — loaded via FZF_DEFAULT_OPTS_FILE
+# https://github.com/junegunn/fzf#customizing-the-look
+
+--style minimal
+--height 95%
+--layout reverse
+--border
+--highlight-line
+--preview 'fzf-preview.sh {}'
+--preview-window right:50%
+--bind 'focus:transform-header:file --brief {}'
+--bind 'ctrl-/:toggle-preview'

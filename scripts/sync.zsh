@@ -40,7 +40,8 @@ magenta "zsh"
   symlink "${CWD}"/zsh ~/.hushlogin # disabled "last login" prompt
   symlink "${CWD}"/zsh ~/.iterm2_shell_integration.zsh # https://iterm2.com/documentation-shell-integration.html
   # symlink "${CWD}"/zsh ~/.fzf.zsh 
-  symlink "${CWD}"/.config/bat ~/.config/bat/config 
+  symlink "${CWD}"/.config/bat ~/.config/bat/config
+  symlink "${CWD}"/.config/fzf ~/.config/fzf/config
 )
 
 # JetBrains IDEs

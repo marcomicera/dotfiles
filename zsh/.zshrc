@@ -120,6 +120,7 @@ export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
 # eval $(thefuck --alias)
 
 # fzf
+export FZF_DEFAULT_OPTS_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/fzf/config"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Rust

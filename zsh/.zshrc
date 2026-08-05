@@ -120,7 +120,7 @@ export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
 # eval $(thefuck --alias)
 
 # fzf
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Rust
 export PATH="$(brew --prefix)/opt/rustup/bin:$PATH"

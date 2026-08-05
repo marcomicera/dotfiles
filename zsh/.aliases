@@ -88,6 +88,9 @@ alias t='tree'
 
 # vim
 alias v='nvim'
+vf() {
+    nvim "$(fzf)"
+  }
 # function v() {
 #     if [ "$1" != "" ]
 #     then

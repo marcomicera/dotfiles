@@ -10,6 +10,7 @@ git
 git-delta
 git-lfs
 glab
+glow
 gnupg
 go
 graphviz

@@ -21,8 +21,36 @@ alias x..='cursor ..'
 # SmartGit
 alias sm.='sm .'
 
-# bat
-alias cat='bat'
+# bat (syntax highlight) + glow (markdown render, like render-markdown.nvim)
+unalias cat 2>/dev/null
+cat() {
+  if (( $# == 0 )); then
+    command bat
+    return
+  fi
+
+  local all_md=true
+  local arg
+  for arg in "$@"; do
+    if [[ "$arg" == -* ]]; then
+      all_md=false
+      break
+    fi
+    case "${arg:l}" in
+      *.md|*.markdown|*.mdown|*.mkd|*.mdwn) ;;
+      *) all_md=false; break ;;
+    esac
+  done
+
+  if $all_md; then
+    # glow accepts one source at a time
+    for arg in "$@"; do
+      command glow "$arg"
+    done
+  else
+    command bat "$@"
+  fi
+}
 
 # ls (function = lazy-load colorls, saves ~9ms at shell init)
 unalias ls 2>/dev/null

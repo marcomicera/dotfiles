@@ -85,6 +85,10 @@ PATH+=:$HOME/.local/bin
 # Docker
 PATH+=:$HOME/.docker/bin
 
+# Use bat for man pages
+export MANPAGER="sh -c 'col -bx | bat -l man -p --paging=always'"
+export MANROFFOPT='-c'
+
 ##############
 # START      #
 # Kubernetes #

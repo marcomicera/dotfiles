@@ -218,4 +218,13 @@ if [[ -n ${XDG_CONFIG_HOME} ]]; then
   )
 fi
 
+# glow
+if [[ -n ${XDG_CONFIG_HOME} ]]; then
+  magenta "glow"
+  (
+    set -x
+    symlink "${CWD}"/.config/glow "${XDG_CONFIG_HOME}/glow/glow.yml"
+  )
+fi
+
 printf "\n"

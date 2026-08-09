@@ -156,3 +156,6 @@ source ~/.untracked-aliases
 # [[ -n "$zsh_start_epoch" ]] && echo "zsh init: $(( (EPOCHREALTIME - zsh_start_epoch) * 1000 )) ms"
 # source ~/.safe-chain/scripts/init-posix.sh # Safe-chain Zsh initialization script
 # export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+# zoxide
+eval "$(zoxide init --cmd cd zsh)" # completion

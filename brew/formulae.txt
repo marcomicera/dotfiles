@@ -44,4 +44,5 @@ watch
 yamlfmt
 yazi
 yq
+zoxide
 zsh-completions

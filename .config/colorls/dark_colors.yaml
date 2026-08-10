@@ -1,0 +1,51 @@
+# Tokyo Night Moon (matches Neovim / Ghostty / bat / fzf / p10k)
+# Palette: blue #82aaff, cyan #86e1fc, green #c3e88d, teal #4fd6be,
+#          yellow #ffc777, orange #ff966c, red #ff757f, magenta #c099ff,
+#          purple #fca7ea, comment #636da6, fg #c8d3f5, fg_dark #828bb8
+
+# Main Colors
+unrecognized_file: '#ffc777'
+recognized_file:   '#c8d3f5'
+executable_file:   '#c3e88d'
+dir:               '#82aaff'
+
+# Link
+dead_link: '#c53b53'
+link:      '#86e1fc'
+
+# Special Files
+socket:   '#c3e88d'
+blockdev: '#c3e88d'
+chardev:  '#c3e88d'
+
+# Access Modes
+write:     '#fca7ea'
+read:      '#c099ff'
+exec:      '#86e1fc'
+no_access: '#c53b53'
+
+# Age
+hour_old:    '#828bb8'
+day_old:     '#636da6'
+no_modifier: '#545c7e'
+
+# File Size
+file_large:  '#ff757f'
+file_medium: '#ff966c'
+file_small:  '#c3e88d'
+
+# Random
+report: '#c3e88d'
+user:   '#86e1fc'
+tree:   '#545c7e'
+empty:  '#636da6'
+error:  '#c53b53'
+normal: '#c8d3f5'
+inode:  '#c099ff'
+
+# Git
+addition:     '#b8db87'
+modification: '#7ca1f2'
+deletion:     '#e26a75'
+untracked:    '#ff966c'
+unchanged:    '#c3e88d'

@@ -43,6 +43,7 @@ magenta "zsh"
   symlink "${CWD}"/.config/bat ~/.config/bat/config
   symlink "${CWD}"/.config/bat/themes ~/.config/bat/themes/tokyonight_moon.tmTheme
   symlink "${CWD}"/.config/fzf ~/.config/fzf/config
+  symlink "${CWD}"/.config/colorls ~/.config/colorls/dark_colors.yaml
   if command -v bat >/dev/null 2>&1; then
     bat cache --build >/dev/null
   fi

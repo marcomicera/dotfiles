@@ -43,11 +43,21 @@
 [delta]
     navigate = true # use n and N to move between diff sections
 	side-by-side = true
-	minus-emph-style = white bold red
-	plus-emph-style = white bold green
-	file-style = yellow bold none
-	file-decoration-style = yellow box
-	hunk-header-decoration-style = magenta box
+	# Tokyo Night Moon (matches Neovim)
+	minus-style = syntax "#4b2a3d"
+	minus-non-emph-style = syntax "#4b2a3d"
+	minus-emph-style = syntax "#6b2e43"
+	minus-empty-line-marker-style = syntax "#4b2a3d"
+	line-numbers-minus-style = "#e26a75"
+	plus-style = syntax "#2a5645"
+	plus-non-emph-style = syntax "#2a5645"
+	plus-emph-style = syntax "#306f5f"
+	plus-empty-line-marker-style = syntax "#2a5645"
+	line-numbers-plus-style = "#b8db87"
+	line-numbers-zero-style = "#3b4261"
+	file-style = "#82aaff" bold
+	file-decoration-style = "#82aaff" box
+	hunk-header-decoration-style = "#c099ff" box
 
 # Aliases
 [alias]

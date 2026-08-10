@@ -41,7 +41,11 @@ magenta "zsh"
   symlink "${CWD}"/zsh ~/.iterm2_shell_integration.zsh # https://iterm2.com/documentation-shell-integration.html
   # symlink "${CWD}"/zsh ~/.fzf.zsh 
   symlink "${CWD}"/.config/bat ~/.config/bat/config
+  symlink "${CWD}"/.config/bat/themes ~/.config/bat/themes/tokyonight_moon.tmTheme
   symlink "${CWD}"/.config/fzf ~/.config/fzf/config
+  if command -v bat >/dev/null 2>&1; then
+    bat cache --build >/dev/null
+  fi
 )
 
 # JetBrains IDEs
@@ -197,12 +201,13 @@ magenta "lazygit"
 )
 
 # # k9s
-if [ -n ${XDG_CONFIG_HOME} ]; then 
+if [[ -n ${XDG_CONFIG_HOME} ]]; then
   magenta "k9s"
   (
     set -x
-    symlink "${CWD}"/.config/k9s ${XDG_CONFIG_HOME}/k9s/plugins.yaml
-    symlink "${CWD}"/.config/k9s ${XDG_CONFIG_HOME}/k9s/config.yaml
+    symlink "${CWD}"/.config/k9s "${XDG_CONFIG_HOME}/k9s/plugins.yaml"
+    symlink "${CWD}"/.config/k9s "${XDG_CONFIG_HOME}/k9s/config.yaml"
+    symlink "${CWD}"/.config/k9s/skins "${XDG_CONFIG_HOME}/k9s/skins/tokyonight-moon.yaml"
   )
 fi
 

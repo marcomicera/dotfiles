@@ -1,14 +1,11 @@
-theme = dark:Dark Pastel,light:Bluloco Light
-# background-opacity = 0.9
+theme = TokyoNight Moon
 
 background-opacity = 0.75
-background-blur=16
-# background=#000000
-# macos-titlebar-style = hidden
+background-blur = 16
 
 # Split panes: visible dividers + stronger focus contrast.
 # Divider hit area is fixed at ~7px in Ghostty (not configurable yet).
-split-divider-color =#5c75c0
+split-divider-color = #589ed7
 unfocused-split-opacity = 0.2
 unfocused-split-fill = #000000
 

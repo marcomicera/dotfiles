@@ -21,55 +21,22 @@ alias x..='cursor ..'
 # SmartGit
 alias sm.='sm .'
 
-# bat (syntax highlight) + glow (markdown render, like render-markdown.nvim)
+# bat for code; glow for markdown (style from ~/.config/glow/glow.yml)
 unalias cat 2>/dev/null
-unalias glow 2>/dev/null
-
-_glow_style() {
-  local style="${XDG_CONFIG_HOME:-$HOME/.config}/glow/tokyo-night.json"
-  if [[ ! -f "$style" ]]; then
-    style="${DOTFILES_DIR/#\~/$HOME}/.config/glow/tokyo-night.json"
-  fi
-  [[ -f "$style" ]] && print -r -- "$style"
-}
-
-glow() {
-  local style
-  style="$(_glow_style)"
-  if [[ -n "$style" ]]; then
-    command glow --style "$style" -w 0 "$@"
-  else
-    command glow -w 0 "$@"
-  fi
-}
-
 cat() {
   if (( $# == 0 )); then
     command bat
     return
   fi
-
-  local all_md=true
-  local arg
-  for arg in "$@"; do
-    if [[ "$arg" == -* ]]; then
-      all_md=false
-      break
-    fi
-    case "${arg:l}" in
+  local f
+  for f in "$@"; do
+    [[ $f == -* ]] && { command bat "$@"; return }
+    case ${f:l} in
       *.md|*.markdown|*.mdown|*.mkd|*.mdwn) ;;
-      *) all_md=false; break ;;
+      *) command bat "$@"; return ;;
     esac
   done
-
-  if $all_md; then
-    # glow accepts one source at a time
-    for arg in "$@"; do
-      glow "$arg"
-    done
-  else
-    command bat "$@"
-  fi
+  for f in "$@"; do command glow "$f"; done
 }
 
 # ls (function = lazy-load colorls, saves ~9ms at shell init)

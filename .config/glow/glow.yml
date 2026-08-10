@@ -1,11 +1,10 @@
-# Builtin name or JSON path. Heading # prefixes are stripped via tokyo-night.json
-# (applied by the glow()/cat() wrappers in ~/.aliases).
-style: "tokyo-night"
+# style is set via GLOW_STYLE in ~/.zshrc (glow only accepts absolute
+# paths for custom JSON; ~ / relative / $HOME in this file all fail)
 # mouse wheel support (TUI-mode only)
 mouse: false
 # use pager to display markdown
 pager: false
-# word-wrap width; 0 = disable wrap / avoid space-padded lines
+# word-wrap width; 0 = terminal width
 width: 0
 # show all files, including hidden and ignored.
 all: false

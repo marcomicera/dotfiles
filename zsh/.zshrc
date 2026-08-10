@@ -123,6 +123,9 @@ export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
 # fuck
 # eval $(thefuck --alias)
 
+# glow (custom tokyo-night style; must be absolute — see glow.yml)
+export GLOW_STYLE="${XDG_CONFIG_HOME:-$HOME/.config}/glow/tokyo-night.json"
+
 # fzf
 export FZF_DEFAULT_OPTS_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/fzf/config"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

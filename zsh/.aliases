@@ -23,6 +23,26 @@ alias sm.='sm .'
 
 # bat (syntax highlight) + glow (markdown render, like render-markdown.nvim)
 unalias cat 2>/dev/null
+unalias glow 2>/dev/null
+
+_glow_style() {
+  local style="${XDG_CONFIG_HOME:-$HOME/.config}/glow/tokyo-night.json"
+  if [[ ! -f "$style" ]]; then
+    style="${DOTFILES_DIR/#\~/$HOME}/.config/glow/tokyo-night.json"
+  fi
+  [[ -f "$style" ]] && print -r -- "$style"
+}
+
+glow() {
+  local style
+  style="$(_glow_style)"
+  if [[ -n "$style" ]]; then
+    command glow --style "$style" -w 0 "$@"
+  else
+    command glow -w 0 "$@"
+  fi
+}
+
 cat() {
   if (( $# == 0 )); then
     command bat
@@ -45,7 +65,7 @@ cat() {
   if $all_md; then
     # glow accepts one source at a time
     for arg in "$@"; do
-      command glow "$arg"
+      glow "$arg"
     done
   else
     command bat "$@"

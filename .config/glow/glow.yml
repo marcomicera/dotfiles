@@ -1,11 +1,12 @@
-# style name or JSON path (default "auto")
-# style: "light"
+# Builtin name or JSON path. Heading # prefixes are stripped via tokyo-night.json
+# (applied by the glow()/cat() wrappers in ~/.aliases).
+style: "tokyo-night"
 # mouse wheel support (TUI-mode only)
 mouse: false
 # use pager to display markdown
 pager: false
-# at which column should we word wrap?
-width: 80
+# word-wrap width; 0 = disable wrap / avoid space-padded lines
+width: 0
 # show all files, including hidden and ignored.
 all: false
 # show line numbers (TUI-mode only)

@@ -20,10 +20,10 @@
     "breadcrumbs.enabled": true,
     "window.commandCenter": true,
 
-    // Theme
+    // Theme (requires enkia.tokyo-night extension)
     "window.autoDetectColorScheme": true,
-    // "workbench.preferredLightColorTheme": "Light+",
-    // "workbench.preferredDarkColorTheme": "Cursor Dark",
+    "workbench.preferredLightColorTheme": "Tokyo Night Light",
+    "workbench.colorTheme": "Tokyo Night Moon",
 
     // File explorer
     "files.exclude": { // what to show

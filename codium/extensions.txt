@@ -1,4 +1,5 @@
 eamodio.gitlens
+enkia.tokyo-night
 hashicorp.hcl
 hashicorp.terraform
 malo.copy-json-path

@@ -99,7 +99,8 @@ k9s:
       bgColor: default
       indicator:
         fgColor: *foreground
-        bgColor: *selection
+        bgColor: default
+        toggleOffColor: *red
     help:
       fgColor: *foreground
       bgColor: default

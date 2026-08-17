@@ -1,0 +1,12 @@
+# $XDG_CONFIG_HOME/k9s/views.yaml
+# Press `w` in a view to show remaining default columns after these.
+views:
+  v1/nodes:
+    columns:
+      - NAME
+      - STATUS
+      - ROLE
+      - AGE
+      - VERSION
+      - NODEGROUP:.metadata.labels.eks\.amazonaws\.com/nodegroup
+      - NODEPOOL:.metadata.labels.karpenter\.sh/nodepool

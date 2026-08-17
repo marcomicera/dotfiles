@@ -84,6 +84,7 @@ k9s:
         fgColor: *foreground
         bgColor: default
         sorterColor: *cyan
+        selectedSortColumnColor: *orange
     xray:
       fgColor: *foreground
       bgColor: default

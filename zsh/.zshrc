@@ -83,6 +83,11 @@ PATH+=:"${KREW_ROOT:-$HOME/.krew}/bin"
 
 # Completions
 source ~/.completions
+# Selected match: explicit bg/fg (not reverse). zsh's default ma=7 inverts
+# 24-bit colors inconsistently — fine on Down, bright on Up — in Ghostty.
+zstyle ':completion:*' list-colors \
+  ${(s.:.)LS_COLORS} \
+  'ma=0;48;2;45;63;118;38;2;200;211;245'
 
 # Work-related
 source ~/.work

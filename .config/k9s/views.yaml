@@ -2,6 +2,7 @@
 # Press `w` in a view to show remaining default columns after these.
 views:
   v1/nodes:
+    sortColumn: NODEGROUP:desc
     columns:
       - NAME
       - STATUS

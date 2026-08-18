@@ -1,2 +1,4 @@
 /.vscode
 nvim.log
+__pycache__/
+*.py[cod]

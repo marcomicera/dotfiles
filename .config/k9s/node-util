@@ -1,0 +1,508 @@
+#!/usr/bin/env python3
+"""Live node CPU/memory utilization (%) stacked by workload — terminal graph for k9s."""
+
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import shutil
+import signal
+import subprocess
+import sys
+import threading
+import time
+from collections import defaultdict, deque
+from dataclasses import dataclass, field
+from datetime import datetime
+from typing import Deque, Dict, List, Optional, Sequence, Tuple
+
+# Tokyo Night Moon palette (matches k9s skin)
+COLORS = [
+    "\033[38;2;130;170;255m",  # blue
+    "\033[38;2;195;232;141m",  # green
+    "\033[38;2;255;199;119m",  # yellow
+    "\033[38;2;255;150;108m",  # orange
+    "\033[38;2;192;153;255m",  # magenta
+    "\033[38;2;134;225;252m",  # cyan
+    "\033[38;2;255;117;127m",  # red
+    "\033[38;2;79;214;190m",  # teal
+    "\033[38;2;252;167;234m",  # purple
+    "\033[38;2;130;139;184m",  # white/muted
+]
+DIM = "\033[38;2;99;109;166m"
+FG = "\033[38;2;200;211;245m"
+RESET = "\033[0m"
+BOLD = "\033[1m"
+CLEAR = "\033[2J\033[H"
+HIDE_CURSOR = "\033[?25l"
+SHOW_CURSOR = "\033[?25h"
+BLOCKS = " ▂▃▄▅▆▇█"
+
+
+@dataclass
+class Sample:
+    ts: float
+    cpu: Dict[str, float] = field(default_factory=dict)  # workload -> % of node
+    mem: Dict[str, float] = field(default_factory=dict)
+
+
+class Kubectl:
+    def __init__(self, context: Optional[str], kubeconfig: Optional[str]) -> None:
+        self.base = ["kubectl"]
+        if kubeconfig:
+            self.base += ["--kubeconfig", kubeconfig]
+        if context:
+            self.base += ["--context", context]
+
+    def json(self, *args: str) -> dict:
+        cmd = self.base + list(args) + ["-o", "json"]
+        proc = subprocess.run(cmd, capture_output=True, text=True)
+        if proc.returncode != 0:
+            raise RuntimeError(proc.stderr.strip() or f"command failed: {' '.join(cmd)}")
+        return json.loads(proc.stdout)
+
+    def raw(self, path: str) -> dict:
+        cmd = self.base + ["get", "--raw", path]
+        proc = subprocess.run(cmd, capture_output=True, text=True)
+        if proc.returncode != 0:
+            raise RuntimeError(proc.stderr.strip() or f"metrics API failed: {path}")
+        return json.loads(proc.stdout)
+
+
+def parse_cpu(value: str) -> float:
+    """Return CPU cores as float."""
+    if value.endswith("n"):
+        return int(value[:-1]) / 1_000_000_000
+    if value.endswith("u"):
+        return int(value[:-1]) / 1_000_000
+    if value.endswith("m"):
+        return int(value[:-1]) / 1000
+    return float(value)
+
+
+def parse_mem(value: str) -> float:
+    """Return memory bytes as float."""
+    units = {
+        "Ki": 1024,
+        "Mi": 1024**2,
+        "Gi": 1024**3,
+        "Ti": 1024**4,
+        "K": 1000,
+        "M": 1000**2,
+        "G": 1000**3,
+        "T": 1000**4,
+    }
+    for suffix, mult in units.items():
+        if value.endswith(suffix):
+            return float(value[: -len(suffix)]) * mult
+    if value.endswith("i"):
+        return float(value[:-1])
+    return float(value)
+
+
+def workload_for_pod(pod: dict, rs_to_deploy: Dict[str, str]) -> str:
+    owners = pod.get("metadata", {}).get("ownerReferences") or []
+    ns = pod["metadata"]["namespace"]
+    name = pod["metadata"]["name"]
+    if not owners:
+        return f"{ns}/pod/{name}"
+
+    # Prefer controller owner
+    owners = sorted(owners, key=lambda o: not o.get("controller", False))
+    kind = owners[0].get("kind", "Unknown")
+    oname = owners[0].get("name", name)
+
+    if kind == "ReplicaSet":
+        deploy = rs_to_deploy.get(f"{ns}/{oname}")
+        if deploy:
+            return f"{ns}/deploy/{deploy}"
+        # fallback: strip pod-template-hash suffix
+        if "-" in oname:
+            return f"{ns}/deploy/{oname.rsplit('-', 1)[0]}"
+        return f"{ns}/rs/{oname}"
+
+    short = {
+        "Deployment": "deploy",
+        "StatefulSet": "sts",
+        "DaemonSet": "ds",
+        "Job": "job",
+        "CronJob": "cj",
+        "ReplicaSet": "rs",
+        "ReplicationController": "rc",
+    }.get(kind, kind.lower())
+    return f"{ns}/{short}/{oname}"
+
+
+class Collector:
+    """Collects samples for a node, caching the slow/rarely-changing lookups.
+
+    Node allocatable capacity and the ReplicaSet->Deployment mapping change
+    rarely, so they're refreshed only every `meta_ttl` seconds. The hot-path
+    per-tick calls (pods on node + cluster pod metrics) run concurrently.
+    """
+
+    def __init__(self, kc: Kubectl, node: str, meta_ttl: float = 60.0) -> None:
+        self.kc = kc
+        self.node = node
+        self.meta_ttl = meta_ttl
+        self.cpu_cap = 0.0
+        self.mem_cap = 0.0
+        self.rs_to_deploy: Dict[str, str] = {}
+        self._rs_at = 0.0
+        self._rs_thread: Optional[threading.Thread] = None
+
+    def _fetch_caps(self) -> None:
+        node_obj = self.kc.json("get", "node", self.node)
+        alloc = node_obj["status"]["allocatable"]
+        self.cpu_cap = parse_cpu(alloc["cpu"])
+        self.mem_cap = parse_mem(alloc["memory"])
+        if self.cpu_cap <= 0 or self.mem_cap <= 0:
+            raise RuntimeError(f"invalid allocatable capacity on node {self.node}")
+
+    def _refresh_rs_map(self, namespaces: Sequence[str]) -> None:
+        """Build ReplicaSet->Deployment map (best effort, runs in background)."""
+        rs_to_deploy: Dict[str, str] = {}
+        for ns in namespaces:
+            try:
+                data = self.kc.json("get", "rs", "-n", ns)
+            except RuntimeError:
+                continue
+            for rs in data.get("items") or []:
+                for owner in rs.get("metadata", {}).get("ownerReferences") or []:
+                    if owner.get("kind") == "Deployment":
+                        rs_to_deploy[f"{ns}/{rs['metadata']['name']}"] = owner["name"]
+        self.rs_to_deploy = rs_to_deploy
+        self._rs_at = time.time()
+
+    def _maybe_refresh_rs(self, namespaces: Sequence[str]) -> None:
+        stale = (time.time() - self._rs_at) > self.meta_ttl
+        busy = self._rs_thread is not None and self._rs_thread.is_alive()
+        if not stale or busy:
+            return
+        nss = list(namespaces)
+        self._rs_thread = threading.Thread(
+            target=self._refresh_rs_map, args=(nss,), daemon=True
+        )
+        self._rs_thread.start()
+
+    def sample(self) -> Sample:
+        # Fetch the three independent calls concurrently. Node capacity is only
+        # fetched until we have it; the RS->Deployment map is refreshed lazily
+        # in the background so it never blocks a frame.
+        results: Dict[str, object] = {}
+        errors: Dict[str, Exception] = {}
+
+        def fetch_pods() -> None:
+            try:
+                results["pods"] = self.kc.json(
+                    "get", "pods", "-A", f"--field-selector=spec.nodeName={self.node}"
+                )
+            except Exception as exc:  # noqa: BLE001
+                errors["pods"] = exc
+
+        def fetch_metrics() -> None:
+            try:
+                results["metrics"] = self.kc.raw("/apis/metrics.k8s.io/v1beta1/pods")
+            except Exception as exc:  # noqa: BLE001
+                errors["metrics"] = exc
+
+        def fetch_caps() -> None:
+            try:
+                self._fetch_caps()
+            except Exception as exc:  # noqa: BLE001
+                errors["caps"] = exc
+
+        tasks = [fetch_pods, fetch_metrics]
+        if not self.cpu_cap:
+            tasks.append(fetch_caps)
+        threads = [threading.Thread(target=f) for f in tasks]
+        for t in threads:
+            t.start()
+        for t in threads:
+            t.join()
+        if "pods" in errors:
+            raise errors["pods"]
+        if "metrics" in errors:
+            raise errors["metrics"]
+        if "caps" in errors:
+            raise errors["caps"]
+
+        pods = (results["pods"].get("items") or [])  # type: ignore[union-attr]
+        namespaces = sorted({p["metadata"]["namespace"] for p in pods})
+        self._maybe_refresh_rs(namespaces)
+
+        pod_workload = {
+            f"{p['metadata']['namespace']}/{p['metadata']['name']}": workload_for_pod(
+                p, self.rs_to_deploy
+            )
+            for p in pods
+        }
+
+        metrics = results["metrics"]  # type: ignore[assignment]
+        cpu_by_wl: Dict[str, float] = defaultdict(float)
+        mem_by_wl: Dict[str, float] = defaultdict(float)
+        for item in metrics.get("items") or []:  # type: ignore[union-attr]
+            key = f"{item['metadata']['namespace']}/{item['metadata']['name']}"
+            wl = pod_workload.get(key)
+            if not wl:
+                continue
+            for c in item.get("containers") or []:
+                usage = c.get("usage") or {}
+                if "cpu" in usage:
+                    cpu_by_wl[wl] += parse_cpu(usage["cpu"])
+                if "memory" in usage:
+                    mem_by_wl[wl] += parse_mem(usage["memory"])
+
+        cpu_pct = {w: (v / self.cpu_cap) * 100.0 for w, v in cpu_by_wl.items()}
+        mem_pct = {w: (v / self.mem_cap) * 100.0 for w, v in mem_by_wl.items()}
+        return Sample(ts=time.time(), cpu=cpu_pct, mem=mem_pct)
+
+
+def top_workloads(history: Sequence[Sample], metric: str, limit: int) -> List[str]:
+    totals: Dict[str, float] = defaultdict(float)
+    for sample in history:
+        data = sample.cpu if metric == "cpu" else sample.mem
+        for wl, val in data.items():
+            totals[wl] += val
+    ranked = sorted(totals, key=totals.get, reverse=True)
+    if len(ranked) <= limit:
+        return ranked
+    return ranked[: limit - 1] + ["other"]
+
+
+def series_matrix(
+    history: Sequence[Sample], workloads: Sequence[str], metric: str
+) -> List[List[float]]:
+    """Return rows=workloads (bottom→top), cols=time, values as stacked %."""
+    known = set(workloads) - {"other"}
+    raw: List[List[float]] = []
+    for wl in workloads:
+        row = []
+        for sample in history:
+            data = sample.cpu if metric == "cpu" else sample.mem
+            if wl == "other":
+                val = sum(v for k, v in data.items() if k not in known)
+            else:
+                val = data.get(wl, 0.0)
+            row.append(val)
+        raw.append(row)
+
+    # convert to cumulative (stacked)
+    stacked: List[List[float]] = []
+    running = [0.0] * len(history)
+    for row in raw:
+        cum = [running[i] + row[i] for i in range(len(history))]
+        stacked.append(cum)
+        running = cum
+    return stacked
+
+
+def render_chart(
+    history: Sequence[Sample],
+    workloads: Sequence[str],
+    metric: str,
+    width: int,
+    height: int,
+    title: str,
+) -> str:
+    if not history or not workloads:
+        empty = f"{DIM}(waiting for samples…){RESET}"
+        return f"{BOLD}{FG}{title}{RESET}\n{empty}"
+
+    stacked = series_matrix(history, workloads, metric)
+    totals = [stacked[-1][t] for t in range(len(history))] if stacked else [0.0]
+    ymax = max(100.0, max(totals, default=0.0) * 1.1, 1.0)
+
+    # canvas: height rows of width cols — store topmost color index at each cell
+    # We paint from bottom layer to top so higher workloads overwrite.
+    canvas: List[List[Optional[int]]] = [
+        [None for _ in range(width)] for _ in range(height)
+    ]
+    # Also store fill intensity 0-1 within cell for block chars
+    intensity: List[List[float]] = [[0.0] * width for _ in range(height)]
+
+    n = len(history)
+    for wi, cum in enumerate(stacked):
+        lower = [0.0] * n if wi == 0 else stacked[wi - 1]
+        for col in range(width):
+            # map column to sample index
+            idx = int(round(col * (n - 1) / max(width - 1, 1))) if n > 1 else 0
+            lo = lower[idx]
+            hi = cum[idx]
+            if hi <= lo:
+                continue
+            # fill rows from lo..hi
+            y0 = lo / ymax * height
+            y1 = hi / ymax * height
+            r_start = int(y0)
+            r_end = min(height - 1, int(y1))
+            for r in range(r_start, r_end + 1):
+                # row 0 is bottom
+                cell_lo = r
+                cell_hi = r + 1
+                overlap = max(0.0, min(y1, cell_hi) - max(y0, cell_lo))
+                if overlap <= 0:
+                    continue
+                canvas[r][col] = wi
+                intensity[r][col] = max(intensity[r][col], min(1.0, overlap))
+
+    # draw lines at each stack boundary for "stacked lines" look
+    for wi, cum in enumerate(stacked):
+        prev_r = None
+        for col in range(width):
+            idx = int(round(col * (n - 1) / max(width - 1, 1))) if n > 1 else 0
+            y = cum[idx] / ymax * height
+            r = min(height - 1, max(0, int(y)))
+            canvas[r][col] = wi
+            intensity[r][col] = 1.0
+            if prev_r is not None and prev_r != r:
+                step = 1 if r > prev_r else -1
+                for rr in range(prev_r, r, step):
+                    canvas[rr][col] = wi
+                    intensity[rr][col] = 1.0
+            prev_r = r
+
+    lines: List[str] = [f"{BOLD}{FG}{title}{RESET}  {DIM}(0–{ymax:.0f}%){RESET}"]
+
+    label_every = max(1, height // 4)
+    for row in range(height - 1, -1, -1):
+        pct = (row + 1) / height * ymax
+        show_label = row == height - 1 or row % label_every == 0
+        label = f"{pct:5.0f}%│" if show_label else "     │"
+        cells = []
+        for col in range(width):
+            wi = canvas[row][col]
+            if wi is None:
+                cells.append(f"{DIM}·{RESET}" if row == 0 else " ")
+            else:
+                level = intensity[row][col]
+                ch = BLOCKS[max(1, min(7, int(round(level * 7))))]
+                cells.append(f"{COLORS[wi % len(COLORS)]}{ch}{RESET}")
+        lines.append(f"{DIM}{label}{RESET}{''.join(cells)}")
+
+    # x-axis
+    axis = "      └" + "─" * width
+    lines.append(f"{DIM}{axis}{RESET}")
+    if history:
+        t0 = datetime.fromtimestamp(history[0].ts).strftime("%H:%M:%S")
+        t1 = datetime.fromtimestamp(history[-1].ts).strftime("%H:%M:%S")
+        pad = max(0, width - len(t0) - len(t1))
+        lines.append(f"       {DIM}{t0}{' ' * pad}{t1}{RESET}")
+
+    # legend with current values
+    latest = history[-1]
+    data = latest.cpu if metric == "cpu" else latest.mem
+    known = set(workloads) - {"other"}
+    legend_parts = []
+    for wi, wl in enumerate(workloads):
+        if wl == "other":
+            val = sum(v for k, v in data.items() if k not in known)
+        else:
+            val = data.get(wl, 0.0)
+        short = wl if len(wl) <= 36 else "…" + wl[-35:]
+        legend_parts.append(
+            f"{COLORS[wi % len(COLORS)]}█{RESET} {short} {BOLD}{val:.1f}%{RESET}"
+        )
+    # wrap legend
+    legend_line = "   ".join(legend_parts)
+    lines.append(legend_line)
+    total = sum(
+        (sum(v for k, v in data.items() if k not in known) if wl == "other" else data.get(wl, 0.0))
+        for wl in workloads
+    )
+    lines.append(f"{DIM}stacked total:{RESET} {BOLD}{FG}{total:.1f}%{RESET}")
+    return "\n".join(lines)
+
+
+def term_size() -> Tuple[int, int]:
+    size = shutil.get_terminal_size(fallback=(100, 40))
+    return size.columns, size.lines
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(
+        description="Node CPU/MEM utilization (%) stacked by workload (temporal graph)"
+    )
+    parser.add_argument("node", help="Node name")
+    parser.add_argument("--context", default=os.environ.get("CONTEXT") or None)
+    parser.add_argument("--kubeconfig", default=os.environ.get("KUBECONFIG") or None)
+    parser.add_argument("--interval", type=float, default=2.0, help="Sample interval seconds")
+    parser.add_argument("--history", type=int, default=90, help="Number of samples to retain")
+    parser.add_argument("--top", type=int, default=8, help="Max workloads to show (+ other)")
+    args = parser.parse_args()
+
+    if not shutil.which("kubectl"):
+        print("kubectl not found in PATH", file=sys.stderr)
+        return 1
+
+    kc = Kubectl(args.context, args.kubeconfig)
+    collector = Collector(kc, args.node)
+    history: Deque[Sample] = deque(maxlen=max(2, args.history))
+    running = True
+
+    def stop(*_args: object) -> None:
+        nonlocal running
+        running = False
+
+    signal.signal(signal.SIGINT, stop)
+    signal.signal(signal.SIGTERM, stop)
+
+    sys.stdout.write(HIDE_CURSOR)
+    sys.stdout.flush()
+    err: Optional[str] = None
+
+    def draw(status: str = "") -> None:
+        cols, rows = term_size()
+        chart_w = max(40, cols - 8)
+        chart_h = max(6, (rows - 14) // 2)
+        cpu_wls = top_workloads(history, "cpu", args.top) if history else []
+        mem_wls = top_workloads(history, "mem", args.top) if history else []
+        header = (
+            f"{BOLD}{FG}node/{args.node}{RESET}"
+            f"  {DIM}ctx={args.context or 'current'}  interval={args.interval:g}s  "
+            f"samples={len(history)}/{args.history}  Ctrl-C=quit{RESET}"
+        )
+        body = [header, ""]
+        if status:
+            body.append(f"{DIM}{status}{RESET}")
+            body.append("")
+        if err:
+            body.append(f"\033[38;2;197;59;83merror: {err}{RESET}")
+            body.append("")
+        body.append(
+            render_chart(history, cpu_wls, "cpu", chart_w, chart_h, "CPU % of node (stacked by workload)")
+        )
+        body.append("")
+        body.append(
+            render_chart(history, mem_wls, "mem", chart_w, chart_h, "MEM % of node (stacked by workload)")
+        )
+        sys.stdout.write(CLEAR + "\n".join(body) + "\n")
+        sys.stdout.flush()
+
+    try:
+        # Immediate frame so the pane never looks frozen while the first
+        # (slowest) sample is being collected.
+        draw(status="connecting to cluster and collecting first sample…")
+        while running:
+            try:
+                history.append(collector.sample())
+                err = None
+            except Exception as exc:  # noqa: BLE001 — show live in UI
+                err = str(exc)
+
+            draw()
+
+            # interruptible sleep
+            end = time.time() + args.interval
+            while running and time.time() < end:
+                time.sleep(0.1)
+    finally:
+        sys.stdout.write(SHOW_CURSOR + "\n")
+        sys.stdout.flush()
+
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

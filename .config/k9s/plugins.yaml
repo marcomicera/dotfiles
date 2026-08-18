@@ -1,4 +1,19 @@
-plugin:
+# $XDG_CONFIG_HOME/k9s/plugins.yaml
+plugins:
+  # Live node CPU/MEM % stacked by workload (temporal graph).
+  # Requires metrics-server. Install helper via `make sync` (symlinks node-util).
+  node-util:
+    shortCut: Shift-U
+    confirm: false
+    description: Node util % (stacked)
+    scopes:
+      - node
+    command: sh
+    background: false
+    args:
+      - -c
+      - '"${XDG_CONFIG_HOME:-$HOME/.config}/k9s/node-util" "$NAME" --context "$CONTEXT"'
+
   # get-all:
   #   shortCut: g
   #   confirm: false

@@ -6,8 +6,11 @@ views:
     columns:
       - NAME
       - STATUS
-      - ROLE
-      - AGE
-      - VERSION
+      - PODS
+      - CPU
+      - "%CPU"
+      - MEM
+      - "%MEM"
       - NODEGROUP:.metadata.labels.eks\.amazonaws\.com/nodegroup
       - NODEPOOL:.metadata.labels.karpenter\.sh/nodepool
+      - AGE

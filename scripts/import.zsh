@@ -50,6 +50,14 @@ magenta "brew"
   brew leaves --installed-on-request >"${CWD}"/brew/formulae.txt
 )
 
+# krew
+magenta "krew"
+(
+  set -x
+  mkdir -p "${CWD}"/krew
+  kubectl krew list >"${CWD}"/krew/plugins.txt
+)
+
 # SmartGit
 magenta "SmartGit"
 (

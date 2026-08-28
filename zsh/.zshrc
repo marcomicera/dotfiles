@@ -56,6 +56,8 @@ export EDITOR='nvim'
 
 # Mise (lazy: activate on first prompt, saves ~26ms at shell open)
 export MISE_OVERRIDE_TOOL_VERSIONS_FILENAMES=none
+# Do not compile missing tools during activate/hook-env (stdout is eval'd).
+export MISE_AUTO_INSTALL=false
 _mise_lazy_init() {
   eval "$(mise activate zsh)"
   precmd_functions=(${precmd_functions:#_mise_lazy_init})

@@ -4,3 +4,8 @@ kubectl = "latest"
 remotectl = "latest"
 terraform = "latest"
 terragrunt = "latest"
+
+[settings]
+# hook-env evals stdout; auto-install of source builds (e.g. postgres) dumps
+# `./configure` "checking ..." lines into the shell as commands.
+auto_install = false

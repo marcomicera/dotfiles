@@ -1,4 +1,5 @@
 1password-cli
+basictex
 claude-code
 ghostty
 maccy

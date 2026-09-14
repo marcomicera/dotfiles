@@ -50,3 +50,32 @@ refresh-zsh-completions() {
 	rm -f "$d"/_*
 	echo "Completions cache cleared. Restart zsh to regenerate."
 }
+
+# Selected match: explicit bg/fg (not reverse). zsh's default ma=7 inverts
+# 24-bit colors inconsistently — fine on Down, bright on Up — in Ghostty.
+zstyle ':completion:*' list-colors \
+  ${(s.:.)LS_COLORS} \
+  'ma=0;48;2;45;63;118;38;2;200;211;245'
+# fzf-tab: pipe zsh completion (git switch, kubectl, files, ...) through fzf.
+# Don't use FZF_DEFAULT_OPTS_FILE here — its file preview/header binds break
+# non-file candidates (Aloxaf/fzf-tab#455).
+zstyle ':completion:*' menu no
+zstyle ':completion:*:descriptions' format '[%d]'
+zstyle ':completion:*:git-checkout:*' sort false
+zstyle ':completion:*:git-switch:*' sort false
+zstyle ':fzf-tab:*' switch-group '<' '>'
+zstyle ':fzf-tab:*' fzf-flags \
+  --style=minimal --height=80% --layout=reverse --border --highlight-line \
+  --bind=tab:accept \
+  --color=bg+:#2d3f76 --color=bg:-1 --color=border:#589ed7 --color=fg:#c8d3f5 \
+  --color=gutter:-1 --color=header:#ff966c --color=hl+:#65bcff --color=hl:#65bcff \
+  --color=info:#545c7e --color=marker:#ff007c --color=pointer:#ff007c \
+  --color=prompt:#65bcff --color=query:#c8d3f5:regular --color=scrollbar:#589ed7 \
+  --color=separator:#ff966c --color=spinner:#ff007c
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'fzf-preview.sh $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'fzf-preview.sh $realpath'
+zstyle ':fzf-tab:complete:git-(add|diff|restore):*' fzf-preview 'git diff --color=always $word | delta'
+zstyle ':fzf-tab:complete:git-(checkout|switch|branch):*' fzf-preview \
+  'git log -n 50 --color=always --date=short --pretty="format:%C(auto)%cd %h%d %s" ${word#remotes/}'
+# Reclaim Tab after any other widget binders (fzf, oh-my-zsh).
+(( $+functions[enable-fzf-tab] )) && enable-fzf-tab

@@ -19,6 +19,8 @@
     "editor.accessibilitySupport": "off",
     "breadcrumbs.enabled": true,
     "window.commandCenter": true,
+    "editor.wordWrap": "on",
+    "diffEditor.ignoreTrimWhitespace": false,
 
     // Theme (requires enkia.tokyo-night extension)
     "window.autoDetectColorScheme": true,
@@ -37,6 +39,7 @@
     "workbench.tree.indent": 20, // indentation
     "explorer.autoReveal": false, // never focus opened files into the file explorer pane
     "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
 
     // PDF viewer
     "pdf-preview.default.sidebar": false,
@@ -112,14 +115,15 @@
             ]
         }
     ],
-    "diffEditor.ignoreTrimWhitespace": false,
-    "go.toolsManagement.autoUpdate": true,
-    "explorer.confirmDelete": false,
-    "aikido.coreUrl": "https://ide.aikido.dev",
-    "editor.wordWrap": "on",
-    
+
     // AI
     "cursor.chatMaxWidth": 9999,
+    "aikido.coreUrl": "https://ide.aikido.dev",
+
+    // GitLens
     "gitlens.ai.model": "gitkraken",
     "gitlens.ai.gitkraken.model": "gemini:gemini-2.5-flash",
+
+    // Go
+    "go.toolsManagement.autoUpdate": true,
 }

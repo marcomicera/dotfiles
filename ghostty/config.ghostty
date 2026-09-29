@@ -7,8 +7,12 @@ background-blur = 16
 # Split panes: visible dividers + stronger focus contrast.
 # Divider hit area is fixed at ~7px in Ghostty (not configurable yet).
 split-divider-color = #589ed7
-unfocused-split-opacity = 0.2
-unfocused-split-fill = #000000
+# Blend unfocused panes toward a light grey instead of pure black: a lower
+# opacity means MORE of the fill shows through, so unfocused panes read as a
+# lifted grey rather than a dimmed black. Focus is signalled by the divider
+# plus the tint difference.
+unfocused-split-opacity = 0.75
+unfocused-split-fill = #828bb8
 
 # iTerm2-style splits: equalize panes after each split so repeated
 # Cmd+D / Cmd+Shift+D produces evenly sized columns/rows (e.g. thirds).

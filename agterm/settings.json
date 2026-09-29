@@ -1,0 +1,19 @@
+{
+  "backgroundBlur" : 61,
+  "backgroundOpacity" : 0.8888194499421823,
+  "blockedStatusColorHex" : "#FF2600",
+  "blockedStatusSoundName" : "Pop",
+  "darkTheme" : "TokyoNight",
+  "followSystemAppearance" : true,
+  "hiddenInterfaceElements" : [
+    "quickTerminal",
+    "split"
+  ],
+  "inheritGlobalGhosttyConfig" : true,
+  "newSessionCustomDirectory" : "\/Users\/marco.micera\/git\/work",
+  "newSessionDirectory" : "custom",
+  "restoreMode" : "none",
+  "sidebarBackgroundShift" : 10,
+  "theme" : "TokyoNight Day",
+  "welcomeShown" : true
+}

@@ -193,6 +193,18 @@ magenta "Ghossty"
   fi
 )
 
+# agterm
+magenta "agterm"
+(
+  # Hand-edited config only. settings.json is rewritten by the app on every settings
+  # change, so import.zsh copies it instead (an atomic rewrite would replace a symlink).
+  set -x
+  symlink "${CWD}"/agterm ~/.config/agterm/ghostty.conf
+  symlink "${CWD}"/agterm ~/.config/agterm/hooks.conf
+  symlink "${CWD}"/agterm ~/.config/agterm/keymap.conf
+  symlink "${CWD}"/agterm ~/.config/agterm/restore-denylist.conf
+)
+
 # lazygit
 magenta "lazygit"
 (

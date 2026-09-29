@@ -95,4 +95,16 @@ magenta "VSCodium"
   codium --list-extensions > "${CWD}"/codium/extensions.txt # Extensions list (installation: https://stackoverflow.com/a/49398449)
 )
 
+# agterm
+magenta "agterm"
+(
+  # The app rewrites settings.json on every settings change, so it is copied rather than
+  # symlinked. The hand-edited *.conf files are symlinked by sync.zsh instead.
+  # Skipped on purpose: ghostty-settings.conf (emitted from Settings), windows.json,
+  # recent-closed.json and agent-status/ (installed by Help > Install Agent Status Hooks,
+  # with an absolute agtermctl path baked in).
+  set -x
+  cp ~/Library/Application\ Support/agterm/settings.json "${CWD}"/agterm/settings.json
+)
+
 printf "\n"

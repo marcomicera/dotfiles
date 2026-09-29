@@ -173,3 +173,7 @@ source ~/.untracked-aliases
 
 # zoxide
 eval "$(zoxide init --cmd cd zsh)" # completion
+
+# >>> agterm agent-status >>>
+source '/Users/marco.micera/.config/agterm/agent-status/shell/integration.sh'
+# <<< agterm agent-status <<<

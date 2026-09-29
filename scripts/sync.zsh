@@ -203,6 +203,7 @@ magenta "agterm"
   symlink "${CWD}"/agterm ~/.config/agterm/hooks.conf
   symlink "${CWD}"/agterm ~/.config/agterm/keymap.conf
   symlink "${CWD}"/agterm ~/.config/agterm/restore-denylist.conf
+  symlink "${CWD}"/agterm/scripts ~/.config/agterm/scripts/close-pane.sh
 )
 
 # lazygit

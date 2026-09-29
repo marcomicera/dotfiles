@@ -33,6 +33,7 @@ prettier
 ruby
 rustup
 skaffold
+skopeo
 stern
 terraform-docs
 terragrunt

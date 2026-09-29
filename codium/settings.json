@@ -116,9 +116,7 @@
         }
     ],
 
-    // AI
-    "cursor.chatMaxWidth": 9999,
-    "aikido.coreUrl": "https://ide.aikido.dev",
+    
 
     // GitLens
     "gitlens.ai.model": "gitkraken",
@@ -126,4 +124,18 @@
 
     // Go
     "go.toolsManagement.autoUpdate": true,
+
+    // AI
+    
+    "aikido.coreUrl": "https://ide.aikido.dev",
+
+    // Cursor
+    "cursor.chatMaxWidth": 9999,
+    "cursor.composer.shouldChimeAfterChatFinishes": true,
+
+    // Claude
+    // "claudeCode.preferredLocation": "panel",
+    "chat.fontSize": 14,
+    "claudeCode.preferredLocation": "panel" // conversation text
+    // "chat.editor.fontSize": 18 // code blocks in the chat
 }

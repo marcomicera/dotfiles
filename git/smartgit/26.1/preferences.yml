@@ -115,7 +115,7 @@ globalTextComponentSettings:
 listx: {uid: x24982992311}
 project: {defaultWindowType: log, showWelcomeDialog: false}
 uiSettings: {theme: auto, themeChanged: false, fileSearchPatternType: 1}
-vcsRecords: {lastGitUsage: 1790765072885}
+vcsRecords: {lastGitUsage: 1790770402207}
 updateCheck:
   channels: []
   prevCheckTime: 1790722265275

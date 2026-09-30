@@ -116,8 +116,6 @@
         }
     ],
 
-    
-
     // GitLens
     "gitlens.ai.model": "gitkraken",
     "gitlens.ai.gitkraken.model": "gemini:gemini-2.5-flash",
@@ -126,7 +124,6 @@
     "go.toolsManagement.autoUpdate": true,
 
     // AI
-    
     "aikido.coreUrl": "https://ide.aikido.dev",
 
     // Cursor

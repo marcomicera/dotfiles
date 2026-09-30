@@ -70,8 +70,8 @@ magenta "SmartGit"
     printf "Using new SmartGit version: ${SMARTGIT_VERSION}\nCreating folder...\n"
     mkdir -p "${CWD}"/git/smartgit/${SMARTGIT_VERSION}
   fi
+  # smartgit.vmoptions is hand-edited and symlinked by sync.zsh, so it is not copied here.
   set -x
-  cp ${SMARTGIT_BASE_CONFIG_DIR}/smartgit.vmoptions "${CWD}"/git/smartgit
   cp ${SMARTGIT_VERSION_SPECIFIC_DIR}/preferences.yml "${CWD}"/git/smartgit/${SMARTGIT_VERSION}
   cp ${SMARTGIT_VERSION_SPECIFIC_DIR}/tools.yml "${CWD}"/git/smartgit/${SMARTGIT_VERSION}
   cp ${SMARTGIT_VERSION_SPECIFIC_DIR}/ui-config.yml "${CWD}"/git/smartgit/${SMARTGIT_VERSION}

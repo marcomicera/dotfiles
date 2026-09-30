@@ -101,7 +101,12 @@ magenta "git"
 # SmartGit
 magenta "SmartGit"
 (
+  set -x
   symlink "${CWD}"/bin /usr/local/bin/sm
+  # JVM options are hand-edited, so they are symlinked here. The per-version
+  # preferences under ~/Library/Preferences/SmartGit/<version>/ are rewritten by the
+  # app, so import.zsh copies those instead.
+  symlink "${CWD}"/git/smartgit ~/Library/Preferences/SmartGit/smartgit.vmoptions
 )
 
 # nano

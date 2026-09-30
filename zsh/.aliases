@@ -1,5 +1,6 @@
 # AI
 alias c="claude"
+alias cr="claude --resume"
 
 # Yazi
 function y() {

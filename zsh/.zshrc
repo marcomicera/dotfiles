@@ -93,6 +93,10 @@ PATH+=:$HOME/.local/bin
 # Docker
 PATH+=:$HOME/.docker/bin
 
+# TeX (basictex)
+# /etc/paths.d/TeX covers login shells via path_helper; this covers the rest
+[[ ":$PATH:" == *":/Library/TeX/texbin:"* ]] || PATH+=:/Library/TeX/texbin
+
 # Use bat for man pages
 export MANPAGER="sh -c 'col -bx | bat -l man -p --paging=always'"
 export MANROFFOPT='-c'

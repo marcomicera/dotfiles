@@ -79,6 +79,7 @@
     
     // Git
     "git.openRepositoryInParentFolders": "always",
+    "git.ignoreLimitWarning": true, // don't warn when a repo has thousands of changes (e.g. the work workspace)
 
     // Laguage-specific
     "[json]": {

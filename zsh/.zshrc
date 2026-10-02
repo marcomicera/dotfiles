@@ -86,11 +86,13 @@ if [[ -s $_gem_home_cache ]]; then
 fi
 unset _gem_home_cache
 
-# Golang
-export GOPATH="$(go env GOPATH)"
+# Golang. $HOME/go is Go's built-in GOPATH default (no ~/.config/go/env override
+# here) and GOROOT follows the Homebrew layout, so neither needs a subprocess:
+# `go env GOPATH` cost ~39 ms and `brew --prefix go` ~85 ms.
+export GOPATH="${GOPATH:-$HOME/go}"
 export GOBIN="${GOPATH}/bin"
 export PATH="${PATH}:${GOBIN}"
-export GOROOT="$(brew --prefix go)/libexec"
+export GOROOT="${HOMEBREW_PREFIX}/opt/go/libexec"
 export PATH="$PATH:$GOROOT/bin"
 
 # Functions

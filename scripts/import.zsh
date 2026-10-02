@@ -50,6 +50,15 @@ magenta "brew"
   brew leaves --installed-on-request >"${CWD}"/brew/formulae.txt
 )
 
+# npm
+magenta "npm"
+(
+  # Globals live in the active mise node's prefix, so this list is only complete
+  # while that node is the one they were installed under. mise/config.toml pins it.
+  set -x
+  npm ls -g --depth=0 --json | jq -r '.dependencies | keys[] | select(. != "npm")' >"${CWD}"/npm/globals.txt
+)
+
 # krew
 magenta "krew"
 (

@@ -1,6 +1,9 @@
 [tools]
 helm = "latest"
 kubectl = "latest"
+# happy and @getpaseo/cli are npm globals installed into this node's prefix,
+# so a node must always be active or they drop off PATH entirely.
+node = "26.9.0"
 remotectl = "latest"
 terraform = "latest"
 terragrunt = "latest"

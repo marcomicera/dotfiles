@@ -72,8 +72,19 @@ precmd_functions+=(_mise_lazy_init)
 
 # Ruby
 export PATH="${HOMEBREW_PREFIX}/opt/ruby/bin:$PATH"
-export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-export PATH="$PATH:$GEM_HOME/bin"
+# Gem.user_dir is Ruby-version-specific (.../ruby/4.0.0), so it is cached rather
+# than hardcoded -- spawning ruby costs ~63 ms. The cache is rebuilt when the ruby
+# binary is newer than it, i.e. after a Homebrew upgrade. $(<file) does not fork.
+_gem_home_cache="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/gem-home"
+if [[ ! -s $_gem_home_cache || ${HOMEBREW_PREFIX}/opt/ruby/bin/ruby -nt $_gem_home_cache ]]; then
+  mkdir -p "${_gem_home_cache:h}"
+  ruby -e 'puts Gem.user_dir' >| "$_gem_home_cache" 2>/dev/null
+fi
+if [[ -s $_gem_home_cache ]]; then
+  export GEM_HOME="$(<$_gem_home_cache)"
+  export PATH="$PATH:$GEM_HOME/bin"
+fi
+unset _gem_home_cache
 
 # Golang
 export GOPATH="$(go env GOPATH)"

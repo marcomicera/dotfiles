@@ -1,4 +1,5 @@
 # AI
+alias claude="happy claude"
 alias c="claude"
 alias cr="claude --resume"
 

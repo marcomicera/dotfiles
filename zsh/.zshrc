@@ -7,12 +7,17 @@ export ZSH_DISABLE_COMPFIX=true
 # Skip Oh-My-Zsh upgrade check (~6–12ms)
 export DISABLE_AUTO_UPDATE=true
 
+# Homebrew prefix. `brew shellenv` exports this from ~/.zprofile, which only runs
+# for login shells; the fallback covers the rest. Used instead of `brew --prefix`
+# below, which costs ~85 ms per call.
+export HOMEBREW_PREFIX="${HOMEBREW_PREFIX:-/opt/homebrew}"
+
 # Powerlevel10k
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source "$(brew --prefix powerlevel10k)"/share/powerlevel10k/powerlevel10k.zsh-theme
+source "${HOMEBREW_PREFIX}"/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # My binaries
 export PATH="${HOME}/bin:${PATH}"
@@ -66,7 +71,7 @@ _mise_lazy_init() {
 precmd_functions+=(_mise_lazy_init)
 
 # Ruby
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="${HOMEBREW_PREFIX}/opt/ruby/bin:$PATH"
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
 
@@ -146,7 +151,7 @@ export FZF_DEFAULT_OPTS_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/fzf/config"
 source ~/.completions
 
 # Rust
-export PATH="$(brew --prefix)/opt/rustup/bin:$PATH"
+export PATH="${HOMEBREW_PREFIX}/opt/rustup/bin:$PATH"
 
 # Aliases
 source ~/.aliases

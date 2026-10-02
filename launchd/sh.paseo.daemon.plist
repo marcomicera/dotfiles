@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>sh.paseo.daemon</string>
+
+  <!-- `paseo start` spawns its own supervisor and exits, so this runs once at
+       login rather than being kept alive. It is idempotent: a second run against
+       a live daemon just reports "Already running". -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/opt/homebrew/bin/mise</string>
+    <string>exec</string>
+    <string>--</string>
+    <string>paseo</string>
+    <string>start</string>
+  </array>
+
+  <key>RunAtLoad</key>
+  <true/>
+
+  <!-- Run from home so mise picks the node pinned in ~/.config/mise/config.toml.
+       The paseo binary lives in that node's npm prefix. -->
+  <key>WorkingDirectory</key>
+  <string>/Users/marco.micera</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+
+  <key>StandardOutPath</key>
+  <string>/Users/marco.micera/.paseo/launchd.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/marco.micera/.paseo/launchd.log</string>
+</dict>
+</plist>

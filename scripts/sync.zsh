@@ -89,6 +89,15 @@ magenta "mise"
   symlink "${CWD}"/mise ~/.config/mise/config.toml
 )
 
+# paseo
+magenta "paseo"
+(
+  # Brings the daemon back at login so the phone client can reach this machine.
+  # The paseo CLI has no autostart of its own.
+  set -x
+  symlink "${CWD}"/launchd ~/Library/LaunchAgents/sh.paseo.daemon.plist
+)
+
 # git
 magenta "git"
 (

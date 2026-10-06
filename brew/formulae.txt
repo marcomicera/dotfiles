@@ -2,6 +2,9 @@ argocd
 awscli
 bat
 cilium-cli
+colima
+docker
+docker-compose
 dyff
 elixir
 fd

@@ -58,23 +58,19 @@ tree:
 		-a \
 		-I '.git|.gitignore|.idea|Makefile|README.md|img|import.zsh|util'
 
-.PHONY: start-docker
-start-docker:
+.PHONY: start-colima
+start-colima:
 ifeq ($(UNAME), Darwin)
 	@if ! docker info > /dev/null 2>&1; then \
-		echo "Docker is not running. Attempting to start Docker.app..."; \
-		open -a Docker; \
-		echo "Waiting for Docker to start..."; \
-		while ! docker info > /dev/null 2>&1; do \
-			sleep 1; \
-		done; \
-		echo "Docker is now running."; \
+		echo "Container runtime is not running. Starting Colima..."; \
+		colima start; \
+		echo "Colima is now running."; \
 	fi
 endif
 
 .PHONY: gitleaks
 .SILENT: gitleaks
-gitleaks: start-docker
+gitleaks: start-colima
 	docker run \
 		--rm \
 		--name gitleaks \

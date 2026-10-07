@@ -1,0 +1,41 @@
+# TokyoNight Moon with a pure black background.
+#
+# Why this file exists: Ghostty's `theme` key takes a light:/dark: pair, but `background`
+# does NOT — an explicit `background` overrides the theme in BOTH appearances, so it
+# cannot be made appearance-dependent. The only way to get a black background in dark
+# mode only is to bake it into the dark theme itself, which is what this is.
+#
+# Ghostty looks for custom themes in ~/.config/ghostty/themes ONLY — NOT in the macOS
+# config dir (~/Library/Application Support/com.mitchellh.ghostty/themes), despite that
+# being where this setup keeps config.ghostty. sync.zsh symlinks this file into place.
+#
+# Verbatim copy of Ghostty's bundled "TokyoNight Moon" except for the two marked lines.
+# Re-check them against the bundle after a Ghostty upgrade:
+#   /Applications/Ghostty.app/Contents/Resources/ghostty/themes/TokyoNight Moon
+#
+# NOT used by agterm: it rejects custom theme names in its own picker, and while its
+# ghostty.conf can reach this file, agterm only re-evaluates light:/dark: on an explicit
+# `agtermctl config reload` — never on a live appearance change. agterm therefore stays
+# on the bundled TokyoNight Moon (#222436) and its dark background differs from Ghostty's.
+palette = 0=#1b1d2b
+palette = 1=#ff757f
+palette = 2=#c3e88d
+palette = 3=#ffc777
+palette = 4=#82aaff
+palette = 5=#c099ff
+palette = 6=#86e1fc
+palette = 7=#828bb8
+palette = 8=#444a73
+palette = 9=#ff757f
+palette = 10=#c3e88d
+palette = 11=#ffc777
+palette = 12=#82aaff
+palette = 13=#c099ff
+palette = 14=#86e1fc
+palette = 15=#c8d3f5
+background = #000000
+foreground = #c8d3f5
+cursor-color = #c8d3f5
+cursor-text = #000000
+selection-background = #2d3f76
+selection-foreground = #c8d3f5

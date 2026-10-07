@@ -1,18 +1,27 @@
-theme = TokyoNight Moon
-background = #000000
+# Follows the macOS Light/Dark appearance. Ghostty supports the light:/dark: pair on
+# `theme` ONLY — `background` and friends have no such syntax and, when set explicitly,
+# override the theme's colors in BOTH appearances regardless of where they appear in this
+# file. So there is no `background` here: the pure black dark background is baked into
+# the dark theme instead (themes/TokyoNight Moon Black, symlinked into
+# ~/.config/ghostty/themes by sync.zsh — the only directory Ghostty searches for custom
+# themes, NOT the macOS config dir this file lives in).
+#
+# Deliberately NOT in sync with the agterm-scoped config (agterm/ghostty.conf): agterm
+# cannot reach a custom theme on a live appearance change, so it stays on the bundled
+# TokyoNight Moon and its dark background is #222436 rather than black. See that file.
+theme = light:TokyoNight Day,dark:TokyoNight Moon Black
 
 background-opacity = 0.9
 background-blur = 16
 
 # Split panes: visible dividers + stronger focus contrast.
 # Divider hit area is fixed at ~7px in Ghostty (not configurable yet).
+# The blue divider reads on both appearances, so it is not appearance-dependent.
 split-divider-color = #589ed7
-# Blend unfocused panes toward a light grey instead of pure black: a lower
-# opacity means MORE of the fill shows through, so unfocused panes read as a
-# lifted grey rather than a dimmed black. Focus is signalled by the divider
-# plus the tint difference.
+# No `unfocused-split-fill`: it is a single color that cannot track the appearance, and a
+# fill tuned for dark reads muddy on light. Unfocused panes instead blend toward whatever
+# background the active theme set. Focus is signalled by the divider plus that dimming.
 unfocused-split-opacity = 0.75
-unfocused-split-fill = #828bb8
 
 # iTerm2-style splits: equalize panes after each split so repeated
 # Cmd+D / Cmd+Shift+D produces evenly sized columns/rows (e.g. thirds).

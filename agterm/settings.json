@@ -4,13 +4,16 @@
   "backgroundOpacity" : 0.8888194499421823,
   "blockedStatusColorHex" : "#FF2600",
   "blockedStatusSoundName" : "Pop",
+  "darkTheme" : "TokyoNight Moon",
   "dockBounce" : "once",
+  "followSystemAppearance" : true,
   "hiddenInterfaceElements" : [
     "quickTerminal",
     "scratch",
     "split",
     "windowName"
   ],
+  "inactivePaneMuteStrength" : 10,
   "inheritGlobalGhosttyConfig" : true,
   "mouseScrollMultiplier" : 1,
   "newSessionCustomDirectory" : "\/Users\/marco.micera\/git\/work",
@@ -18,6 +21,6 @@
   "notificationSoundName" : "Pop",
   "restoreMode" : "none",
   "sidebarBackgroundShift" : 10,
-  "theme" : "TokyoNight Moon",
+  "theme" : "TokyoNight Day",
   "welcomeShown" : true
 }

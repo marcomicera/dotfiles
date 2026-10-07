@@ -199,6 +199,9 @@ magenta "Ghossty"
 (
   set -x
   symlink "${CWD}"/ghostty ~/Library/Application\ Support/com.mitchellh.ghostty/config.ghostty
+  # Custom themes resolve ONLY from ~/.config/ghostty/themes, never from the macOS config
+  # dir above, so the dark theme carrying the black background is linked separately.
+  symlink "${CWD}"/ghostty/themes ~/.config/ghostty/themes/TokyoNight\ Moon\ Black
   # xterm-ghostty terminfo for TUIs (lazygit, etc.)
   if [[ -d "/Applications/Ghostty.app/Contents/Resources/terminfo" ]]; then
     mkdir -p "${HOME}/.terminfo"

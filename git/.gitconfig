@@ -43,21 +43,25 @@
 [delta]
     navigate = true # use n and N to move between diff sections
 	side-by-side = true
-	# Tokyo Night Moon (matches Neovim)
-	minus-style = syntax "#4b2a3d"
-	minus-non-emph-style = syntax "#4b2a3d"
-	minus-emph-style = syntax "#6b2e43"
-	minus-empty-line-marker-style = syntax "#4b2a3d"
-	line-numbers-minus-style = "#e26a75"
-	plus-style = syntax "#2a5645"
-	plus-non-emph-style = syntax "#2a5645"
-	plus-emph-style = syntax "#306f5f"
-	plus-empty-line-marker-style = syntax "#2a5645"
-	line-numbers-plus-style = "#b8db87"
-	line-numbers-zero-style = "#3b4261"
-	file-style = "#82aaff" bold
-	file-decoration-style = "#82aaff" box
-	hunk-header-decoration-style = "#c099ff" box
+	# Modus Vivendi (matches Neovim / bat). Generated values come from
+	# modus-themes.nvim extras/delta; the file/hunk decorations are ours.
+	# syntax-theme reads the Modus tmTheme out of bat's cache, so run
+	# `bat cache --build` if diffs come out unhighlighted.
+	syntax-theme = modus_vivendi
+	minus-style = syntax "#4f1119"
+	minus-non-emph-style = syntax "#380a0f"
+	minus-emph-style = syntax "#781a1f"
+	minus-empty-line-marker-style = syntax "#380a0f"
+	line-numbers-minus-style = "#ffbfbf"
+	plus-style = syntax "#00381f"
+	plus-non-emph-style = syntax "#002910"
+	plus-emph-style = syntax "#034f2f"
+	plus-empty-line-marker-style = syntax "#002910"
+	line-numbers-plus-style = "#a0e0a0"
+	line-numbers-zero-style = "#989898"
+	file-style = "#2fafff" bold
+	file-decoration-style = "#2fafff" box
+	hunk-header-decoration-style = "#b6a0ff" box
 
 # Aliases
 [alias]

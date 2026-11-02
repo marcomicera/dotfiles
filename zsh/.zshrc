@@ -36,10 +36,12 @@ plugins=(
 	zsh-fzf-history-search
 )
 
-# LS_COLORS for tree (and anything else that reads it): Modus Vivendi
+# LS_COLORS for tree (and anything else that reads it), from vivid's ansi theme:
 # Matches Neovim / Ghostty / bat / fzf. Regenerated with:
-#   vivid generate modus-vivendi > ~/.config/vivid/modus-vivendi.ls_colors
-_ls_colors_file="${XDG_CONFIG_HOME:-$HOME/.config}/vivid/modus-vivendi.ls_colors"
+#   vivid generate ansi > ~/.config/vivid/modus.ls_colors
+# The ansi theme emits the 16 terminal colours instead of hex, so file colours are
+# Modus Vivendi in dark and Modus Operandi in light, like everything else.
+_ls_colors_file="${XDG_CONFIG_HOME:-$HOME/.config}/vivid/modus.ls_colors"
 [[ -r $_ls_colors_file ]] && export LS_COLORS="$(<$_ls_colors_file)"
 unset _ls_colors_file
 

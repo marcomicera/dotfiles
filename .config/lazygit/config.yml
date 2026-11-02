@@ -1,7 +1,15 @@
-# Theme matches Neovim (modus-themes.nvim, Modus Vivendi palette)
+# Colours follow the macOS appearance: lazygit asks the terminal whether its
+# background is dark or light (colorScheme: auto) and layers darkTheme or
+# lightTheme over theme. The two palettes are Modus Vivendi and Modus Operandi,
+# the same pair the terminal, Neovim and bat use.
 gui:
   nerdFontsVersion: "3"
+  colorScheme: auto
   theme:
+    defaultFgColor:
+      - "default"
+  # Modus Vivendi
+  darkTheme:
     activeBorderColor:
       - "#ff6b55"
       - "bold"
@@ -24,5 +32,27 @@ gui:
       - "#d0bc00"
     unstagedChangesColor:
       - "#ff5f59"
-    defaultFgColor:
-      - "default"
+  # Modus Operandi
+  lightTheme:
+    activeBorderColor:
+      - "#972500"
+      - "bold"
+    inactiveBorderColor:
+      - "#9f9f9f"
+    searchingActiveBorderColor:
+      - "#972500"
+      - "bold"
+    optionsTextColor:
+      - "#0031a9"
+    selectedLineBgColor:
+      - "#c0deff"
+    cherryPickedCommitFgColor:
+      - "#0031a9"
+    cherryPickedCommitBgColor:
+      - "#531ab6"
+    markedBaseCommitFgColor:
+      - "#0031a9"
+    markedBaseCommitBgColor:
+      - "#6f5500"
+    unstagedChangesColor:
+      - "#a60000"

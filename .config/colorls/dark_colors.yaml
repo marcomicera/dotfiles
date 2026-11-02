@@ -1,51 +1,52 @@
-# Tokyo Night Moon (matches Neovim / Ghostty / bat / fzf / p10k)
-# Palette: blue #82aaff, cyan #86e1fc, green #c3e88d, teal #4fd6be,
-#          yellow #ffc777, orange #ff966c, red #ff757f, magenta #c099ff,
-#          purple #fca7ea, comment #636da6, fg #c8d3f5, fg_dark #828bb8
+# Modus Vivendi (matches Neovim / Ghostty / bat / fzf / p10k)
+# Palette: blue #2fafff, cyan #00d3d0, green #44bc44, teal #6ae4b9,
+#          yellow #d0bc00, orange #ff6b55, red #ff5f59, magenta #b6a0ff,
+#          purple #feacd0, fg #ffffff, fg_dim #989898
+#          greys, brightest to dimmest: #c4c4c4, #989898, #646464
 
 # Main Colors
-unrecognized_file: '#ffc777'
-recognized_file:   '#c8d3f5'
-executable_file:   '#c3e88d'
-dir:               '#82aaff'
+unrecognized_file: '#d0bc00'
+recognized_file:   '#ffffff'
+executable_file:   '#44bc44'
+dir:               '#2fafff'
 
 # Link
-dead_link: '#c53b53'
-link:      '#86e1fc'
+dead_link: '#ff5f59'
+link:      '#00d3d0'
 
 # Special Files
-socket:   '#c3e88d'
-blockdev: '#c3e88d'
-chardev:  '#c3e88d'
+socket:   '#44bc44'
+blockdev: '#44bc44'
+chardev:  '#44bc44'
 
 # Access Modes
-write:     '#fca7ea'
-read:      '#c099ff'
-exec:      '#86e1fc'
-no_access: '#c53b53'
+write:     '#feacd0'
+read:      '#b6a0ff'
+exec:      '#00d3d0'
+no_access: '#ff5f59'
 
 # Age
-hour_old:    '#828bb8'
-day_old:     '#636da6'
-no_modifier: '#545c7e'
+hour_old:    '#c4c4c4'
+day_old:     '#989898'
+no_modifier: '#646464'
 
 # File Size
-file_large:  '#ff757f'
-file_medium: '#ff966c'
-file_small:  '#c3e88d'
+file_large:  '#ff5f59'
+file_medium: '#ff6b55'
+file_small:  '#44bc44'
 
 # Random
-report: '#c3e88d'
-user:   '#86e1fc'
-tree:   '#545c7e'
-empty:  '#636da6'
-error:  '#c53b53'
-normal: '#c8d3f5'
-inode:  '#c099ff'
+report: '#44bc44'
+user:   '#00d3d0'
+tree:   '#989898'
+empty:  '#989898'
+error:  '#ff5f59'
+normal: '#ffffff'
+inode:  '#b6a0ff'
 
 # Git
-addition:     '#b8db87'
+addition:     '#a0e0a0'
 modification: '#7ca1f2'
-deletion:     '#e26a75'
-untracked:    '#ff966c'
-unchanged:    '#c3e88d'
+deletion:     '#ffbfbf'
+untracked:    '#ff6b55'
+unchanged:    '#44bc44'

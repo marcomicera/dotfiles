@@ -264,7 +264,7 @@ if [[ -n ${XDG_CONFIG_HOME} ]]; then
   (
     set -x
     symlink "${CWD}"/.config/glow "${XDG_CONFIG_HOME}/glow/glow.yml"
-    symlink "${CWD}"/.config/glow "${XDG_CONFIG_HOME}/glow/tokyo-night.json"
+    symlink "${CWD}"/.config/glow "${XDG_CONFIG_HOME}/glow/modus-vivendi.json"
   )
 fi
 

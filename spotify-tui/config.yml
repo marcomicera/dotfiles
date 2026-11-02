@@ -1,22 +1,23 @@
 # Sample config file
 
 # The theme colours can be an rgb string of the form "255, 255, 255" or a string that references the colours from your terminal theme: Reset, Black, Red, Green, Yellow, Blue, Magenta, Cyan, Gray, DarkGray, LightRed, LightGreen, LightYellow, LightBlue, LightMagenta, LightCyan, White.
-# Modus Vivendi (matches Neovim)
+# Modus, by terminal colour name rather than rgb, so the palette follows the macOS
+# appearance: Modus Vivendi in dark, Modus Operandi in light.
 theme:
-  active: "0, 211, 208" # cyan #00d3d0
-  banner: "47, 175, 255" # blue #2fafff
-  error_border: "255, 95, 89" # red #ff5f59
-  error_text: "255, 191, 191" # fg_removed #ffbfbf
-  hint: "208, 188, 0" # yellow #d0bc00
-  hovered: "182, 160, 255" # magenta_cooler #b6a0ff
-  inactive: "152, 152, 152" # fg_dim #989898
-  playbar_background: "30, 30, 30" # bg_dim #1e1e1e
-  playbar_progress: "0, 188, 255" # blue_cooler #00bcff
-  playbar_progress_text: "0, 211, 208" # cyan #00d3d0
-  playbar_text: "255, 255, 255" # fg_main #ffffff
-  selected: "0, 188, 255" # blue_cooler #00bcff
-  text: "255, 255, 255" # fg_main #ffffff
-  header: "47, 175, 255" # blue #2fafff
+  active: "Cyan"
+  banner: "Blue"
+  error_border: "Red"
+  error_text: "LightRed"
+  hint: "Yellow"
+  hovered: "LightMagenta"
+  inactive: "White" # ANSI 15, which is where Modus puts its dim grey
+  playbar_background: "Reset"
+  playbar_progress: "LightBlue"
+  playbar_progress_text: "Cyan"
+  playbar_text: "Reset"
+  selected: "LightBlue"
+  text: "Reset"
+  header: "Blue"
 
 behavior:
   seek_milliseconds: 5000

@@ -8,7 +8,6 @@
 ## Manual imports
 
 - Rectangle (into [`.config/rectangle/RectangleConfig.json`](.config/rectangle/RectangleConfig.json))
-- iTerm2 (into [`iterm2/com.googlecode.iterm2.plist`](iterm2/com.googlecode.iterm2.plist))
 
 ## Dependencies
 

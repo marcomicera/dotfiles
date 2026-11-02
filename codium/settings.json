@@ -65,7 +65,7 @@
     
     // Terminal
     "terminal.integrated.defaultProfile.osx": "zsh",
-    "terminal.external.osxExec": "iTerm.app",
+    "terminal.external.osxExec": "agterm.app",
     "terminal.integrated.fontSize": 12,
     "terminal.integrated.fontFamily": "Hack Nerd Font",
     "terminal.integrated.scrollback": 9999,

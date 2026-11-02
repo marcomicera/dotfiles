@@ -26,7 +26,6 @@ fPATH+=:$HOMEBREW_PREFIX/share/zsh/site-functions
 
 plugins=(
 	docker
-    iterm2
     # gcloud
     gh
     # git
@@ -48,7 +47,6 @@ export ZSH="${HOME}/.oh-my-zsh"
 export ZSH_CUSTOM=$ZSH/custom
 ZSH_THEME="" # theme loaded from Homebrew above
 source $ZSH/oh-my-zsh.sh
-source ~/.iterm2_shell_integration.zsh
 
 export VISUAL='nvim'
 export EDITOR='nvim'

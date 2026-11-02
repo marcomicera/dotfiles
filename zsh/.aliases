@@ -1,7 +1,7 @@
 # AI
-alias claude="happy claude"
-alias c="claude"
-alias cr="claude --resume"
+alias ci="claude -p"
+alias c="happy claude"
+alias cr="happy claude --resume"
 
 # Yazi
 function y() {

@@ -17,21 +17,21 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Deque, Dict, List, Optional, Sequence, Tuple
 
-# Tokyo Night Moon palette (matches k9s skin)
+# Modus Vivendi palette (matches k9s skin)
 COLORS = [
-    "\033[38;2;130;170;255m",  # blue
-    "\033[38;2;195;232;141m",  # green
-    "\033[38;2;255;199;119m",  # yellow
-    "\033[38;2;255;150;108m",  # orange
-    "\033[38;2;192;153;255m",  # magenta
-    "\033[38;2;134;225;252m",  # cyan
-    "\033[38;2;255;117;127m",  # red
-    "\033[38;2;79;214;190m",  # teal
-    "\033[38;2;252;167;234m",  # purple
-    "\033[38;2;130;139;184m",  # white/muted
+    "\033[38;2;47;175;255m",  # blue
+    "\033[38;2;68;188;68m",  # green
+    "\033[38;2;208;188;0m",  # yellow
+    "\033[38;2;255;107;85m",  # orange
+    "\033[38;2;182;160;255m",  # magenta
+    "\033[38;2;0;211;208m",  # cyan
+    "\033[38;2;255;95;89m",  # red
+    "\033[38;2;106;228;185m",  # teal
+    "\033[38;2;254;172;208m",  # purple
+    "\033[38;2;152;152;152m",  # white/muted
 ]
-DIM = "\033[38;2;99;109;166m"
-FG = "\033[38;2;200;211;245m"
+DIM = "\033[38;2;100;100;100m"
+FG = "\033[38;2;255;255;255m"
 RESET = "\033[0m"
 BOLD = "\033[1m"
 CLEAR = "\033[2J\033[H"

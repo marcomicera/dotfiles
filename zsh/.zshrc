@@ -37,10 +37,10 @@ plugins=(
 	zsh-fzf-history-search
 )
 
-# LS_COLORS for tree (and anything else that reads it): Tokyo Night Moon
+# LS_COLORS for tree (and anything else that reads it): Modus Vivendi
 # Matches Neovim / Ghostty / bat / fzf. Regenerated with:
-#   vivid generate tokyonight-moon > ~/.config/vivid/tokyonight-moon.ls_colors
-_ls_colors_file="${XDG_CONFIG_HOME:-$HOME/.config}/vivid/tokyonight-moon.ls_colors"
+#   vivid generate modus-vivendi > ~/.config/vivid/modus-vivendi.ls_colors
+_ls_colors_file="${XDG_CONFIG_HOME:-$HOME/.config}/vivid/modus-vivendi.ls_colors"
 [[ -r $_ls_colors_file ]] && export LS_COLORS="$(<$_ls_colors_file)"
 unset _ls_colors_file
 

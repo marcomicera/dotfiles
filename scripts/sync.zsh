@@ -45,7 +45,7 @@ magenta "zsh"
   symlink "${CWD}"/.config/bat/themes ~/.config/bat/themes/modus_vivendi.tmTheme
   symlink "${CWD}"/.config/fzf ~/.config/fzf/config
   symlink "${CWD}"/.config/colorls ~/.config/colorls/dark_colors.yaml
-  symlink "${CWD}"/.config/vivid ~/.config/vivid/tokyonight-moon.ls_colors
+  symlink "${CWD}"/.config/vivid ~/.config/vivid/modus-vivendi.ls_colors
   if command -v bat >/dev/null 2>&1; then
     bat cache --build >/dev/null
   fi

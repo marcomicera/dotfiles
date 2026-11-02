@@ -1,81 +1,84 @@
 [mgr]
+# Colours are the 16 ANSI names, not hex, so they come from whatever palette the
+# terminal has: Modus Vivendi in dark, Modus Operandi in light. That is what makes
+# yazi follow the macOS appearance.
 # NOTE: can be combined with tmTheme (sublime colorshceme file) for preview code highlight
 syntect_theme = "~/.config/bat/themes/modus_vivendi.tmTheme"
 
-cwd = { fg = "#989898", italic = true }
+cwd = { fg = "white", italic = true }
 
 # Hovered
-hovered         = { bg = "#2f3849" }
-preview_hovered = { bg = "#2f3849" }
+hovered         = { bg = "black" }
+preview_hovered = { bg = "black" }
 
 # Find
-find_keyword  = { fg = "#ffffff", bg = "#7030af", bold = true }
-find_position = { fg = "#00d3d0", bg = "#1e1e1e", bold = true }
+find_keyword  = { fg = "reset", bg = "magenta", bold = true }
+find_position = { fg = "cyan", bg = "black", bold = true }
 
 # Marker
-marker_copied   = { fg = "#44bc44", bg = "#44bc44" }
-marker_cut      = { fg = "#ff5f59", bg = "#ff5f59" }
-marker_marked   = { fg = "#b6a0ff", bg = "#b6a0ff" }
-marker_selected = { fg = "#2fafff", bg = "#2fafff" }
+marker_copied   = { fg = "green", bg = "green" }
+marker_cut      = { fg = "red", bg = "red" }
+marker_marked   = { fg = "lightmagenta", bg = "lightmagenta" }
+marker_selected = { fg = "blue", bg = "blue" }
 
 # Count
-count_copied   = { fg = "#000000", bg = "#44bc44" }
-count_cut      = { fg = "#000000", bg = "#ff5f59" }
-count_selected = { fg = "#000000", bg = "#2fafff" }
+count_copied   = { fg = "reset", bg = "green" }
+count_cut      = { fg = "reset", bg = "red" }
+count_selected = { fg = "reset", bg = "blue" }
 
 # Border
 border_symbol = "│"
-border_style  = { fg = "#c4c4c4" }
+border_style  = { fg = "white" }
 
 # Tab
 [tabs]
-active   = { fg = "#000000", bg = "#2fafff" }
-inactive = { fg = "#2fafff", bg = "#303030" }
+active   = { fg = "reset", bg = "blue" }
+inactive = { fg = "blue", bg = "black" }
 
 [mode]
-normal_main = { fg = "#000000", bg = "#2fafff", bold = true }
-normal_alt  = { fg = "#2fafff", bg = "#303030" }
+normal_main = { fg = "reset", bg = "blue", bold = true }
+normal_alt  = { fg = "blue", bg = "black" }
 
-select_main = { fg = "#000000", bg = "#b6a0ff", bold = true }
-select_alt  = { fg = "#b6a0ff", bg = "#303030" }
+select_main = { fg = "reset", bg = "lightmagenta", bold = true }
+select_alt  = { fg = "lightmagenta", bg = "black" }
 
-unset_main  = { fg = "#000000", bg = "#feacd0", bold = true }
-unset_alt   = { fg = "#feacd0", bg = "#303030" }
+unset_main  = { fg = "reset", bg = "magenta", bold = true }
+unset_alt   = { fg = "magenta", bg = "black" }
 
 [status]
-overall   = { fg = "#ffffff", bg = "#1e1e1e" }
+overall   = { fg = "reset", bg = "black" }
 sep_left  = { open = "", close = "" }
 sep_right = { open = "", close = "" }
 
 # Progress
-progress_label  = { fg = "#ffffff", bold = true }
-progress_normal = { fg = "#2fafff", bg = "#2f3849" }
-progress_error  = { fg = "#ff5f59", bg = "#2f3849" }
+progress_label  = { fg = "reset", bold = true }
+progress_normal = { fg = "blue", bg = "black" }
+progress_error  = { fg = "red", bg = "black" }
 
 # Permissions
-perm_type  = { fg = "#2fafff" }
-perm_read  = { fg = "#d0bc00" }
-perm_write = { fg = "#ff5f59" }
-perm_exec  = { fg = "#44bc44" }
-perm_sep   = { fg = "#646464" }
+perm_type  = { fg = "blue" }
+perm_read  = { fg = "yellow" }
+perm_write = { fg = "red" }
+perm_exec  = { fg = "green" }
+perm_sep   = { fg = "white" }
 
 [pick]
-border   = { fg = "#c4c4c4" }
-active   = { fg = "#ffffff",  bg = "#2f447f" }
-inactive = { fg = "#ffffff" }
+border   = { fg = "white" }
+active   = { fg = "reset",  bg = "black" }
+inactive = { fg = "reset" }
 
 # Input
 [input]
-border   = { fg = "#00d3d0" }
-title    = { fg = "#00d3d0" }
-value    = { fg = "#feacd0" }
-selected = { bg = "#2f447f" }
+border   = { fg = "cyan" }
+title    = { fg = "cyan" }
+value    = { fg = "magenta" }
+selected = { bg = "black" }
 
 # Completion
 [cmp]
-border   = { fg = "#00d3d0" }
-active   = { fg = "#ffffff", bg = "#303030" }
-inactive = { fg = "#ffffff" }
+border   = { fg = "cyan" }
+active   = { fg = "reset", bg = "black" }
+inactive = { fg = "reset" }
 
 icon_file    = ""
 icon_folder  = ""
@@ -83,40 +86,40 @@ icon_command = ""
 
 # Tasks
 [tasks]
-border  = { fg = "#c4c4c4" }
-title   = { fg = "#c4c4c4" }
-hovered = { fg = "#ffffff", bg = "#2f447f" }
+border  = { fg = "white" }
+title   = { fg = "white" }
+hovered = { fg = "reset", bg = "black" }
 
 # Which
 [which]
 cols            = 3
-mask            = { bg = "#1e1e1e" }
-cand            = { fg = "#00d3d0" }
-rest            = { fg = "#2fafff" }
-desc            = { fg = "#b6a0ff" }
+mask            = { bg = "black" }
+cand            = { fg = "cyan" }
+rest            = { fg = "blue" }
+desc            = { fg = "lightmagenta" }
 separator       = " ➜ "
-separator_style = { fg = "#989898" }
+separator_style = { fg = "white" }
 
 # Confirm
 [confirm]
-border  = { fg = "#00d3d0" }
-title   = { fg = "#c4c4c4" }
+border  = { fg = "cyan" }
+title   = { fg = "white" }
 content = {}
 list    = {}
-btn_yes = { bg = "#2f447f" }
+btn_yes = { bg = "black" }
 btn_no  = {}
 btn_labels = [ "  [Y]es  ", "  (N)o  " ]
 
 # Spot
 [spot]
-border  = { fg = "#c4c4c4" }
-title   = { fg = "#c4c4c4" }
+border  = { fg = "white" }
+title   = { fg = "white" }
 
 # Notify
 [notify]
-title_info  = { fg = "#00d3d0" }
-title_warn  = { fg = "#d0bc00" }
-title_error = { fg = "#ff5f59" }
+title_info  = { fg = "cyan" }
+title_warn  = { fg = "yellow" }
+title_error = { fg = "red" }
 
 icon_error = ""
 icon_warn = ""
@@ -124,36 +127,36 @@ icon_info = ""
 
 # Help
 [help]
-on      = { fg = "#44bc44" }
-run     = { fg = "#b6a0ff" }
-desc    = { fg = "#00d3d0" }
-hovered = { bg = "#2f3849" }
-footer  = { fg = "#ffffff", bg = "#000000" }
+on      = { fg = "green" }
+run     = { fg = "lightmagenta" }
+desc    = { fg = "cyan" }
+hovered = { bg = "black" }
+footer  = { fg = "reset", bg = "reset" }
 
 [filetype]
 
 rules = [
 	# Images
-	{ mime = "image/*", fg = "#d0bc00" },
+	{ mime = "image/*", fg = "yellow" },
 
 	# Media
-	{ mime = "{audio,video}/*", fg = "#b6a0ff" },
+	{ mime = "{audio,video}/*", fg = "lightmagenta" },
 
 	# Archives
-	{ mime = "application/*zip", fg = "#ff5f59" },
-	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#ff5f59" },
+	{ mime = "application/*zip", fg = "red" },
+	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "red" },
 
 	# Documents
-	{ mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#00d3d0" },
+	{ mime = "application/{pdf,doc,rtf,vnd.*}", fg = "cyan" },
 
 	# Empty files
-	# { mime = "inode/x-empty", fg = "#ff5f59" },
+	# { mime = "inode/x-empty", fg = "red" },
 
 	# Special files
-	{ url = "*", is = "orphan", bg = "#ff5f59" },
-	{ url = "*", is = "exec"  , fg = "#44bc44" },
+	{ url = "*", is = "orphan", bg = "red" },
+	{ url = "*", is = "exec"  , fg = "green" },
 
 	# Fallback
-	{ url = "*/", fg = "#2fafff" },
-	{ url = "*", fg = "#ffffff" }
+	{ url = "*/", fg = "blue" },
+	{ url = "*", fg = "reset" }
 ]

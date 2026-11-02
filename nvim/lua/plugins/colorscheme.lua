@@ -1,13 +1,18 @@
 return {
   {
-    "folke/tokyonight.nvim",
+    "miikanissi/modus-themes.nvim",
+    priority = 1000,
     opts = {
-      style = "moon",
+      -- `auto` picks modus_vivendi or modus_operandi from vim.o.background, so Neovim
+      -- follows the same macOS light/dark switch as the terminal.
+      style = "auto",
       transparent = true,
-      styles = {
-        sidebars = "transparent",
-        floats = "transparent",
-      },
+    },
+  },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "modus",
     },
   },
 }

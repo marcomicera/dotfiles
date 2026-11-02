@@ -4,7 +4,7 @@
   "backgroundOpacity" : 0.8888194499421823,
   "blockedStatusColorHex" : "#FF2600",
   "blockedStatusSoundName" : "Pop",
-  "darkTheme" : "12-bit Rainbow",
+  "darkTheme" : "Modus Vivendi",
   "dockBounce" : "once",
   "followSystemAppearance" : true,
   "hiddenInterfaceElements" : [
@@ -21,6 +21,6 @@
   "notificationSoundName" : "Pop",
   "restoreMode" : "none",
   "sidebarBackgroundShift" : 10,
-  "theme" : "GitHub Light High Contrast",
+  "theme" : "Modus Operandi",
   "welcomeShown" : true
 }

@@ -238,7 +238,7 @@ if [[ -n ${XDG_CONFIG_HOME} ]]; then
     symlink "${CWD}"/.config/k9s "${XDG_CONFIG_HOME}/k9s/config.yaml"
     symlink "${CWD}"/.config/k9s "${XDG_CONFIG_HOME}/k9s/views.yaml"
     symlink "${CWD}"/.config/k9s "${XDG_CONFIG_HOME}/k9s/node-util"
-    symlink "${CWD}"/.config/k9s/skins "${XDG_CONFIG_HOME}/k9s/skins/modus-vivendi.yaml"
+    symlink "${CWD}"/.config/k9s/skins "${XDG_CONFIG_HOME}/k9s/skins/modus.yaml"
   )
 fi
 

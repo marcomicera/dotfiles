@@ -1,6 +1,7 @@
 # fzf default options — loaded via FZF_DEFAULT_OPTS_FILE
 # https://github.com/junegunn/fzf#customizing-the-look
-# Colors: tokyonight-moon (matches Neovim)
+# Colors: Modus Vivendi (matches Neovim / bat / delta). bg and gutter stay at -1 so
+# the terminal background and foreground show through, so both follow the appearance.
 
 --style minimal
 --height 95%
@@ -11,19 +12,19 @@
 --preview-window right:50%
 --bind 'focus:transform-header:file --brief {}'
 --bind 'ctrl-/:toggle-preview'
---color=bg+:#2d3f76
+--color=bg+:#2f447f
 --color=bg:-1
---color=border:#589ed7
---color=fg:#c8d3f5
+--color=border:#c4c4c4
+--color=fg:-1
 --color=gutter:-1
---color=header:#ff966c
---color=hl+:#65bcff
---color=hl:#65bcff
---color=info:#545c7e
---color=marker:#ff007c
---color=pointer:#ff007c
---color=prompt:#65bcff
---color=query:#c8d3f5:regular
---color=scrollbar:#589ed7
---color=separator:#ff966c
---color=spinner:#ff007c
+--color=header:#ff6b55
+--color=hl+:#00bcff
+--color=hl:#00bcff
+--color=info:#989898
+--color=marker:#feacd0
+--color=pointer:#feacd0
+--color=prompt:#00bcff
+--color=query:-1:regular
+--color=scrollbar:#c4c4c4
+--color=separator:#ff6b55
+--color=spinner:#feacd0

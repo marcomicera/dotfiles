@@ -1,52 +1,50 @@
-# Modus Vivendi (matches Neovim / Ghostty / bat / fzf / p10k)
-# Palette: blue #2fafff, cyan #00d3d0, green #44bc44, teal #6ae4b9,
-#          yellow #d0bc00, orange #ff6b55, red #ff5f59, magenta #b6a0ff,
-#          purple #feacd0, fg #ffffff, fg_dim #989898
-#          greys, brightest to dimmest: #c4c4c4, #989898, #646464
-
+# Modus, following the terminal palette. The values are the colorize gem's ANSI
+# names rather than hex, so they resolve against whatever the terminal has:
+# Modus Vivendi in dark, Modus Operandi in light.
+# Modus puts its dim grey on 15 (light_white) and a subtle grey on 8 (light_black).
 # Main Colors
-unrecognized_file: '#d0bc00'
-recognized_file:   '#ffffff'
-executable_file:   '#44bc44'
-dir:               '#2fafff'
+unrecognized_file: yellow
+recognized_file:   white
+executable_file:   green
+dir:               blue
 
 # Link
-dead_link: '#ff5f59'
-link:      '#00d3d0'
+dead_link: red
+link:      cyan
 
 # Special Files
-socket:   '#44bc44'
-blockdev: '#44bc44'
-chardev:  '#44bc44'
+socket:   green
+blockdev: green
+chardev:  green
 
 # Access Modes
-write:     '#feacd0'
-read:      '#b6a0ff'
-exec:      '#00d3d0'
-no_access: '#ff5f59'
+write:     magenta
+read:      light_magenta
+exec:      cyan
+no_access: red
 
 # Age
-hour_old:    '#c4c4c4'
-day_old:     '#989898'
-no_modifier: '#646464'
+hour_old:    white
+day_old:     light_white
+no_modifier: light_black
 
 # File Size
-file_large:  '#ff5f59'
-file_medium: '#ff6b55'
-file_small:  '#44bc44'
+file_large:  red
+file_medium: light_red
+file_small:  green
 
 # Random
-report: '#44bc44'
-user:   '#00d3d0'
-tree:   '#989898'
-empty:  '#989898'
-error:  '#ff5f59'
-normal: '#ffffff'
-inode:  '#b6a0ff'
+report: green
+user:   cyan
+tree:   light_white
+empty:  light_white
+error:  red
+normal: white
+inode:  light_magenta
 
 # Git
-addition:     '#a0e0a0'
-modification: '#7ca1f2'
-deletion:     '#ffbfbf'
-untracked:    '#ff6b55'
-unchanged:    '#44bc44'
+addition:     light_green
+modification: light_blue
+deletion:     red
+untracked:    light_red
+unchanged:    green

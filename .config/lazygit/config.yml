@@ -1,28 +1,28 @@
-# Theme matches Neovim Snacks.lazygit (tokyonight-moon via configure = true)
+# Theme matches Neovim (modus-themes.nvim, Modus Vivendi palette)
 gui:
   nerdFontsVersion: "3"
   theme:
     activeBorderColor:
-      - "#ff966c"
+      - "#ff6b55"
       - "bold"
     inactiveBorderColor:
-      - "#589ed7"
+      - "#646464"
     searchingActiveBorderColor:
-      - "#ff966c"
+      - "#ff6b55"
       - "bold"
     optionsTextColor:
-      - "#82aaff"
+      - "#2fafff"
     selectedLineBgColor:
-      - "#2d3f76"
+      - "#2f447f"
     cherryPickedCommitFgColor:
-      - "#82aaff"
+      - "#2fafff"
     cherryPickedCommitBgColor:
-      - "#c099ff"
+      - "#b6a0ff"
     markedBaseCommitFgColor:
-      - "#82aaff"
+      - "#2fafff"
     markedBaseCommitBgColor:
-      - "#ffc777"
+      - "#d0bc00"
     unstagedChangesColor:
-      - "#c53b53"
+      - "#ff5f59"
     defaultFgColor:
-      - "#c8d3f5"
+      - "default"

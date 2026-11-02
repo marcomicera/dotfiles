@@ -1,4 +1,5 @@
 [tools]
+glab = "latest"
 helm = "latest"
 kubectl = "latest"
 # happy and @getpaseo/cli are npm globals installed into this node's prefix,

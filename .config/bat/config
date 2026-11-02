@@ -3,8 +3,13 @@
 # run `bat --help` to get a list of all possible configuration options.
 
 # Specify desired highlighting theme (e.g. "TwoDark"). Run `bat --list-themes`
-# for a list of all available themes
---theme="tokyonight_moon"
+# for a list of all available themes.
+# bat >= 0.25 picks between these two from the terminal's own background colour, so bat
+# follows the macOS light/dark switch along with everything else. Both files come from
+# modus-themes.nvim's extras/bat and live in themes/ here; after changing them run
+# `bat cache --build`.
+--theme-light="modus_operandi"
+--theme-dark="modus_vivendi"
 
 # Enable this to use italic text on the terminal. This is not supported on all
 # terminal emulators (like tmux, by default):

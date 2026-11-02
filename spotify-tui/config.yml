@@ -1,22 +1,22 @@
 # Sample config file
 
 # The theme colours can be an rgb string of the form "255, 255, 255" or a string that references the colours from your terminal theme: Reset, Black, Red, Green, Yellow, Blue, Magenta, Cyan, Gray, DarkGray, LightRed, LightGreen, LightYellow, LightBlue, LightMagenta, LightCyan, White.
-# Tokyo Night Moon (matches Neovim)
+# Modus Vivendi (matches Neovim)
 theme:
-  active: "134, 225, 252" # cyan #86e1fc
-  banner: "130, 170, 255" # blue #82aaff
-  error_border: "197, 59, 83" # red1 #c53b53
-  error_text: "255, 117, 127" # red #ff757f
-  hint: "255, 199, 119" # yellow #ffc777
-  hovered: "192, 153, 255" # magenta #c099ff
-  inactive: "99, 109, 166" # comment #636da6
-  playbar_background: "30, 32, 48" # bg_dark #1e2030
-  playbar_progress: "101, 188, 255" # blue1 #65bcff
-  playbar_progress_text: "134, 225, 252" # cyan #86e1fc
-  playbar_text: "200, 211, 245" # fg #c8d3f5
-  selected: "101, 188, 255" # blue1 #65bcff
-  text: "200, 211, 245" # fg #c8d3f5
-  header: "130, 170, 255" # blue #82aaff
+  active: "0, 211, 208" # cyan #00d3d0
+  banner: "47, 175, 255" # blue #2fafff
+  error_border: "255, 95, 89" # red #ff5f59
+  error_text: "255, 191, 191" # fg_removed #ffbfbf
+  hint: "208, 188, 0" # yellow #d0bc00
+  hovered: "182, 160, 255" # magenta_cooler #b6a0ff
+  inactive: "152, 152, 152" # fg_dim #989898
+  playbar_background: "30, 30, 30" # bg_dim #1e1e1e
+  playbar_progress: "0, 188, 255" # blue_cooler #00bcff
+  playbar_progress_text: "0, 211, 208" # cyan #00d3d0
+  playbar_text: "255, 255, 255" # fg_main #ffffff
+  selected: "0, 188, 255" # blue_cooler #00bcff
+  text: "255, 255, 255" # fg_main #ffffff
+  header: "47, 175, 255" # blue #2fafff
 
 behavior:
   seek_milliseconds: 5000

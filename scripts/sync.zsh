@@ -41,7 +41,6 @@ magenta "zsh"
   symlink "${CWD}"/zsh ~/.iterm2_shell_integration.zsh # https://iterm2.com/documentation-shell-integration.html
   # symlink "${CWD}"/zsh ~/.fzf.zsh 
   symlink "${CWD}"/.config/bat ~/.config/bat/config
-  symlink "${CWD}"/.config/bat/themes ~/.config/bat/themes/tokyonight_moon.tmTheme
   symlink "${CWD}"/.config/bat/themes ~/.config/bat/themes/modus_operandi.tmTheme
   symlink "${CWD}"/.config/bat/themes ~/.config/bat/themes/modus_vivendi.tmTheme
   symlink "${CWD}"/.config/fzf ~/.config/fzf/config

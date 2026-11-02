@@ -43,25 +43,28 @@
 [delta]
     navigate = true # use n and N to move between diff sections
 	side-by-side = true
-	# Modus Vivendi (matches Neovim / bat). Generated values come from
-	# modus-themes.nvim extras/delta; the file/hunk decorations are ours.
-	# syntax-theme reads the Modus tmTheme out of bat's cache, so run
-	# `bat cache --build` if diffs come out unhighlighted.
-	syntax-theme = modus_vivendi
-	minus-style = syntax "#4f1119"
-	minus-non-emph-style = syntax "#380a0f"
-	minus-emph-style = syntax "#781a1f"
-	minus-empty-line-marker-style = syntax "#380a0f"
-	line-numbers-minus-style = "#ffbfbf"
-	plus-style = syntax "#00381f"
-	plus-non-emph-style = syntax "#002910"
-	plus-emph-style = syntax "#034f2f"
-	plus-empty-line-marker-style = syntax "#002910"
-	line-numbers-plus-style = "#a0e0a0"
-	line-numbers-zero-style = "#989898"
-	file-style = "#2fafff" bold
-	file-decoration-style = "#2fafff" box
-	hunk-header-decoration-style = "#b6a0ff" box
+	# Colours follow the macOS appearance. detect-dark-light asks the terminal whether
+	# its background is dark or light; `auto` in a style then resolves to delta's own
+	# default for that element on that side, and the ansi syntax theme renders from the
+	# 16 terminal colours, which are Modus Vivendi in dark and Modus Operandi in light.
+	# Note the diff tints are delta's, not Modus's: a gitconfig cannot branch on the
+	# appearance, so exact Modus backgrounds would have pinned one side.
+	detect-dark-light = auto
+	syntax-theme = ansi
+	minus-style = syntax auto
+	minus-non-emph-style = syntax auto
+	minus-emph-style = syntax auto
+	minus-empty-line-marker-style = syntax auto
+	line-numbers-minus-style = "1"
+	plus-style = syntax auto
+	plus-non-emph-style = syntax auto
+	plus-emph-style = syntax auto
+	plus-empty-line-marker-style = syntax auto
+	line-numbers-plus-style = "2"
+	line-numbers-zero-style = "15"
+	file-style = "4" bold
+	file-decoration-style = "4" box
+	hunk-header-decoration-style = "13" box
 
 # Aliases
 [alias]

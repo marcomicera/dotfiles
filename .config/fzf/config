@@ -1,7 +1,8 @@
 # fzf default options — loaded via FZF_DEFAULT_OPTS_FILE
 # https://github.com/junegunn/fzf#customizing-the-look
-# Colors: Modus Vivendi (matches Neovim / bat / delta). bg and gutter stay at -1 so
-# the terminal background and foreground show through, so both follow the appearance.
+# Colours are ANSI indices, not hex, so they come from the terminal palette: Modus
+# Vivendi in dark, Modus Operandi in light. -1 is the terminal's own default.
+# Modus puts its dim grey on 15, so borders and info text use that.
 
 --style minimal
 --height 95%
@@ -12,19 +13,19 @@
 --preview-window right:50%
 --bind 'focus:transform-header:file --brief {}'
 --bind 'ctrl-/:toggle-preview'
---color=bg+:#2f447f
+--color=bg+:8
 --color=bg:-1
---color=border:#c4c4c4
+--color=border:15
 --color=fg:-1
 --color=gutter:-1
---color=header:#ff6b55
---color=hl+:#00bcff
---color=hl:#00bcff
---color=info:#989898
---color=marker:#feacd0
---color=pointer:#feacd0
---color=prompt:#00bcff
+--color=header:9
+--color=hl+:12
+--color=hl:12
+--color=info:15
+--color=marker:5
+--color=pointer:5
+--color=prompt:12
 --color=query:-1:regular
---color=scrollbar:#c4c4c4
---color=separator:#ff6b55
---color=spinner:#feacd0
+--color=scrollbar:15
+--color=separator:9
+--color=spinner:5

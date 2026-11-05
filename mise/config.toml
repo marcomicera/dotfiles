@@ -2,9 +2,11 @@
 glab = "latest"
 helm = "latest"
 kubectl = "latest"
-# happy and @getpaseo/cli are npm globals installed into this node's prefix,
-# so a node must always be active or they drop off PATH entirely.
+# @getpaseo/cli is an npm global installed into this node's prefix, so a node
+# must always be active or it drops off PATH entirely. happy is mise-managed
+# below, so bumping node no longer takes it off PATH.
 node = "26.9.0"
+"npm:happy" = "latest"
 remotectl = "latest"
 terraform = "latest"
 terragrunt = "latest"

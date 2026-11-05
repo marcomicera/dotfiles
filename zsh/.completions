@@ -7,12 +7,23 @@ ZSH_COMPLETIONS_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh-completions"
 mkdir -p "$ZSH_COMPLETIONS_CACHE"
 
 # Usage: _source_completion cache_name "full command that prints zsh completion"
+# zsh expands every word of `local` before assigning any of them, so cache_file
+# must be assigned on its own line -- on one line $name is still empty and every
+# tool shares a single cache file named `_`.
 _source_completion() {
-	local name="$1" cmd="$2" cache_file="$ZSH_COMPLETIONS_CACHE/_$name"
-	if [[ -r "$cache_file" ]]; then
+	local name="$1" cmd="$2"
+	local cache_file="$ZSH_COMPLETIONS_CACHE/_$name"
+	if [[ -s "$cache_file" ]]; then
 		source "$cache_file"
 	elif [[ -n "$cmd" ]]; then
-		(eval "$cmd" 2>/dev/null) > "$cache_file" && [[ -s "$cache_file" ]] && source "$cache_file"
+		# Drop the file when generation fails, otherwise an empty cache entry is
+		# sourced forever and the tool silently never completes.
+		(eval "$cmd" 2>/dev/null) > "$cache_file"
+		if [[ -s "$cache_file" ]]; then
+			source "$cache_file"
+		else
+			rm -f "$cache_file"
+		fi
 	fi
 }
 
@@ -30,12 +41,13 @@ _source_completion skaffold        'skaffold completion zsh'
 _source_completion terraform-docs  'terraform-docs completion zsh'
 _source_completion dyff            'dyff completion zsh'
 _mise_source_completion helm helm completion zsh
+_mise_source_completion kubectl kubectl completion zsh
 _source_completion glab            'glab completion --shell zsh'
 _source_completion argocd          'argocd completion zsh'
 _source_completion cilium          'cilium completion zsh'
 _source_completion hubble          'hubble completion zsh'
 _source_completion mise            'mise completion --quiet zsh'
-_source_completion kubectl-neat    'kubectl neat completion zsh'
+_mise_source_completion kubectl-neat kubectl neat completion zsh
 _source_completion argo			   'argo completion zsh'
 
 # These stay as-is (cheap: just register completer, no heavy binary)

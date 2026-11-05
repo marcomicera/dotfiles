@@ -30,8 +30,6 @@ k9s:
     reactive: false
     # Toggles icons display as not all terminal support these chars. Default: true
     noIcons: false
-    # Modus, following the terminal palette in both appearances
-    skin: modus
   # Toggles whether k9s should check for the latest revision from the Github repository releases. Default is false.
   skipLatestRevCheck: false
   # Disable count pods while in node view. Default is false.

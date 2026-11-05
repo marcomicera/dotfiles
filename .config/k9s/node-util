@@ -17,7 +17,7 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Deque, Dict, List, Optional, Sequence, Tuple
 
-# Modus Vivendi palette (matches k9s skin)
+# Hardcoded Modus Vivendi palette: these are this plugin's own colours, not a k9s skin.
 COLORS = [
     "\033[38;2;47;175;255m",  # blue
     "\033[38;2;68;188;68m",  # green

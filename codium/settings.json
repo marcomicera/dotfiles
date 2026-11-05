@@ -127,10 +127,6 @@
     // AI
     "aikido.coreUrl": "https://ide.aikido.dev",
 
-    // Cursor
-    "cursor.chatMaxWidth": 9999,
-    "cursor.composer.shouldChimeAfterChatFinishes": true,
-
     // Claude
     // "claudeCode.preferredLocation": "panel",
     "chat.fontSize": 14,

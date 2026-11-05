@@ -105,9 +105,6 @@ PATH+=:"${KREW_ROOT:-$HOME/.krew}/bin"
 # Work-related
 source ~/.work
 
-# Cursor
-PATH+=:$HOME/.local/bin
-
 # TeX (basictex)
 # /etc/paths.d/TeX covers login shells via path_helper; this covers the rest
 [[ ":$PATH:" == *":/Library/TeX/texbin:"* ]] || PATH+=:/Library/TeX/texbin

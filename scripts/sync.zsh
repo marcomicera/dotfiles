@@ -186,14 +186,6 @@ magenta "VSCodium"
   symlink "${CWD}"/codium ~/Library/Application\ Support/VSCodium/User/keybindings.json
 )
 
-# Cursor
-magenta "Cursor"
-(
-  set -x
-  symlink "${CWD}"/codium ~/Library/Application\ Support/Cursor/User/settings.json
-  symlink "${CWD}"/codium ~/Library/Application\ Support/Cursor/User/keybindings.json
-)
-
 # Ghossty
 magenta "Ghossty"
 (

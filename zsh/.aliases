@@ -15,10 +15,6 @@ function y() {
 # Text editors
 alias code='codium'
 alias code.='codium .'
-alias x="cursor"
-alias cursor.='cursor .'
-alias x.='cursor .'
-alias x..='cursor ..'
 
 # SmartGit
 alias sm.='sm .'

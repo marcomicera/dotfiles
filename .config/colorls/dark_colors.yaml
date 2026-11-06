@@ -1,7 +1,10 @@
-# Modus, following the terminal palette. The values are the colorize gem's ANSI
-# names rather than hex, so they resolve against whatever the terminal has:
-# Modus Vivendi in dark, Modus Operandi in light.
-# Modus puts its dim grey on 15 (light_white) and a subtle grey on 8 (light_black).
+# Modus, following the terminal palette. colorls colors through the rainbow gem,
+# so the plain names (red, blue, ...) are ANSI 30-37 and resolve against whatever
+# the terminal has: Modus Vivendi in dark, Modus Operandi in light. Rainbow has no
+# bright-ANSI names, so the few entries that need a second shade of a colour use
+# its X11 names (violet, lightgray, dimgray, lightcoral, ...), which are fixed
+# tints rather than palette colours.
+
 # Main Colors
 unrecognized_file: yellow
 recognized_file:   white
@@ -19,32 +22,32 @@ chardev:  green
 
 # Access Modes
 write:     magenta
-read:      light_magenta
+read:      violet
 exec:      cyan
 no_access: red
 
 # Age
 hour_old:    white
-day_old:     light_white
-no_modifier: light_black
+day_old:     lightgray
+no_modifier: dimgray
 
 # File Size
 file_large:  red
-file_medium: light_red
+file_medium: lightcoral
 file_small:  green
 
 # Random
 report: green
 user:   cyan
-tree:   light_white
-empty:  light_white
+tree:   lightgray
+empty:  lightgray
 error:  red
 normal: white
-inode:  light_magenta
+inode:  violet
 
 # Git
-addition:     light_green
-modification: light_blue
+addition:     lightgreen
+modification: lightblue
 deletion:     red
-untracked:    light_red
+untracked:    lightcoral
 unchanged:    green

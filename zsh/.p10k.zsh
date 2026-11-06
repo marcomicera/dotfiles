@@ -420,33 +420,33 @@
 
     # "wip" if the latest commit's summary contains "wip" or "WIP".
     if [[ $VCS_STATUS_COMMIT_SUMMARY == (|*[^[:alnum:]])(wip|WIP)(|[^[:alnum:]]*) ]]; then
-      rest+=" wip"
+      rest+=", wip"
     fi
 
     if (( VCS_STATUS_COMMITS_AHEAD || VCS_STATUS_COMMITS_BEHIND )); then
-      (( VCS_STATUS_COMMITS_BEHIND )) && rest+=" behind ${VCS_STATUS_COMMITS_BEHIND}"
-      (( VCS_STATUS_COMMITS_AHEAD  )) && rest+=" ahead ${VCS_STATUS_COMMITS_AHEAD}"
+      (( VCS_STATUS_COMMITS_BEHIND )) && rest+=", behind ${VCS_STATUS_COMMITS_BEHIND}"
+      (( VCS_STATUS_COMMITS_AHEAD  )) && rest+=", ahead ${VCS_STATUS_COMMITS_AHEAD}"
     elif [[ -n $VCS_STATUS_REMOTE_BRANCH ]]; then
       # Tip: Uncomment the next line to display 'sync' if up to date with the remote.
-      # rest+=" sync"
+      # rest+=", sync"
     fi
 
-    (( VCS_STATUS_PUSH_COMMITS_BEHIND )) && rest+=" behind ${VCS_STATUS_PUSH_COMMITS_BEHIND}"
-    (( VCS_STATUS_PUSH_COMMITS_AHEAD  )) && rest+=" ahead ${VCS_STATUS_PUSH_COMMITS_AHEAD}"
-    (( VCS_STATUS_STASHES        )) && rest+=" stash ${VCS_STATUS_STASHES}"
+    (( VCS_STATUS_PUSH_COMMITS_BEHIND )) && rest+=", behind ${VCS_STATUS_PUSH_COMMITS_BEHIND}"
+    (( VCS_STATUS_PUSH_COMMITS_AHEAD  )) && rest+=", ahead ${VCS_STATUS_PUSH_COMMITS_AHEAD}"
+    (( VCS_STATUS_STASHES        )) && rest+=", stash ${VCS_STATUS_STASHES}"
     # Action is already one word: merge, rebase, cherry-pick, etc.
-    [[ -n $VCS_STATUS_ACTION     ]] && rest+=" ${VCS_STATUS_ACTION}"
-    (( VCS_STATUS_NUM_CONFLICTED )) && rest+=" conflict ${VCS_STATUS_NUM_CONFLICTED}"
-    (( VCS_STATUS_NUM_STAGED     )) && rest+=" staged ${VCS_STATUS_NUM_STAGED}"
-    (( VCS_STATUS_NUM_UNSTAGED   )) && rest+=" modified ${VCS_STATUS_NUM_UNSTAGED}"
+    [[ -n $VCS_STATUS_ACTION     ]] && rest+=", ${VCS_STATUS_ACTION}"
+    (( VCS_STATUS_NUM_CONFLICTED )) && rest+=", conflict ${VCS_STATUS_NUM_CONFLICTED}"
+    (( VCS_STATUS_NUM_STAGED     )) && rest+=", staged ${VCS_STATUS_NUM_STAGED}"
+    (( VCS_STATUS_NUM_UNSTAGED   )) && rest+=", modified ${VCS_STATUS_NUM_UNSTAGED}"
     # Remove the next line if you don't want to see untracked files at all.
-    (( VCS_STATUS_NUM_UNTRACKED  )) && rest+=" untracked ${VCS_STATUS_NUM_UNTRACKED}"
+    (( VCS_STATUS_NUM_UNTRACKED  )) && rest+=", untracked ${VCS_STATUS_NUM_UNTRACKED}"
     # "…" if the number of unstaged files is unknown. This can happen due to
     # POWERLEVEL9K_VCS_MAX_INDEX_SIZE_DIRTY (see below) being set to a non-negative number lower
     # than the number of files in the Git index, or due to bash.showDirtyState being set to false
     # in the repository config. The number of staged and untracked files may also be unknown
     # in this case.
-    (( VCS_STATUS_HAS_UNSTAGED == -1 )) && rest+=" …"
+    (( VCS_STATUS_HAS_UNSTAGED == -1 )) && rest+=", …"
 
     typeset -g my_git_format="${faint}(${bright}${head}${faint}${rest})"
   }
